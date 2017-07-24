@@ -125,11 +125,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+
     <Content Include="Content\Images\AerialCle.jpg" />
     <Content Include="Content\Images\AerialCle2.jpg" />
     <Content Include="Content\Images\CleFlat.jpg" />
     <Content Include="Content\Images\CleRock.jpg" />
     <Content Include="Content\Images\PlayhouseSquare.jpg" />
+
+    <Content Include="Content\StyleSheet1.css" />
+
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -157,13 +161,16 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\College.cs" />
     <Compile Include="Models\Hours.cs" />
     <Compile Include="Models\Landmark.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Park.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -184,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

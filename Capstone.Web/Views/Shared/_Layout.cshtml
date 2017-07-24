@@ -9,13 +9,25 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>_Layout</title>
-
+    <link href="~/Content/bootstrap.css" rel="StyleSheet1" />
+    <link rel="stylesheet" href="~/Content/StyleSheet1.css"/>
+    <script scr="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 </head>
 <body>
-    <div> 
-    </div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+    </ul>
 </body>
 </html>
