@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Capstone.Web.Models;
 using Capstone.Web.DAL;
 using Capstone.Web.Crypto;
+using Capstone.Web.Filters;
 
 namespace Capstone.Web.Controllers
 {
@@ -129,6 +130,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpGet]
+        [CityToursAuthorizationFilter]
         [Route("users/{username}/changepassword")]
         public ActionResult ChangePassword(string username)
         {
@@ -137,6 +139,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpPost]
+        [CityToursAuthorizationFilter]
         [Route("users/{username}/changepassword")]
         public ActionResult ChangePassword(string username, ChangePasswordViewModel model)
         {
