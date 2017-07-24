@@ -11,10 +11,10 @@ CREATE TABLE landmark (
 	address varchar(100) NOT NULL,
 	phone_number varchar(12) NOT NULL,
 	description varchar(MAX) NOT NULL,
-	year_founded integer NOT NULL,
+	year_founded integer NULL,
 	average_rating integer NOT NULL,
 	relative_cost integer NOT NULL,
-	annual_num_visitors integer NOT NULL,
+	annual_num_visitors integer NULL,
 	website_url varchar(MAX) NOT NULL
 	CONSTRAINT pk_landmark_id PRIMARY KEY(id),
 	CONSTRAINT unique_landmark_name UNIQUE(name)
