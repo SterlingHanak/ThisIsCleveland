@@ -161,6 +161,7 @@
     <Compile Include="Models\College.cs" />
     <Compile Include="Models\Hours.cs" />
     <Compile Include="Models\Landmark.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Park.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
