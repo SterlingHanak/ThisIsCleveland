@@ -171,7 +171,9 @@
     <Compile Include="Models\Landmark.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Park.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,7 +206,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55601</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
