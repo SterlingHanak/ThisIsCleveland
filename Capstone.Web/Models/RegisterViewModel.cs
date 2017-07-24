@@ -22,6 +22,9 @@ namespace Capstone.Web.Models
         [EmailAddress(ErrorMessage = "Invalid Email")]
         public string EmailAddress { get; set; }
 
+        [Required(ErrorMessage = "This field is required")]
+        [Display(Name = "User Name:")]
+        public string Username { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
         [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
