@@ -4,15 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Capstone.Web.Models;
+using Capstone.Web.DAL;
 
 namespace Capstone.Web.Controllers
 {
     public class UsersController : Controller
     {
+        private IUserDAL userDAL;
 
-        public UsersController()
+        public UsersController(IUserDAL userDAL)
         {
-
+            this.userDAL = userDAL;
         }
         
         

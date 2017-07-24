@@ -125,15 +125,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-
     <Content Include="Content\Images\AerialCle.jpg" />
     <Content Include="Content\Images\AerialCle2.jpg" />
     <Content Include="Content\Images\CleFlat.jpg" />
     <Content Include="Content\Images\CleRock.jpg" />
     <Content Include="Content\Images\PlayhouseSquare.jpg" />
-
     <Content Include="Content\StyleSheet1.css" />
-
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -164,6 +161,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Crypto\HashProvider.cs" />
+    <Compile Include="DAL\IUserDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,7 +191,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <PropertyGroup>
