@@ -18,7 +18,7 @@ namespace Capstone.Web.Models
         public double AvgRating { get; set; }
         public int YearFounded { get; set; }
         public int RelativeCost { get; set; }
-        public int AnnualVisitors { get; set; }
-        public string Website { get; set; }
+        public int AnnualNumVisitors { get; set; }
+        public string WebsiteUrl { get; set; }
     }
 }
