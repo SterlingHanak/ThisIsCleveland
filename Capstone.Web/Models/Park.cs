@@ -10,7 +10,7 @@ namespace Capstone.Web.Models
     {
         public List<string> Activities { get; set; }
         public bool IsPetFriendly { get; set; }
-        public double Area { get; set; }
+        public double AreaInSqFt { get; set; }
         public bool HasPicnicArea { get; set; }
         public bool HasRestroom { get; set; }
         public bool HasWaterFountain { get; set; }
