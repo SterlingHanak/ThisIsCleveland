@@ -1,9 +1,12 @@
-﻿@{
-    Layout = null;
+﻿@using Capstone.Web.Models;
+@model LoginViewModel
+
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<div class="container">
-    <h1>Register</h1>
+<div class="container">
+    <h1>Login</h1>
     @using (Html.BeginForm("Login", "Users", FormMethod.Post))
     {
         <div class="row">Username</div>
@@ -22,4 +25,6 @@
         <p>Not A Member? Sign Up Today!</p>
         <a href="#">Register As New User</a>
     </div>
-</div>*@
+</div>
+
+

@@ -166,6 +166,7 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Crypto\HashProvider.cs" />
     <Compile Include="DAL\IUserDAL.cs" />
+    <Compile Include="DAL\UserSqlDAL.cs" />
     <Compile Include="Filters\CityToursAuthorizationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,6 +192,7 @@
     <Content Include="Views\Users\Register.cshtml" />
     <Content Include="Views\Users\LeavingSite.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

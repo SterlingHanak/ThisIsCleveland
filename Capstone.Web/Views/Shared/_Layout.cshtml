@@ -1,47 +1,32 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_Layout</title>
-    <link href="~/Content/bootstrap.css" rel="StyleSheet1" />
-    <script scr="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css"/>
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-3.1.1.min.js" defer></script>
+    <script src="~/Scripts/jquery.validate.min.js" defer></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
-    <ul class="nav navbar-nav navbar-fixed-top">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Things To Do</a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Restaurants</a></li>
-                <li><a href="#">Sports Venues</a></li>
-                <li><a href="#">Parks</a></li>
-            </ul>
-        </li>
-        <li>@Html.ActionLink("Plan Visit", "About", "Home")</li>
-        <li>@Html.ActionLink("About", "Visit", "Home")</li>
-        <li>@Html.ActionLink("Login", "Programs", "Home")</li>
-    </ul>
-
-    @*<ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </li>
-    </ul>*@
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-fixed-top">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Things To Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Sports Venues</a></li>
+                    <li><a href="#">Parks</a></li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Plan Visit", "About", "Home")</li>
+            <li>@Html.ActionLink("About", "Visit", "Home")</li>
+            <li>@Html.ActionLink("Login", "Programs", "Home")</li>
+        </ul>
+    </div>
     @RenderBody()
 </body>
-
 </html>

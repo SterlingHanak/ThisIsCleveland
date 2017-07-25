@@ -25,7 +25,7 @@ namespace Capstone.Web.Controllers
         {
             if (base.IsAuthenticated)
             {
-                return RedirectToAction("Dashboard", "Messages", new { username = base.CurrentUser });
+                return RedirectToAction("Index", "Home");
             }
 
             LoginViewModel model = new LoginViewModel();
