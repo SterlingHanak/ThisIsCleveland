@@ -1,9 +1,4 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -20,7 +15,21 @@
 
 </head>
 <body>
-    <ul>
+    <ul class="nav navbar-nav navbar-fixed-top">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Things To Do</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Restaurants</a></li>
+                <li><a href="#">Sports Venues</a></li>
+                <li><a href="#">Parks</a></li>
+            </ul>
+        </li>
+        <li>@Html.ActionLink("Plan Visit", "About", "Home")</li>
+        <li>@Html.ActionLink("About", "Visit", "Home")</li>
+        <li>@Html.ActionLink("Login", "Programs", "Home")</li>
+    </ul>
+
+    @*<ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#news">News</a></li>
         <li class="dropdown">
@@ -31,8 +40,8 @@
                 <a href="#">Link 3</a>
             </div>
         </li>
-    </ul>
-    @RenderBody();
+    </ul>*@
+    @RenderBody()
 </body>
 
 </html>
