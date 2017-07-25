@@ -10,11 +10,14 @@
     <meta name="viewport" content="width=device-width" />
     <title>_Layout</title>
     <link href="~/Content/bootstrap.css" rel="StyleSheet1" />
-    <link rel="stylesheet" href="~/Content/StyleSheet1.css"/>
     <script scr="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
     <ul>
@@ -29,5 +32,7 @@
             </div>
         </li>
     </ul>
+    @RenderBody();
 </body>
+
 </html>
