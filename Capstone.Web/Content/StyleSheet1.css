@@ -1,4 +1,6 @@
 ﻿body {
+    background-color:black;
+    color:white;
 }
 
 ul {
@@ -125,3 +127,24 @@ div.home-info > p {
     background-image: url(Images/CavsFire.jpeg);
     width: 33%;
 }*/
+
+.form-width{
+    width:200px;
+    margin-left:490px;
+}
+
+.navbar-nav{
+    background-color:gray;
+    font-weight:900;
+    font-family:cursive;
+}
+
+.btn-primary{
+    margin-bottom:30px;
+    margin-top:10px;
+}
+
+.form-width2 {
+    width: 300px;
+    margin-left: 45px;
+}

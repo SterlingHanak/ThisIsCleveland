@@ -12,25 +12,25 @@
         <div class="form">
             <div class="form-group row">
                 Username
-                <div class="row">
-                    @Html.TextBoxFor(m => Model.Username)
+                <div class="form-width">
+                    @Html.TextBoxFor(m => Model.Username, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => Model.Username)
                 </div>
             </div>
             <div class="form-group row">
                 Password
-                <div class="row">
-                    @Html.PasswordFor(m => Model.Password)
+                <div class="form-width">
+                    @Html.PasswordFor(m => Model.Password, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => Model.Password)
                     @Html.ValidationMessage("invalid-login")
                 </div>
             </div>
-            <p><button>Submit</button></p>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     }
     <div class="row">
         <p>Not A Member? Sign Up Today!</p>
-        <a href="#">Register As New User</a>
+        <a href="@Url.Action("Register", "Users")">Register As New User</a>
     </div>
 
 </div>
