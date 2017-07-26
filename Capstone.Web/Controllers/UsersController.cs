@@ -61,7 +61,7 @@ namespace Capstone.Web.Controllers
             // If username and password combination found in database, log user in
             base.LogUserIn(user.Username);
 
-            //If they are supposed to be redirected then redirect them; otherwise, send them to the dashboard
+            //If they are supposed to be redirected then redirect them; otherwise, send them to the home page
             var queryString = this.Request.UrlReferrer.Query;
             var urlParams = HttpUtility.ParseQueryString(queryString);
             if (urlParams["landingPage"] != null)
@@ -86,6 +86,11 @@ namespace Capstone.Web.Controllers
         [Route("users/register")]
         public ActionResult Register()
         {
+            if (base.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var model = new RegisterViewModel();
             return View("Register", model);
         }
@@ -116,6 +121,9 @@ namespace Capstone.Web.Controllers
             // Assign properties to user
             var newUser = new User
             {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.EmailAddress,
                 Username = model.Username,
                 Password = hashedPassword,
                 Salt = salt
@@ -134,8 +142,13 @@ namespace Capstone.Web.Controllers
         [Route("users/{username}/changepassword")]
         public ActionResult ChangePassword(string username)
         {
-            var model = new ChangePasswordViewModel();
-            return View("ChangePassword", model);
+            if (base.IsAuthenticated)
+            {
+                var model = new ChangePasswordViewModel();
+                return View("ChangePassword", model);
+            }
+
+            return RedirectToAction("Login");
         }
 
         [HttpPost]

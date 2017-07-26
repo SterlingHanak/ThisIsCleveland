@@ -18,6 +18,7 @@
         <div class="row">
             @Html.PasswordFor(m => Model.Password)
             @Html.ValidationMessageFor(m => Model.Password)
+            @Html.ValidationMessage("invalid-login")
         </div>
         <p><button>Submit</button></p>
     }

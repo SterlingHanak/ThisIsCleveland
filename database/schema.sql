@@ -10,7 +10,7 @@ CREATE TABLE landmark (
 	name varchar(100) NOT NULL,
 	address varchar(100) NOT NULL,
 	phone_number varchar(12) NOT NULL,
-	description varchar(MAX) NOT NULL,
+	[description] varchar(MAX) NOT NULL,
 	year_founded integer NULL,
 	average_rating integer NOT NULL,
 	relative_cost integer NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE landmark_highlight (
 	CONSTRAINT fk_landmark_highlight_landmark_id FOREIGN KEY(landmark_id) REFERENCES landmark(id)
 );
 
-CREATE TABLE day (
+CREATE TABLE [day] (
 	id integer IDENTITY NOT NULL,
 	name varchar(10)
 	CONSTRAINT pk_day_id PRIMARY KEY(id),
@@ -97,6 +97,19 @@ CREATE TABLE landmark_category (
 	CONSTRAINT pk_landmark_category PRIMARY KEY(landmark_id, category_id),
 	CONSTRAINT fk_landmark_category_category_id FOREIGN KEY(category_id) REFERENCES category(id),
 	CONSTRAINT fk_landmark_category_landmark_id FOREIGN KEY(landmark_id) REFERENCES landmark(id)
+);
+
+CREATE TABLE city_tours_user (
+	id integer IDENTITY NOT NULL,
+	first_name varchar(50) NOT NULL,
+	last_name varchar(50) NOT NULL,
+	email varchar(50) NOT NULL,
+	username varchar(50) NOT NULL,
+	[password] varchar(MAX) NOT NULL,
+	salt varchar(MAX) NOT NULL,
+	account_creation_date DateTime NOT NULL DEFAULT(GetDate())
+	CONSTRAINT pk_user_id PRIMARY KEY(id),
+	CONSTRAINT unique_user_username UNIQUE(username)
 );
 
 COMMIT;
