@@ -1,25 +1,80 @@
-﻿@{
-    Layout = null;
+﻿@using Capstone.Web.Models
+@model RegisterViewModel
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<div class="container">
+<div class="container">
     <h1>Register</h1>
-    @using (Html.BeginForm("Login", "Users", FormMethod.Post))
+    @using (Html.BeginForm("Register", "Users", FormMethod.Post))
     {
-        <div class="row">Username</div>
+        <!--FIRST NAME-->
         <div class="row">
-            @Html.TextBoxFor(m => Model.Username)
-            @Html.ValidationMessageFor(m => Model.Username)
+            <div class="col-lg-4">
+                <h3>First Name</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(m => Model.FirstName)
+                @Html.ValidationMessageFor(m => Model.FirstName)
+            </div>
         </div>
-        <div class="row">Password</div>
+
+        <!--LAST NAME-->
         <div class="row">
-            @Html.PasswordFor(m => Model.Password)
-            @Html.ValidationMessageFor(m => Model.Password)
+            <div class="col-lg-4">
+                <h3>Last Name</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(m => Model.LastName)
+                @Html.ValidationMessageFor(m => Model.LastName)
+            </div>
         </div>
+
+        <!--EMAIL-->
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Email</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(m => Model.EmailAddress, new { type = "email" })
+                @Html.ValidationMessageFor(m => Model.EmailAddress)
+            </div>
+        </div>
+
+        <!--USERNAME-->
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Username</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(m => Model.Username)
+                @Html.ValidationMessageFor(m => Model.Username)
+            </div>
+        </div>
+
+        <!--PASSWORD-->
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Password</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.PasswordFor(m => Model.Password)
+                @Html.ValidationMessageFor(m => Model.Password)
+            </div>
+        </div>
+
+        <!--PASSWORD-->
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Confirm Password</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.PasswordFor(m => Model.ConfirmPassword)
+                @Html.ValidationMessageFor(m => Model.ConfirmPassword)
+            </div>
+        </div>
+
         <p><button>Submit</button></p>
     }
-    <div class="row">
-        <p>Not A Member? Sign Up Today!</p>
-        <a href="#">Register As New User</a>
-    </div>
-</div>*@
+</div>
