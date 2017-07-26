@@ -10,16 +10,20 @@
     @using (Html.BeginForm("Login", "Users", FormMethod.Post))
     {
         <div class="form">
-            <div class="row">Username</div>
-            <div class="row">
-                @Html.TextBoxFor(m => Model.Username)
-                @Html.ValidationMessageFor(m => Model.Username)
+            <div class="form-group row">
+                Username
+                <div class="row">
+                    @Html.TextBoxFor(m => Model.Username)
+                    @Html.ValidationMessageFor(m => Model.Username)
+                </div>
             </div>
-            <div class="row">Password</div>
-            <div class="row">
-                @Html.PasswordFor(m => Model.Password)
-                @Html.ValidationMessageFor(m => Model.Password)
-                @Html.ValidationMessage("invalid-login")
+            <div class="form-group row">
+                Password
+                <div class="row">
+                    @Html.PasswordFor(m => Model.Password)
+                    @Html.ValidationMessageFor(m => Model.Password)
+                    @Html.ValidationMessage("invalid-login")
+                </div>
             </div>
             <p><button>Submit</button></p>
         </div>
