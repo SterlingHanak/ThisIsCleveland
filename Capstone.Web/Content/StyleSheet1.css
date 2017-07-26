@@ -57,6 +57,26 @@ li {
 }
 
 /*Home View*/
+#cf {
+    position: relative;
+    width: 1610px;
+    height: 847px;
+    margin: 0px !important;
+}
+
+#cf img {
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+    opacity: 0;
+}
+
 .carousel-headline {
     position: absolute;
     bottom: 50%;
@@ -88,7 +108,11 @@ li {
     display: inline-block;
 }
 
-div.home-info > h2 {
+.home-box {
+    margin: 0px !important;
+}
+
+div.home-box > h2 {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     color: antiquewhite;
@@ -102,11 +126,11 @@ div.home-info > h2 {
 }
 
 div.home-info > p {
-    font-size: 20px;
-    text-align: center;
+    font-size: 30px;
+    text-align: right;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: #333;
+    /*background-color: #333;*/
     color: white;
     border: ridge;
     border-width: 2px;
@@ -114,20 +138,17 @@ div.home-info > p {
     border-radius: 4px;
 }
 
-/*#playhouse {
-    background-image: url(Images/PlayhouseSquare.jpg);
-    width: 33%;
+#playhouse {
+    width: 45%;
 }
 
 #flats-east {
-    background-image: url(Images/Flats.jpg);
-    width: 33%;
+    width: 45%;
 }
 
 #fire-cavs {
-    background-image: url(Images/CavsFire.jpeg);
-    width: 33%;
-}*/
+    width: 45%;
+}
 
 .form-width{
     width:200px;
