@@ -2,30 +2,33 @@
 @model LoginViewModel
 
 @{
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+//Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div class="container text-center">
     <h1>Login</h1>
     @using (Html.BeginForm("Login", "Users", FormMethod.Post))
     {
-        <div class="row">Username</div>
-        <div class="row">
-            @Html.TextBoxFor(m => Model.Username)
-            @Html.ValidationMessageFor(m => Model.Username)
+        <div class="form">
+            <div class="row">Username</div>
+            <div class="row">
+                @Html.TextBoxFor(m => Model.Username)
+                @Html.ValidationMessageFor(m => Model.Username)
+            </div>
+            <div class="row">Password</div>
+            <div class="row">
+                @Html.PasswordFor(m => Model.Password)
+                @Html.ValidationMessageFor(m => Model.Password)
+                @Html.ValidationMessage("invalid-login")
+            </div>
+            <p><button>Submit</button></p>
         </div>
-        <div class="row">Password</div>
-        <div class="row">
-            @Html.PasswordFor(m => Model.Password)
-            @Html.ValidationMessageFor(m => Model.Password)
-            @Html.ValidationMessage("invalid-login")
-        </div>
-        <p><button>Submit</button></p>
     }
     <div class="row">
         <p>Not A Member? Sign Up Today!</p>
         <a href="#">Register As New User</a>
     </div>
+
 </div>
 
 
