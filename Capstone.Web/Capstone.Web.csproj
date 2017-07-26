@@ -193,6 +193,7 @@
     <Content Include="Views\Users\LeavingSite.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\CityTours\_AuthenticationBar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,7 +204,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\CityTours\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
