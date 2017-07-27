@@ -57,26 +57,6 @@ li {
 }
 
 /*Home View*/
-#cf {
-    position: relative;
-    width: 1610px;
-    height: 847px;
-    margin: 0px !important;
-}
-
-#cf img {
-    position: absolute;
-    left: 0;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-}
-
-/*#cf img.top:hover {
-    opacity: 0;
-}*/
-
 .carousel-headline {
     position: absolute;
     bottom: 50%;
@@ -130,7 +110,7 @@ div.home-info > p {
 /*.form-width{
     width:200px;    
     /*margin-left:490px;*/
-    padding: 8px;
+    /*padding: 8px;
 }*/
 
 .navbar-nav{

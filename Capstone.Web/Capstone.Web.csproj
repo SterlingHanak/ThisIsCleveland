@@ -125,8 +125,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\AerialCle.jpg" />
     <Content Include="Content\Images\AerialCle2.jpg" />
+    <Content Include="Content\Images\BigAerialCle.jpg" />
     <Content Include="Content\Images\BigCleFlat.jpg" />
     <Content Include="Content\Images\BigOntario.jpg" />
     <Content Include="Content\Images\BigSkyline.jpg" />
