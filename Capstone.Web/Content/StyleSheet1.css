@@ -57,6 +57,26 @@ li {
 }
 
 /*Home View*/
+#cf {
+    position: relative;
+    width: 1610px;
+    height: 847px;
+    margin: 0px !important;
+}
+
+#cf img {
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+/*#cf img.top:hover {
+    opacity: 0;
+}*/
+
 .carousel-headline {
     position: absolute;
     bottom: 50%;
@@ -70,6 +90,7 @@ li {
 
 .carousel-indicators {
     margin-left: 0px;
+    width: 10%;
 }
 
 .home-info-bar {
@@ -85,53 +106,32 @@ li {
     padding: 0px;
     margin: 0px;
     display: inline-block;
+    width: 45%;
 }
 
-div.home-info > h2 {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: antiquewhite;
-    font-size: 35px;
-    margin-top: 0px;
-    border-radius: 10px;
-    position: absolute;
-    left: 5%;
-    right: 5%;
-    bottom: 87%;
+.home-box {
+    margin: 0px !important;
+    width: 55%;
 }
 
 div.home-info > p {
-    font-size: 20px;
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: #333;
+    font-size: 25px;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    /*background-color: #333;*/
     color: white;
-    border: ridge;
-    border-width: 2px;
-    border-color: black;
-    border-radius: 4px;
+    text-align: center;
 }
 
-/*#playhouse {
-    background-image: url(Images/PlayhouseSquare.jpg);
-    width: 33%;
+#middle-img {
+    float: right;
 }
 
-#flats-east {
-    background-image: url(Images/Flats.jpg);
-    width: 33%;
-}
-
-#fire-cavs {
-    background-image: url(Images/CavsFire.jpeg);
-    width: 33%;
+/*.form-width{
+    width:200px;    
+    /*margin-left:490px;*/
+    padding: 8px;
 }*/
-
-.form-width{
-    width:200px;
-    margin-left:490px;
-}
 
 .navbar-nav{
     background-color:gray;
@@ -147,4 +147,15 @@ div.home-info > p {
 .form-width2 {
     width: 300px;
     margin-left: 45px;
+}
+
+.login-margin{
+    margin-top: 12%;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+.register_margin{
+    margin-top: 10%;
 }
