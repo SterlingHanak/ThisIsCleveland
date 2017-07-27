@@ -9,27 +9,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
-    <div>
-        @*@Html.Action("GetAuthenticatedUser", "CityTours")*@
+    <div class="navbar navbar-fixed-top">
+        @Html.Action("GetAuthenticatedUser", "CityTours")
+        <div class="container-fluid" style="background-color: gray;">
+            <ul class="nav navbar-nav navbar">
+                <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Things To Do</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Restaurants</a></li>
+                        <li><a href="#">Sports Venues</a></li>
+                        <li><a href="#">Parks</a></li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Plan Visit", "About", "Home")</li>
+                <li>@Html.ActionLink("About", "Visit", "Home")</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Search</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-bottom: 50px;">
-        <ul class="nav navbar-nav navbar-fixed-top">
-            <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Things To Do</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Restaurants</a></li>
-                    <li><a href="#">Sports Venues</a></li>
-                    <li><a href="#">Parks</a></li>
-                </ul>
-            </li>
-            <li>@Html.ActionLink("Plan Visit", "About", "Home")</li>
-            <li>@Html.ActionLink("About", "Visit", "Home")</li>
-        </ul>
-    </div>
-    @RenderBody()
+    <section style="margin-top: 120px;">
+        @RenderBody()
+    </section>
+
 </body>
 </html>

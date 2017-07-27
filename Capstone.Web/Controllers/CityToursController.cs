@@ -67,7 +67,7 @@ namespace Capstone.Web.Controllers
                 model = userDAL.GetUser(CurrentUser);
             }
 
-            return View("_AuthenticationBar", model);
+            return PartialView("_AuthenticationBar", model);
         }
     }
 }
