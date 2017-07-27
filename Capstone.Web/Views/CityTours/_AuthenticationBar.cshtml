@@ -1,14 +1,26 @@
 ﻿@using Capstone.Web.Models
 @model User
 
-@{ 
+@{
     if (Model == null)
     {
-        
+        <div class="container-fluid" style="background-color: darkgray;">
+            <ul class="nav navbar-nav navbar-right" style="background-color: darkgray;">
+                <li><a href="@Url.Action("Login","Users")">Login</a></li>
+            </ul>
+        </div>
+
     }
     else
     {
-
+        <div class="container-fluid" style="background-color: darkgray;">
+            <ul class="nav navbar-nav navbar-right" style="background-color: darkgray;">
+                <li><h4>Welcome, @Model.FirstName!</h4></li>
+                <li></li>
+                <li><a href="#">Manage Account</a></li>
+                <li><a href=@Url.Action("Logout", "Users")>Logout</a></li>
+            </ul>
+        </div>
     }
 }
 
