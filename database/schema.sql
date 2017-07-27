@@ -8,14 +8,16 @@ BEGIN TRAN;
 CREATE TABLE landmark (
 	id integer IDENTITY NOT NULL,
 	name varchar(100) NOT NULL,
-	address varchar(100) NOT NULL,
+	address varchar(100) NULL,
 	phone_number varchar(12) NOT NULL,
 	[description] varchar(MAX) NOT NULL,
 	year_founded integer NULL,
 	average_rating integer NOT NULL,
 	relative_cost integer NOT NULL,
 	annual_num_visitors integer NULL,
-	website_url varchar(MAX) NOT NULL
+	website_url varchar(MAX) NOT NULL,
+	latitude decimal(11, 8) NOT NULL,
+	longitude decimal(11, 8) NOT NULL
 	CONSTRAINT pk_landmark_id PRIMARY KEY(id),
 	CONSTRAINT unique_landmark_name UNIQUE(name)
 );
