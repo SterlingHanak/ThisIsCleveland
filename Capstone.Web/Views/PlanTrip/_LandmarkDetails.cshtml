@@ -1,0 +1,18 @@
+﻿@using Capstone.Web.Models
+@model Landmark
+
+<div class="col-lg-4">
+    <h3>Details</h3>
+    <img src="#" alt-text="" />
+    <h3>Summary</h3>
+    <h4>Relative Cost</h4>
+    <h4>@Model.Address</h4>
+    <h4>@Model.PhoneNumber</h4>
+    <h4>Average Rating: @Model.AvgRating</h4>
+    <a href=@Model.WebsiteUrl>Link to External Site</a>
+</div>
+<div class="col-lg-8">
+    <h4>Description</h4>
+    <p>@Model.Description</p>
+    <button id="addLandmarkToTripBtn">Add to Trip</button>
+</div>

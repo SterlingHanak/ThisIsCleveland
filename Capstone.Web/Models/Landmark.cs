@@ -22,6 +22,6 @@ namespace Capstone.Web.Models
         public string WebsiteUrl { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
-
+        public List<string> Categories { get; set; }
     }
 }
