@@ -6,75 +6,78 @@
 }
 
 <div class="container text-center">
-    <h1>Register</h1>
-    @using (Html.BeginForm("Register", "Users", FormMethod.Post))
-    {
+    <div class="register_margin">
+        <h1>Register</h1>
+        <br />
+        @using (Html.BeginForm("Register", "Users", FormMethod.Post))
+        {
         <!--FIRST NAME-->
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <h3>First Name</h3>
+            <div class="row">
+                <div class="form-group col-sm-4 text-right">
+                    <h3>First Name</h3>
+                </div>
+                <div class="form-width2 col-sm-4">
+                    @Html.TextBoxFor(m => Model.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                    @Html.ValidationMessageFor(m => Model.FirstName, String.Empty, new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="form-width2 col-lg-4">
-                @Html.TextBoxFor(m => Model.FirstName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => Model.FirstName)
-            </div>
-        </div>
 
         <!--LAST NAME-->
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <h3>Last Name</h3>
+            <div class="row">
+                <div class="form-group col-sm-4 text-right">
+                    <h3>Last Name</h3>
+                </div>
+                <div class="form-width2 col-sm-4">
+                    @Html.TextBoxFor(m => Model.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                    @Html.ValidationMessageFor(m => Model.LastName, String.Empty, new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="form-width2 col-lg-4">
-                @Html.TextBoxFor(m => Model.LastName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => Model.LastName)
-            </div>
-        </div>
 
         <!--EMAIL-->
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <h3>Email</h3>
+            <div class="row">
+                <div class="form-group col-sm-4 text-right">
+                    <h3>Email</h3>
+                </div>
+                <div class="form-width2 col-sm-4">
+                    @Html.TextBoxFor(m => Model.EmailAddress, new { type = "email", @class = "form-control", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(m => Model.EmailAddress, String.Empty, new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="form-width2 col-lg-4">
-                @Html.TextBoxFor(m => Model.EmailAddress, new { type = "email", @class = "form-control"})
-                @Html.ValidationMessageFor(m => Model.EmailAddress)
-            </div>
-        </div>
 
         <!--USERNAME-->
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <h3>Username</h3>
+            <div class="row">
+                <div class="form-group col-sm-4 text-right">
+                    <h3>Username</h3>
+                </div>
+                <div class="form-width2 col-sm-4">
+                    @Html.TextBoxFor(m => Model.Username, new { @class = "form-control", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => Model.Username, String.Empty, new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="form-width2 col-lg-4">
-                @Html.TextBoxFor(m => Model.Username, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => Model.Username)
-            </div>
-        </div>
 
         <!--PASSWORD-->
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <h3>Password</h3>
+            <div class="row">
+                <div class="form-group col-sm-4 text-right">
+                    <h3>Password</h3>
+                </div>
+                <div class="form-width2 col-sm-4">
+                    @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => Model.Password, String.Empty, new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="form-width2 col-lg-4">
-                @Html.PasswordFor(m => Model.Password, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => Model.Password)
-            </div>
-        </div>
 
         <!--PASSWORD-->
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <h3>Confirm Password</h3>
+            <div class="row">
+                <div class="form-group col-sm-4 text-right">
+                    <h3>Confirm Password</h3>
+                </div>
+                <div class="form-width2 col-sm-4">
+                    @Html.PasswordFor(m => Model.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirm Password" })
+                    @Html.ValidationMessageFor(m => Model.ConfirmPassword, String.Empty, new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="form-width2 col-lg-4">
-                @Html.PasswordFor(m => Model.ConfirmPassword, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => Model.ConfirmPassword)
-            </div>
-        </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    }
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        }
+    </div>
 </div>

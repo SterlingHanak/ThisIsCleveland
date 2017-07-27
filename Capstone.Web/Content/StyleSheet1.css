@@ -127,10 +127,11 @@ div.home-info > p {
     float: right;
 }
 
-.form-width{
-    width:200px;
-    margin-left:490px;
-}
+/*.form-width{
+    width:200px;    
+    /*margin-left:490px;*/
+    padding: 8px;
+}*/
 
 .navbar-nav{
     background-color:gray;
@@ -146,4 +147,15 @@ div.home-info > p {
 .form-width2 {
     width: 300px;
     margin-left: 45px;
+}
+
+.login-margin{
+    margin-top: 12%;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+.register_margin{
+    margin-top: 10%;
 }
