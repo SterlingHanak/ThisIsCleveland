@@ -14,11 +14,14 @@
 <div class="row">
 @foreach (Landmark location in Model.Landmarks)
 {
-    <div class="col-md-4">
-        <h2>@location.Name</h2>
-        <p>@location.Address</p>
-        <p>@location.PhoneNumber</p>
-        <p>@location.Description</p>
-    </div>
+    if (location.Categories.Contains(Model.Category))
+    {
+        <div class="col-md-4">
+            <h2>@location.Name</h2>
+            <p>@location.Address</p>
+            <p>@location.PhoneNumber</p>
+            <p>@location.Description</p>
+        </div>
+    }
 }
 </div>

@@ -29,7 +29,7 @@ namespace Capstone.Web.Controllers
                 landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
             }
 
-            viewModel.Category = "schools";
+            viewModel.Category = "Schools";
             return View("Category", viewModel);
         }
 

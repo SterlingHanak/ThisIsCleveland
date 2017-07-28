@@ -197,8 +197,8 @@ namespace Capstone.Web.DAL
             }
             //landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);
             landmark.WebsiteUrl = Convert.ToString(reader["website_url"]);
-            landmark.Latitude = Convert.ToDecimal(reader["latitude"]);
-            landmark.Longitude = Convert.ToDecimal(reader["longitude"]);
+            landmark.Latitude = Convert.ToDouble(reader["latitude"]);
+            landmark.Longitude = Convert.ToDouble(reader["longitude"]);
             return landmark;
         }
 
