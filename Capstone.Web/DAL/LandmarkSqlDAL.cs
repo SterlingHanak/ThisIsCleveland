@@ -19,7 +19,6 @@ namespace Capstone.Web.DAL
         readonly string SQL_GetSchedule = "SELECT day.name, daily_hours.time_open, daily_hours.time_closed FROM daily_hours JOIN" +
                                            " day ON day.id = daily_hours.day_id JOIN landmark ON id = daily_hours.landmark_id " +
                                             "WHERE landmark_id = @landmarkId;";
-        readonly string SQL_
 
         public LandmarkSqlDAL(string connectionString)
         {
