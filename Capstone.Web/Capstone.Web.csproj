@@ -168,6 +168,7 @@
     <Compile Include="Controllers\CityToursController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlanTripController.cs" />
+    <Compile Include="Controllers\ThingsToDoController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Crypto\HashProvider.cs" />
     <Compile Include="DAL\ILandmarkDAL.cs" />
@@ -205,6 +206,7 @@
     <Content Include="Views\CityTours\_AuthenticationBar.cshtml" />
     <Content Include="Views\PlanTrip\NewTrip.cshtml" />
     <Content Include="Views\PlanTrip\_LandmarkDetails.cshtml" />
+    <Content Include="Views\ThingsToDo\Category.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
