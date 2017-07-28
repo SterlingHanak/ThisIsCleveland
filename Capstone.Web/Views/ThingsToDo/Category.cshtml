@@ -6,22 +6,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
+<div class="category-jumbo">
     @*<img East 4th />*@
     <h2>@Model.Category</h2>
 </div>
 
-<div class="row">
+<main>
+
+<div class="filter-container">
+    <h2>Filter</h2>
+    <hr />
+    <h2>Rating</h2>
+    <div>
+        @*@Html.Label("5 Star")
+        @Html.CheckBoxFor(m => )*@
+    </div>
+    <h2>Cost</h2>
+    <h2>Radius</h2>
+</div>
+
+<div class="row location-row">
 @foreach (Landmark location in Model.Landmarks)
 {
     if (location.Categories.Contains(Model.Category))
     {
-        <div class="col-md-4">
+        <div class="col-md-4 location-detail">
             <h2>@location.Name</h2>
             <p>@location.Address</p>
-            <p>@location.PhoneNumber</p>
+            <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
             <p>@location.Description</p>
+            <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
         </div>
     }
 }
 </div>
+
+</main>

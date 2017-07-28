@@ -139,3 +139,40 @@ div.home-info > p {
 .register_margin{
     margin-top: 10%;
 }
+
+/*CATEGORY VIEW*/
+.category-jumbo {
+    border: ridge;
+    border-color: white;
+    border-radius: 6px;
+    text-align: center;
+    background-color: gold;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 150px;
+}
+
+main {
+    display: inline-block;
+}
+
+.filter-container {
+    width: 150px;
+}
+
+.category-jumbo > h2 {
+    font-size: 100px;
+    vertical-align: central;
+    color: crimson;
+}
+
+.location-detail {
+    border: ridge;
+    border-color: black;
+    border-radius: 6px;
+    background-color: crimson;
+    color: gold;
+    height: 320px;
+    text-align: center;
+}
