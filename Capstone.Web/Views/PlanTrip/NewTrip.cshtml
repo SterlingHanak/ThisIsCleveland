@@ -19,13 +19,13 @@
                         <span>@category</span>
                     </p>
                     <p>
-                        @Html.TextBox("search", "Enter Search Terms")
+                        @Html.TextBox("search",String.Empty, new {@placeholder = "Enter Search Terms" })
                         <button class="clearFilter"><span class="glyphicon glyphicon-remove-circle"></span></button>
                     </p>
                 }
                 <p>
                     <h5>Radius (miles)</h5>
-                    @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100 })
+                    @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
                 </p>
             }
         </div>
