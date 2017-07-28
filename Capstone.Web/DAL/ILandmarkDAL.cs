@@ -11,6 +11,7 @@ namespace Capstone.Web.DAL
     {
         Landmark GetLandmark(int id);
         List<Landmark> GetAllLandmarks();
+        List<Landmark> GetAllLandmarksInCategory(string category);
         List<string> GetAllCategories();
         List<string> GetLandmarkHighlights(int id);
         List<string> GetLandmarkCategories(int id);

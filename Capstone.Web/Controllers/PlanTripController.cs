@@ -34,6 +34,12 @@ namespace Capstone.Web.Controllers
             return PartialView("_LandmarkDetails");
         }
 
+        public ActionResult LandmarksInCategoryJSON(string category)
+        {
+            List<Landmark> landmarks = landmarkDAL.GetAllLandmarksInCategory(category);
+            return Json(landmarks, JsonRequestBehavior.AllowGet);
+        }
+
         private MyTripViewModel PopulateMyTripViewModel()
         {
             MyTripViewModel myTripViewModel = new MyTripViewModel();

@@ -19,6 +19,8 @@ namespace Capstone.Web.DAL
         readonly string SQL_GetSchedule = "SELECT day.name, daily_hours.time_open, daily_hours.time_closed FROM daily_hours JOIN" +
                                            " day ON day.id = daily_hours.day_id JOIN landmark ON landmark.id = daily_hours.landmark_id " +
                                             "WHERE landmark_id = @landmarkId;";
+        readonly string SQL_GetAllLandmarksInCategory = "SELECT * FROM landmark JOIN landmark_category ON landmark_category.landmark_id = landmark.id " +
+                                            "JOIN category ON category.id = landmark_category.category_id WHERE category.name = @category;";
 
         public LandmarkSqlDAL(string connectionString)
         {
@@ -135,6 +137,30 @@ namespace Capstone.Web.DAL
                         landmark = PopulateLandmarkObject(reader);
                     }
                     return landmark;
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+        public List<Landmark> GetAllLandmarksInCategory(string category)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(SQL_GetAllLandmarksInCategory, conn);
+                    cmd.Parameters.AddWithValue("@category", category);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<Landmark> landmarksInCategory = new List<Landmark>();
+                    while (reader.Read())
+                    {
+                        landmarksInCategory.Add(PopulateLandmarkObject(reader));
+                    }
+                    return landmarksInCategory;
                 }
             }
             catch (SqlException)

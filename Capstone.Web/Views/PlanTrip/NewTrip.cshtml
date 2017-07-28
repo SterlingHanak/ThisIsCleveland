@@ -15,7 +15,7 @@
                 foreach (string category in Model.Categories)
                 {
                     <p>
-                        @Html.CheckBox(category, false, new { value = category })
+                        @Html.CheckBox(category, false, new { value = category, @class = "category"})
                         <span>@category</span>
                     </p>
                     <p>
@@ -34,7 +34,8 @@
         <div class="col-lg-6">
             <!--MAP-->
             <div class="row" style="background-color: blue;">
-                <div class="col-lg-12">
+                <div id="map" class="col-lg-12" style = "height: 400px;">
+
 
                 </div>
             </div>
@@ -51,16 +52,16 @@
                 {
                     <p>
                         <h5>Name</h5>
-                        @Html.TextBox("tripName", "My New Trip")
+                        @Html.TextBoxFor( m => m.NewTrip.Name, new { @placeholder = "My New Trip" })
                     </p>
 
                     <p>
                         <h5>Description</h5>
-                        @Html.TextArea("description")
+                        @Html.TextAreaFor(m => m.NewTrip.Description)
                     </p>
                     <p>
                         <h5>Date</h5>
-                        @Html.TextBox("date", DateTime.Now, new { type = "date" })
+                        @Html.TextBoxFor(m => m.NewTrip.TripDate, DateTime.Now.ToString("yyyy-MM-dd"), new { type = "date" })
                     </p>
 
                     <button>Save</button>
