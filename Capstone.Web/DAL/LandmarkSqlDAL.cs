@@ -176,8 +176,15 @@ namespace Capstone.Web.DAL
             landmark.Name = Convert.ToString(reader["name"]);
             landmark.Address = Convert.ToString(reader["address"]);
             landmark.PhoneNumber = Convert.ToString(reader["phone_number"]);
-            landmark.Description = Convert.ToString(reader["[description]"]);
-            landmark.YearFounded = Convert.ToInt32(reader["year_founded"]);
+            landmark.Description = Convert.ToString(reader["description"]);
+            if (reader["year_founded"] is DBNull)
+            {
+                landmark.YearFounded = null;
+            }
+            else
+            {
+                landmark.YearFounded = Convert.ToInt32(reader["year_founded"]);
+            }
             landmark.AvgRating = Convert.ToInt32(reader["average_rating"]);
             landmark.RelativeCost = Convert.ToInt32(reader["relative_cost"]);
             landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);

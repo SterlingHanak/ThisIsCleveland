@@ -21,10 +21,10 @@ namespace Capstone.Web.Controllers
 
         public ActionResult NewTrip()
         {
-            if (!base.IsAuthenticated)
-            {
-                RedirectToAction("Login", "Users");
-            }
+            //if (!base.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Login", "Users");
+            //}
             MyTripViewModel myTripViewModel = PopulateMyTripViewModel();
             return View("NewTrip", myTripViewModel);
         }
