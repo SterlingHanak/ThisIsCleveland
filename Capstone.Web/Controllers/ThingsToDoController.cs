@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Capstone.Web.Models;
+using Capstone.Web.Models.ViewModel;
 using Capstone.Web.DAL;
 
 namespace Capstone.Web.Controllers
@@ -11,15 +12,26 @@ namespace Capstone.Web.Controllers
     public class ThingsToDoController : CityToursController
     {
         private IUserDAL userDAL;
+        private ILandmarkDAL landmarkDAL;
 
-        public ThingsToDoController(IUserDAL userDAL) : base(userDAL)
+        public ThingsToDoController(IUserDAL userDAL, ILandmarkDAL landmarkDAL) : base(userDAL)
         {
             this.userDAL = userDAL;
+            this.landmarkDAL = landmarkDAL;
         }
 
-        public ActionResult Category(int id)
+        public ActionResult Category()
         {
-            return View("Category", id);
+            ThingsToDoViewModel viewModel = new ThingsToDoViewModel();
+            viewModel.Landmarks = landmarkDAL.GetAllLandmarks();
+            foreach(Landmark landmark in viewModel.Landmarks)
+            {
+                landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
+            }
+
+            viewModel.Category = "schools";
+            return View("Category", viewModel);
         }
+
     }
 }

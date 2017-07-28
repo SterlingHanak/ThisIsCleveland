@@ -1,5 +1,6 @@
-﻿@using Capstone.Web.Models;
-@model List<Landmark>
+﻿@using Capstone.Web.Models.ViewModel;
+@using Capstone.Web.Models;
+@model ThingsToDoViewModel 
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,14 +8,17 @@
 
 <div>
     @*<img East 4th />*@
-    <h2>Category</h2>
+    <h2>@Model.Category</h2>
 </div>
 
 <div class="row">
-@foreach (Landmark location in Model)
+@foreach (Landmark location in Model.Landmarks)
 {
     <div class="col-md-4">
-
+        <h2>@location.Name</h2>
+        <p>@location.Address</p>
+        <p>@location.PhoneNumber</p>
+        <p>@location.Description</p>
     </div>
 }
 </div>
