@@ -1,5 +1,20 @@
-﻿@{
+﻿@using Capstone.Web.Models;
+@model List<Landmark>
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div>
+    @*<img East 4th />*@
+    <h2>Category</h2>
+</div>
 
+<div class="row">
+@foreach (Landmark location in Model)
+{
+    <div class="col-md-4">
+
+    </div>
+}
+</div>
