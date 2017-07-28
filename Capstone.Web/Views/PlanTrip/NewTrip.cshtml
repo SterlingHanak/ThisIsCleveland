@@ -1,0 +1,61 @@
+﻿@using Capstone.Web.Models
+@model MyTripViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <!--FILTER SECTION-->
+        <div class="col-lg-3">
+            <h2>Sites</h2>
+            @{
+                foreach (string category in Model.Categories)
+                {
+                    @Html.Label(category)
+                    @Html.CheckBox(category, false, new { value = category })
+                    @Html.Label("Search")
+                    @Html.TextBox("search", new { placeholder = "Enter search terms" })
+                    <button class="clearFilter"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                }
+
+                Html.Label("mileRadius", "Mile Radius");
+                Html.TextBox("mileRadius", new { type = "number", min = 10, max = 100 });
+            }
+        </div>
+
+        <!--MAP AND DETAIL SECTIONS-->
+        <div class="col-lg-6">
+            <!--MAP-->
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+
+            <!--DETAILS-->
+            <div class="row"></div>
+        </div>
+
+        <!--CURRENT TRIP SECTION-->
+        <div class="col-lg-3">
+            <h2>Current Trip</h2>
+            @{
+                using (Html.BeginForm("MyTrips", "PlanTrip", FormMethod.Post))
+                {
+                    Html.Label("tripName", "Name");
+                    Html.TextBox("tripName", new { placeholder = "My New Trip" });
+                    Html.Label("description", "Description");
+                    Html.TextArea("description");
+                    Html.Label("date", "Date");
+                    Html.TextBox("date", new { type = "date" });
+
+                    <button>Save</button>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+

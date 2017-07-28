@@ -20,5 +20,8 @@ namespace Capstone.Web.Models
         public int RelativeCost { get; set; }
         public int AnnualNumVisitors { get; set; }
         public string WebsiteUrl { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
+        public List<string> Categories { get; set; }
     }
 }

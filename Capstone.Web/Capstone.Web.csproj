@@ -167,23 +167,28 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CityToursController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlanTripController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Crypto\HashProvider.cs" />
+    <Compile Include="DAL\ILandmarkDAL.cs" />
     <Compile Include="DAL\IUserDAL.cs" />
+    <Compile Include="DAL\LandmarkSqlDAL.cs" />
     <Compile Include="DAL\UserSqlDAL.cs" />
     <Compile Include="Filters\CityToursAuthorizationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChangePasswordViewModel.cs" />
     <Compile Include="Models\College.cs" />
     <Compile Include="Models\Hours.cs" />
     <Compile Include="Models\Landmark.cs" />
-    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Park.cs" />
-    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\Trip.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\ViewModel\LoginViewModel.cs" />
+    <Compile Include="Models\ViewModel\MyTripViewModel.cs" />
+    <Compile Include="Models\ViewModel\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +203,8 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\CityTours\_AuthenticationBar.cshtml" />
+    <Content Include="Views\PlanTrip\NewTrip.cshtml" />
+    <Content Include="Views\PlanTrip\_LandmarkDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
