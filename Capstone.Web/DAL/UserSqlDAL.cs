@@ -11,7 +11,7 @@ namespace Capstone.Web.DAL
     {
         readonly string SQL_GetUser = "SELECT * FROM city_tours_user WHERE username = @username;";
         readonly string SQL_RegisterUser = "INSERT INTO city_tours_user VALUES(@firstName, @lastName, @email, " +
-            "@username, @password, @salt, @accountCreationDate);";
+                                           "@username, @password, @salt, @accountCreationDate);";
         private string connectionString;
 
         public UserSqlDAL(string connectionString)
