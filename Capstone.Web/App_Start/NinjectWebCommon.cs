@@ -65,6 +65,7 @@ namespace Capstone.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IUserDAL>().To<UserSqlDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["CityToursDB"].ConnectionString);
+            kernel.Bind<ILandmarkDAL>().To<LandmarkSqlDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["CityToursDB"].ConnectionString);
         }
     }
 }
