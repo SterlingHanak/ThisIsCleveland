@@ -56,7 +56,7 @@ namespace Capstone.Web.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(SQL_GetLandmark, conn);
+                    SqlCommand cmd = new SqlCommand(SQL_GetLandmarkCategories, conn);
                     cmd.Parameters.AddWithValue("@landmarkId", id);
                     SqlDataReader reader = cmd.ExecuteReader();
                     List<string> listOfCategories = new List<string>();
@@ -150,7 +150,7 @@ namespace Capstone.Web.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(SQL_GetLandmark, conn);
+                    SqlCommand cmd = new SqlCommand(SQL_GetSchedule, conn);
                     cmd.Parameters.AddWithValue("@landmarkId", id);
                     SqlDataReader reader = cmd.ExecuteReader();
                     Dictionary<string, Hours> schedule = new Dictionary<string, Hours>();
@@ -188,7 +188,15 @@ namespace Capstone.Web.DAL
             }
             landmark.AvgRating = Convert.ToInt32(reader["average_rating"]);
             landmark.RelativeCost = Convert.ToInt32(reader["relative_cost"]);
-            landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);
+            if (reader["annual_num_visitors"] is DBNull)
+            {
+                landmark.AnnualNumVisitors = null;
+            }
+            else
+            {
+                landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);
+            }
+            //landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);
             landmark.WebsiteUrl = Convert.ToString(reader["website_url"]);
             landmark.Latitude = Convert.ToDecimal(reader["latitude"]);
             landmark.Longitude = Convert.ToDecimal(reader["longitude"]);
