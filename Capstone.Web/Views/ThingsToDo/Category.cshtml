@@ -11,26 +11,34 @@
     <h2>@Model.Category</h2>
 </div>
 
-<main>
+<div class="row">
 
-<div class="filter-container">
+<div class="col-md-2 filter-container">
     <h2>Filter</h2>
     <hr />
     <h2>Rating</h2>
     <div>
-        @*@Html.Label("5 Star")
-        @Html.CheckBoxFor(m => )*@
+        
+        <p>@Html.CheckBox("avgRating-1", false) One-Star</p>
+        <p>@Html.CheckBox("avgRating-1", false) Two-Star</p>
+        <p>@Html.CheckBox("avgRating-1", false) Three-Star</p>
+        <p>@Html.CheckBox("avgRating-1", false) Four-Star</p>
+        <p>@Html.CheckBox("avgRating-1", false) Five-Star</p>
+        
     </div>
     <h2>Cost</h2>
     <h2>Radius</h2>
 </div>
 
+<div class="col-md-10">
 <div class="row location-row">
 @foreach (Landmark location in Model.Landmarks)
 {
     if (location.Categories.Contains(Model.Category))
     {
-        <div class="col-md-4 location-detail">
+
+        string avgRatingClass = location.AvgRating + "-rating";
+        <div class="col-md-4 location-detail @avgRatingClass">
             <h2>@location.Name</h2>
             <p>@location.Address</p>
             <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
@@ -40,5 +48,6 @@
     }
 }
 </div>
+</div>
 
-</main>
+</div>
