@@ -6,22 +6,27 @@
 }
 
 <div class="container">
+    <div class="row" style="background-color: red; color: white;"><h1>My Trip</h1></div>
     <div class="row">
         <!--FILTER SECTION-->
-        <div class="col-lg-3">
-            <h2>Sites</h2>
+        <div class="col-lg-3" style="background-color: orange; height: 400px; color: black;">
+            <h2>Filter By:</h2>
             @{
                 foreach (string category in Model.Categories)
                 {
-                    @Html.Label(category)
-                    @Html.CheckBox(category, false, new { value = category })
-                    @Html.Label("Search")
-                    @Html.TextBox("search", new { placeholder = "Enter search terms" })
-                    <button class="clearFilter"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                    <p>
+                        @Html.CheckBox(category, false, new { value = category })
+                        <span>@category</span>
+                    </p>
+                    <p>
+                        @Html.TextBox("search", "Enter Search Terms")
+                        <button class="clearFilter"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                    </p>
                 }
-
-                Html.Label("mileRadius", "Mile Radius");
-                Html.TextBox("mileRadius", new { type = "number", min = 10, max = 100 });
+                <p>
+                    <h5>Radius (miles)</h5>
+                    @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100 })
+                </p>
             }
         </div>
 
@@ -39,17 +44,24 @@
         </div>
 
         <!--CURRENT TRIP SECTION-->
-        <div class="col-lg-3">
+        <div class="col-lg-3" style="background-color: lightblue; height: 400px; color: black;">
             <h2>Current Trip</h2>
             @{
                 using (Html.BeginForm("MyTrips", "PlanTrip", FormMethod.Post))
                 {
-                    Html.Label("tripName", "Name");
-                    Html.TextBox("tripName", new { placeholder = "My New Trip" });
-                    Html.Label("description", "Description");
-                    Html.TextArea("description");
-                    Html.Label("date", "Date");
-                    Html.TextBox("date", new { type = "date" });
+                    <p>
+                        <h5>Name</h5>
+                        @Html.TextBox("tripName", "My New Trip")
+                    </p>
+
+                    <p>
+                        <h5>Description</h5>
+                        @Html.TextArea("description")
+                    </p>
+                    <p>
+                        <h5>Date</h5>
+                        @Html.TextBox("date", DateTime.Now, new { type = "date" })
+                    </p>
 
                     <button>Save</button>
                 }
