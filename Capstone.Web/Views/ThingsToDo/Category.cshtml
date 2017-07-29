@@ -18,16 +18,23 @@
     <hr />
     <h2>Rating</h2>
     <div>
-        
-        <p>@Html.CheckBox("avgRating-1", false) One-Star</p>
-        <p>@Html.CheckBox("avgRating-1", false) Two-Star</p>
-        <p>@Html.CheckBox("avgRating-1", false) Three-Star</p>
-        <p>@Html.CheckBox("avgRating-1", false) Four-Star</p>
-        <p>@Html.CheckBox("avgRating-1", false) Five-Star</p>
-        
+        <p id="checkbox-rating-1">@Html.CheckBox("avgRating-1", true) One-Star</p>
+        <p id="checkbox-rating-2">@Html.CheckBox("avgRating-1", true) Two-Star</p>
+        <p id="checkbox-rating-3">@Html.CheckBox("avgRating-1", true) Three-Star</p>
+        <p id="checkbox-rating-4">@Html.CheckBox("avgRating-1", true) Four-Star</p>
+        <p id="checkbox-rating-5">@Html.CheckBox("avgRating-1", true) Five-Star</p>
     </div>
     <h2>Cost</h2>
+    <div>
+        <p>@Html.CheckBox("avgRating-1", true) One</p>
+        <p>@Html.CheckBox("avgRating-1", true) Two</p>
+        <p>@Html.CheckBox("avgRating-1", true) Three</p>
+        <p>@Html.CheckBox("avgRating-1", true) Four</p>
+        <p>@Html.CheckBox("avgRating-1", true) Five</p>
+
+    </div>
     <h2>Radius</h2>
+        @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10})
 </div>
 
 <div class="col-md-10">
@@ -38,7 +45,8 @@
     {
 
         string avgRatingClass = location.AvgRating + "-rating";
-        <div class="col-md-4 location-detail @avgRatingClass">
+        string relativeCostClass = location.RelativeCost + "-cost";
+        <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
             <h2>@location.Name</h2>
             <p>@location.Address</p>
             <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
