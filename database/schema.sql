@@ -22,14 +22,6 @@ CREATE TABLE landmark (
 	CONSTRAINT unique_landmark_name UNIQUE(name)
 );
 
-CREATE TABLE landmark_highlight (
-	id integer IDENTITY NOT NULL,
-	landmark_id integer NOT NULL,
-	highlight varchar(MAX) NOT NULL,
-	CONSTRAINT pk_landmark_highlight_id PRIMARY KEY(id),
-	CONSTRAINT fk_landmark_highlight_landmark_id FOREIGN KEY(landmark_id) REFERENCES landmark(id)
-);
-
 CREATE TABLE [day] (
 	id integer IDENTITY NOT NULL,
 	name varchar(10)
@@ -68,6 +60,16 @@ CREATE TABLE park (
 	CONSTRAINT pk_park_id PRIMARY KEY(id),
 	CONSTRAINT fk_park_landmark_id FOREIGN KEY (landmark_id) REFERENCES landmark(id)
 );
+
+CREATE TABLE activity
+(
+activity_id						Integer								IDENTITY(1,1) NOT NULL,
+name							varchar(100)						NOT NULL,	
+
+CONSTRAINT pk_activities PRIMARY KEY (activity_id),
+
+);
+
 
 CREATE TABLE park_activity (
 	id integer IDENTITY NOT NULL,
