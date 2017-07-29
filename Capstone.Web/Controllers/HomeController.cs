@@ -14,9 +14,9 @@ namespace Capstone.Web.Controllers
             return View("Index");
         }
 
-        public ActionResult Test()
+        public ActionResult About()
         {
-            return View("Test");
+            return View("About");
         }
     }
 }

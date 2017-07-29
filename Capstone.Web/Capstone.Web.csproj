@@ -216,6 +216,7 @@
     <Content Include="Views\PlanTrip\_LandmarkDetails.cshtml" />
     <Content Include="Views\ThingsToDo\Category.cshtml" />
     <Content Include="Views\MyTrips\MyTrips.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
