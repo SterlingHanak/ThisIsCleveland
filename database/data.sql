@@ -139,6 +139,17 @@ INSERT INTO park VALUES (34, 0, 1, 1, 1, 183);
 INSERT INTO park VALUES (35, 1, 1, 1, 1, 103);
 INSERT INTO park VALUES (36, 1, 1, 1, 1, 2572);
 
+--Activity
+INSERT INTO activity VALUES('Biking');
+INSERT INTO activity VALUES('Boating')
+INSERT INTO activity VALUES('Hiking');
+INSERT INTO activity VALUES('Cycling');
+INSERT INTO activity VALUES('Sledding');
+INSERT INTO activity VALUES('Fishing');
+INSERT INTO activity VALUES('Swimming');
+INSERT INTO activity VALUES('Dining');
+INSERT INTO activity VALUES('Horseback-Riding');
+
 --Park Activities
 INSERT INTO park_activity VALUES (1, 'Biking');
 INSERT INTO park_activity VALUES (1, 'Boating');
