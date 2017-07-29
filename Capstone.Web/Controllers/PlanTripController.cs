@@ -19,6 +19,7 @@ namespace Capstone.Web.Controllers
             this.landmarkDAL = landmarkDAL;
         }
 
+        [HttpGet]
         public ActionResult NewTrip()
         {
             //if (!base.IsAuthenticated)
@@ -27,6 +28,25 @@ namespace Capstone.Web.Controllers
             //}
             MyTripViewModel myTripViewModel = PopulateMyTripViewModel();
             return View("NewTrip", myTripViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult NewTrip(MyTripViewModel myTripViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("NewTrip", myTripViewModel);
+            }
+
+            List<Landmark> landmarksInTrip = new List<Landmark>();
+            //foreach (int landmarkId in landmarkIds)
+            //{
+            //    landmarksInTrip.Add(landmarkDAL.GetLandmark(landmarkId));
+            //}
+            //Trip trip = new Trip();
+            //trip.Landmarks = landmarksInTrip;
+
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult LandmarkDetails(int landmarkId)
@@ -52,13 +72,10 @@ namespace Capstone.Web.Controllers
             foreach (Landmark landmark in allLandmarks)
             {
                 landmark.Schedule = landmarkDAL.GetSchedule(landmark.Id);
-                landmark.Highlights = landmarkDAL.GetLandmarkHighlights(landmark.Id);
                 landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
             }
 
             // Initialize new trip
-            myTripViewModel.NewTrip = new Trip();
-
             return myTripViewModel;
         }
     }

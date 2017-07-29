@@ -74,30 +74,6 @@ namespace Capstone.Web.DAL
             }
         }
 
-        public List<string> GetLandmarkHighlights(int id)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(SQL_GetLandmarkHighlights, conn);
-                    cmd.Parameters.AddWithValue("@landmarkId", id);
-                    List<string> listOfHighlights = new List<string>();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        listOfHighlights.Add(Convert.ToString(reader["highlight"]));
-                    }
-                    return listOfHighlights;
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-        }
-
         public List<Landmark> GetAllLandmarks()
         {
             try

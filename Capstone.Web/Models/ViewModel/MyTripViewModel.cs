@@ -9,6 +9,9 @@ namespace Capstone.Web.Models
     {
         public List<Landmark> Landmark { get; set; }
         public List<string> Categories { get; set; }
-        public Trip NewTrip { get; set; }
+        public string TripName { get; set; }
+        public string TripDescription { get; set; }
+        public DateTime TripDate { get; set; }
+        public int[] LandmarkIds { get; set; }
     }
 }

@@ -9,7 +9,7 @@
     <div class="row" style="background-color: red; color: white;"><h1>My Trip</h1></div>
     <div class="row">
         <!--FILTER SECTION-->
-        <div class="col-lg-3" style="background-color: orange; height: 400px; color: black;">
+        <div class="col-lg-3" style="background-color: orange; height: 675px; color: black;">
             <h2>Filter By:</h2>
             @{
                 foreach (string category in Model.Categories)
@@ -48,6 +48,7 @@
                     <h4 id="landmark_phone_number">Phone Number</h4>
                     <h4 id="landmark_average_rating">Average Rating</h4>
                     <a id="landmark_website_url" href="#">Link to External Site</a>
+                    <input type="hidden" id="landmark_id"/>
                 </div>
                 <div class="col-lg-8">
                     <h4>Description</h4>
@@ -65,18 +66,21 @@
                 {
                     <p>
                         <h5>Name</h5>
-                        @Html.TextBoxFor( m => m.NewTrip.Name, new { @placeholder = "My New Trip" })
+                        @Html.TextBoxFor( m => m.TripName, new { @placeholder = "My New Trip" })
                     </p>
 
                     <p>
                         <h5>Description</h5>
-                        @Html.TextAreaFor(m => m.NewTrip.Description)
+                        @Html.TextAreaFor(m => m.TripDescription)
                     </p>
                     <p>
                         <h5>Date</h5>
-                        @Html.TextBoxFor(m => m.NewTrip.TripDate, DateTime.Now.ToString("yyyy-MM-dd"), new { type = "date" })
+                        @Html.TextBoxFor(m => m.TripDate, DateTime.Now.ToString("yyyy-MM-dd"), new { type = "date" })
                     </p>
 
+                    <div id="stops">
+
+                    </div>
                     <button>Save</button>
                 }
             }

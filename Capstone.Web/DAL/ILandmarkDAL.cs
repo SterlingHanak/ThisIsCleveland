@@ -13,7 +13,6 @@ namespace Capstone.Web.DAL
         List<Landmark> GetAllLandmarks();
         List<Landmark> GetAllLandmarksInCategory(string category);
         List<string> GetAllCategories();
-        List<string> GetLandmarkHighlights(int id);
         List<string> GetLandmarkCategories(int id);
         Dictionary<string, Hours> GetSchedule(int id);
     }

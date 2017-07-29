@@ -14,7 +14,6 @@ namespace Capstone.Web.Models
         public string PhoneNumber { get; set; }
         public string Description { get; set; }
         public Dictionary<string, Hours> Schedule { get; set; }
-        public List<string> Highlights { get; set; }
         public int AvgRating { get; set; }
         public int? YearFounded { get; set; }
         public int RelativeCost { get; set; }

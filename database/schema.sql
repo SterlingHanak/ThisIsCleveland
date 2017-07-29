@@ -61,15 +61,11 @@ CREATE TABLE park (
 	CONSTRAINT fk_park_landmark_id FOREIGN KEY (landmark_id) REFERENCES landmark(id)
 );
 
-CREATE TABLE activity
-(
-activity_id						Integer								IDENTITY(1,1) NOT NULL,
-name							varchar(100)						NOT NULL,	
-
-CONSTRAINT pk_activities PRIMARY KEY (activity_id),
-
+CREATE TABLE activity(
+	id	Integer	IDENTITY NOT NULL,
+	name varchar(100) NOT NULL,	
+	CONSTRAINT pk_activity_id PRIMARY KEY (id)
 );
-
 
 CREATE TABLE park_activity (
 	id integer IDENTITY NOT NULL,

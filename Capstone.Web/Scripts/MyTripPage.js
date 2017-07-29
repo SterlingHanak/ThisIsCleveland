@@ -29,7 +29,8 @@
                     lat: gMarkers[categoryName][i].Latitude,
                     lng: gMarkers[categoryName][i].Longitude,
                     title: gMarkers[categoryName][i].Name,
-                    icon: "/Content/Markers/" + categoryName + "_marker.png",
+                    //icon: "/Content/Markers/" + categoryName + "_marker.png",
+                    landmarkId: gMarkers[categoryName][i].Id,
                     landmarkName: gMarkers[categoryName][i].Name,
                     relativeCost: gMarkers[categoryName][i].RelativeCost,
                     customAddress: gMarkers[categoryName][i].Address,
@@ -45,6 +46,7 @@
                         $("#landmark_average_rating").html("Average Rating: " + event.averageRating);
                         $("#landmark_website_url").html(event.websiteUrl);
                         $("#landmark_description").html(event.description);
+                        $("#landmark_id").val(event.landmarkId);
                     }
                 });
                 // Save it as real (Google Maps) marker
@@ -84,4 +86,24 @@
             }
         });
     }
+
+     /**********************************************
+      * ADD LANDMARK STOP TO THE CURRENT TRIP PANEL
+     ***********************************************/
+    var landmarkIds = [];
+
+    $("#addLandmarkToTripBtn").on("click", function () {
+        var newLandmarkDiv = "<div id='" + $("#landmark_id").val() + "'>" + $("#landmark_name").html() + "</div>";
+        landmarkIds.push($("#landmark_id").val());
+        $(newLandmarkDiv).appendTo("#stops");
+
+        // Create a new hidden input field that will bind to model after POST
+        var landmarkIdHiddenField = "<input type='hidden' name='MyTripViewModel.LandmarkIds[" +
+            (landmarkIds.length - 1) + "]' value='" + landmarkIds[(landmarkIds.length - 1)]
+            + "' />";
+
+        // Append input field to div
+        $(landmarkIdHiddenField).appendTo("#stops");
+    });
+
 });

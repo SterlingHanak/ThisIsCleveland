@@ -1,8 +1,8 @@
-﻿$(document).ready(function () {
+﻿//$(document).ready(function () {
 
-    function avgRating() {
+//    function avgRating() {
 
-        $("#checkbox-rating-1").on("click", function () {
-            if ($(this).is(':checked'))
-        }
-    }
+//        $("#checkbox-rating-1").on("click", function () {
+//            if ($(this).is(':checked'))
+//        }
+//    }
