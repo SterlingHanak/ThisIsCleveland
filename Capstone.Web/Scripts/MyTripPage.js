@@ -30,7 +30,21 @@
                     lng: gMarkers[categoryName][i].Longitude,
                     title: gMarkers[categoryName][i].Name,
                     icon: "/Content/Markers/" + categoryName + "_marker.png",
-                    click: function () {
+                    landmarkName: gMarkers[categoryName][i].Name,
+                    relativeCost: gMarkers[categoryName][i].RelativeCost,
+                    customAddress: gMarkers[categoryName][i].Address,
+                    phoneNumber: gMarkers[categoryName][i].PhoneNumber,
+                    averageRating: gMarkers[categoryName][i].AvgRating,
+                    websiteUrl: gMarkers[categoryName][i].WebsiteUrl,
+                    description: gMarkers[categoryName][i].Description,
+                    click: function (event) {
+                        $("#landmark_name").html(event.landmarkName);
+                        $("#landmark_relative_cost").html("Relative Cost ($): " + event.relativeCost + " out of 5");
+                        $("#landmark_address").html(event.customAddress);
+                        $("#landmark_phone_number").html(event.phoneNumber);
+                        $("#landmark_average_rating").html("Average Rating: " + event.averageRating);
+                        $("#landmark_website_url").html(event.websiteUrl);
+                        $("#landmark_description").html(event.description);
                     }
                 });
                 // Save it as real (Google Maps) marker
