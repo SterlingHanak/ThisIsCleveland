@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capstone.Web.Models;
 
 namespace Capstone.Web.DAL
 {
-    interface ITripDAL
+    public interface ITripDAL
     {
+        List<Trip> GetAllUserTrips(string username);
+        bool SaveNewTrip(Trip trip, string username);
     }
 }
