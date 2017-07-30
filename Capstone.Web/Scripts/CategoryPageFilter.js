@@ -1,7 +1,6 @@
 ﻿$(document).ready(function () {
 
     $(".checkbox_rating").on("click", function () {
-        var ratingList = [];
         var name = event.target.name;
         //var address = event.target.address;
         //var phoneNumber = event.target.phoneNumber;
@@ -14,11 +13,7 @@
                 type: "GET",
                 data: {
                     "name": name,
-                    //"address": address,
-                    //"phoneNumber": phoneNumber,
-                    //"description": description,
-                    //"rating": rating,
-                    //"websiteUrl": websiteUrl
+                    
                 },
                 dataType: "json"
             }).done(function (data) {
