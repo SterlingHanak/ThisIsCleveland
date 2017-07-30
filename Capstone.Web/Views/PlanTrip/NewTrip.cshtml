@@ -6,7 +6,7 @@
 }
 
 <div class="container">
-    <div class="row" style="background-color: red; color: white;"><h1>My Trip</h1></div>
+    <div class="row" style="background-color: red; color: white;"><h1>New Trip</h1></div>
     <div class="row">
         <!--FILTER SECTION-->
         <div class="col-lg-3" style="background-color: orange; height: 675px; color: black;">
@@ -62,25 +62,23 @@
         <div class="col-lg-3" style="background-color: lightblue; height: 400px; color: black;">
             <h2>Current Trip</h2>
             @{
-                using (Html.BeginForm("MyTrips", "PlanTrip", FormMethod.Post))
+                using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
                 {
                     <p>
                         <h5>Name</h5>
-                        @Html.TextBoxFor( m => m.TripName, new { @placeholder = "My New Trip" })
+                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip"/>
                     </p>
 
                     <p>
                         <h5>Description</h5>
-                        @Html.TextAreaFor(m => m.TripDescription)
+                        <textarea name="MyTripViewModel.TripDescription"></textarea>
                     </p>
                     <p>
                         <h5>Date</h5>
-                        @Html.TextBoxFor(m => m.TripDate, DateTime.Now.ToString("yyyy-MM-dd"), new { type = "date" })
+                        <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")"/>
                     </p>
 
-                    <div id="stops">
-
-                    </div>
+                    <div id="stops"></div>
                     <button>Save</button>
                 }
             }

@@ -85,25 +85,41 @@
                 GMaps.prototype.removeMarkersOfType(categoryName);
             }
         });
+
+        /**********************************************
+        * ADD LANDMARK STOP TO THE "CURRENT TRIP" PANEL
+        ***********************************************/
+        var landmarkIds = [];
+        var dropSettings = landmarkIds.length > 1 ? "ondrop='drop(event)' ondragover='allowDrop(event)'" : "";
+
+        var drag = function(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        $("#addLandmarkToTripBtn").on("click", function () {
+            var newLandmarkDiv = "<div id='" + $("#landmark_id").val() + "' draggable='true' " +
+                "ondragstart='drag' " + dropSettings + " style='background-color: pink;'>" +
+                $("#landmark_name").html() + "</div>";
+            landmarkIds.push($("#landmark_id").val());
+            $(newLandmarkDiv).appendTo("#stops");
+
+            // Create a new hidden input field that will bind to model after POST
+            var landmarkIdHiddenField = "<input type='hidden' name='MyTripViewModel.SelectedLandmarkIds[" +
+                (landmarkIds.length - 1) + "]' value='" + landmarkIds[(landmarkIds.length - 1)]
+                + "' />";
+
+            // Append input field to div
+            $(landmarkIdHiddenField).appendTo("#stops");
+        });
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
     }
-
-     /**********************************************
-      * ADD LANDMARK STOP TO THE CURRENT TRIP PANEL
-     ***********************************************/
-    var landmarkIds = [];
-
-    $("#addLandmarkToTripBtn").on("click", function () {
-        var newLandmarkDiv = "<div id='" + $("#landmark_id").val() + "'>" + $("#landmark_name").html() + "</div>";
-        landmarkIds.push($("#landmark_id").val());
-        $(newLandmarkDiv).appendTo("#stops");
-
-        // Create a new hidden input field that will bind to model after POST
-        var landmarkIdHiddenField = "<input type='hidden' name='MyTripViewModel.LandmarkIds[" +
-            (landmarkIds.length - 1) + "]' value='" + landmarkIds[(landmarkIds.length - 1)]
-            + "' />";
-
-        // Append input field to div
-        $(landmarkIdHiddenField).appendTo("#stops");
-    });
-
 });
