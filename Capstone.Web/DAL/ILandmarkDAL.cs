@@ -9,11 +9,12 @@ namespace Capstone.Web.DAL
 {
     public interface ILandmarkDAL
     {
-        Landmark GetLandmark(int id);
+        List<string> GetAllCategories();
+        Landmark GetLandmark(int landmarkId);
         List<Landmark> GetAllLandmarks();
         List<Landmark> GetAllLandmarksInCategory(string category);
-        List<string> GetAllCategories();
-        List<string> GetLandmarkCategories(int id);
-        Dictionary<string, Hours> GetSchedule(int id);
+        List<Landmark> GetAllLandmarksInTrip(int tripId);
+        List<string> GetLandmarkCategories(int landmarkId);
+        Dictionary<string, Hours> GetLandmarkSchedule(int landmarkId);
     }
 }

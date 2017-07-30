@@ -66,6 +66,7 @@ namespace Capstone.Web.App_Start
         {
             kernel.Bind<IUserDAL>().To<UserSqlDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["CityToursDB"].ConnectionString);
             kernel.Bind<ILandmarkDAL>().To<LandmarkSqlDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["CityToursDB"].ConnectionString);
+            kernel.Bind<ITripDAL>().To<TripSqlDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["CityToursDB"].ConnectionString);
         }
     }
 }
