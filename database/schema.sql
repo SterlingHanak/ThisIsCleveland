@@ -112,4 +112,23 @@ CREATE TABLE city_tours_user (
 	CONSTRAINT unique_user_username UNIQUE(username)
 );
 
+CREATE TABLE trip (
+	id integer IDENTITY NOT NULL,
+	city_tours_user_id integer NOT NULL,
+	name varchar(500) NOT NULL,
+	[description] varchar(MAX) NULL,
+	trip_date DateTime NULL
+	CONSTRAINT pk_trip_id PRIMARY KEY(id),
+	CONSTRAINT fk_trip_city_tours_user_id FOREIGN KEY(city_tours_user_id) REFERENCES city_tours_user(id)
+);
+
+CREATE TABLE trip_landmark (
+	trip_id integer NOT NULL,
+	landmark_id integer NOT NULL,
+	visit_order integer NOT NULL,
+	CONSTRAINT pk_trip_landmark_trip_id_landmark_id PRIMARY KEY(trip_id, landmark_id),
+	CONSTRAINT fk_trip_landmark_trip_id	FOREIGN KEY(trip_id) REFERENCES trip(id),
+	CONSTRAINT fk_trip_landmark_landmark_id	FOREIGN KEY(landmark_id) REFERENCES landmark(id)
+);
+
 COMMIT;

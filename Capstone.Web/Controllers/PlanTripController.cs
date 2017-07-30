@@ -38,20 +38,29 @@ namespace Capstone.Web.Controllers
                 return RedirectToAction("NewTrip", myTripViewModel);
             }
 
+            // Create new Trip
+            Trip trip = new Trip();
+
+            // Assign trip name, description, and date
+            trip.Name = myTripViewModel.TripName;
+            trip.Description = myTripViewModel.TripDescription;
+            trip.TripDate = myTripViewModel.TripDate;
+
+            // Assign trip landmarks
             List<Landmark> landmarksInTrip = new List<Landmark>();
-            //foreach (int landmarkId in landmarkIds)
-            //{
-            //    landmarksInTrip.Add(landmarkDAL.GetLandmark(landmarkId));
-            //}
-            //Trip trip = new Trip();
-            //trip.Landmarks = landmarksInTrip;
+            foreach (int landmarkId in myTripViewModel.SelectedLandmarkIds)
+            {
+                landmarksInTrip.Add(landmarkDAL.GetLandmark(landmarkId));
+            }
+            trip.Landmarks = landmarksInTrip;
 
-            return RedirectToAction("Index", "Home");
-        }
+            // Insert new trip into database
 
-        public ActionResult LandmarkDetails(int landmarkId)
-        {
-            return PartialView("_LandmarkDetails");
+
+            // Get all trips associated with user
+
+
+            return RedirectToAction("MyTrips", "MyTrips");
         }
 
         public ActionResult LandmarksInCategoryJSON(string category)
@@ -75,7 +84,6 @@ namespace Capstone.Web.Controllers
                 landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
             }
 
-            // Initialize new trip
             return myTripViewModel;
         }
     }
