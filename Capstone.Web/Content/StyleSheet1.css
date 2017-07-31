@@ -56,7 +56,22 @@ li {
     display: block;
 }
 
+footer {
+    margin-top: 30px;
+    margin-bottom: 0px !important;
+}
+
 /*Home View*/
+.carousel-img {
+    width: 1700px;
+    height: 960px !important;
+}
+
+.item {
+    width: 1700px;
+    height: 960px !important;
+}
+
 .carousel-headline {
     position: absolute;
     bottom: 50%;
@@ -182,9 +197,4 @@ main {
     color: gold;
     height: 350px;
     text-align: center;
-}
-
-.starStyle{
-    width: 20px!important;
-    height: 10px!important;
 }
