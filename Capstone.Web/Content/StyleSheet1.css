@@ -140,6 +140,13 @@ div.home-info > p {
     margin-top: 10%;
 }
 
+/*NEW TRIP*/
+.col-height {
+    display: table-cell;
+    height: 100%;
+    float: none;
+}
+
 /*CATEGORY VIEW*/
 .category-jumbo {
     border: ridge;

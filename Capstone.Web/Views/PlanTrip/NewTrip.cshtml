@@ -8,84 +8,89 @@
 <div class="container">
     <div class="row" style="background-color: red; color: white;"><h1>New Trip</h1></div>
     <div class="row">
-        <!--FILTER SECTION-->
-        <div class="col-lg-3" style="background-color: orange; height: 675px; color: black;">
-            <h2>Filter By:</h2>
-            @{
-                foreach (string category in Model.Categories)
-                {
+        <div class="row-height">
+            <!--FILTER SECTION-->
+            <div class="col-lg-3 col-height" style="background-color: orange; color: black;">
+                <h2>Filter By:</h2>
+                @{
                     <p>
-                        @Html.CheckBox(category, false, new { value = category, @class = "category"})
-                        <span>@category</span>
+                        <span>Radius (miles)</span>
+                        @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
                     </p>
+
                     <p>
-                        @Html.TextBox("search",String.Empty, new {@placeholder = "Enter Search Terms" })
+                        @Html.TextBox("search", String.Empty, new { @placeholder = "Enter Search Terms" })
                         <button class="clearFilter"><span class="glyphicon glyphicon-remove-circle"></span></button>
                     </p>
+
+                    foreach (string category in Model.Categories)
+                    {
+                        <p>
+                            @Html.CheckBox(category, false, new { value = category, @class = "category" })
+                            <span>@category</span>
+                        </p>
+
+                    }
                 }
-                <p>
-                    <h5>Radius (miles)</h5>
-                    @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
-                </p>
-            }
-        </div>
-
-        <!--MAP AND DETAIL SECTIONS-->
-        <div class="col-lg-6">
-            <!--MAP-->
-            <div class="row" style="background-color: blue;">
-                <div id="map" class="col-lg-12" style = "height: 400px;"></div>
             </div>
 
-            <!--DETAILS-->
-            <div class="row" style="background-color: yellow; color: black;">
-                <div class="col-lg-4">
-                    <h3 id="landmark_name">Name</h3>
-                    <img src="#" alt-text="" />
-                    <h3>At A Glance</h3>
-                    <h4 id="landmark_relative_cost">Relative Cost</h4>
-                    <h4 id="landmark_address">Address</h4>
-                    <h4 id="landmark_phone_number">Phone Number</h4>
-                    <h4 id="landmark_average_rating">Average Rating</h4>
-                    <a id="landmark_website_url" href="#">Link to External Site</a>
-                    <input type="hidden" id="landmark_id"/>
+            <!--MAP AND DETAIL SECTIONS-->
+            <div class="col-lg-8 col-height">
+                <!--MAP-->
+                <div class="row" style="background-color: blue;">
+                    <div id="map" class="col-lg-12" style="height: 400px;"></div>
                 </div>
-                <div class="col-lg-8">
-                    <h4>Description</h4>
-                    <p id="landmark_description"></p>
-                    <button id="addLandmarkToTripBtn">Add to Trip</button>
-                </div>
-            </div>
-        </div>
 
-        <!--CURRENT TRIP SECTION-->
-        <div class="col-lg-3" style="background-color: lightblue; height: 400px; color: black;">
-            <h2>Current Trip</h2>
-            @{
-                using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
-                {
-                    <p>
-                        <h5>Name</h5>
-                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip"/>
-                    </p>
-
-                    <p>
-                        <h5>Description</h5>
-                        <textarea name="MyTripViewModel.TripDescription"></textarea>
-                    </p>
-                    <p>
-                        <h5>Date</h5>
-                        <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")"/>
-                    </p>
-
-                    <div id="stopContainer" class="row">
-                        <div id="stopOrder" class="col-lg-1 text-right"></div>
-                        <div id="stops" class="col-lg-10"></div>
+                <!--DETAILS-->
+                <div class="row" style="background-color: yellow; color: black;">
+                    <div class="col-lg-4">
+                        <h3 id="landmark_name">Name</h3>
+                        <img src="#" alt-text="" />
+                        <h3>At A Glance</h3>
+                        <h4 id="landmark_relative_cost">Relative Cost</h4>
+                        <h4 id="landmark_address">Address</h4>
+                        <h4 id="landmark_phone_number">Phone Number</h4>
+                        <h4 id="landmark_average_rating">Average Rating</h4>
+                        <a id="landmark_website_url" href="#">Link to External Site</a>
+                        <input type="hidden" id="landmark_id" />
                     </div>
-                    <br />
-                    <button>Save</button>
+                    <div class="col-lg-8">
+                        <h4>Description</h4>
+                        <p id="landmark_description"></p>
+                        <button id="addLandmarkToTripBtn">Add to Trip</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--CURRENT TRIP SECTION-->
+            <div class="col-lg-3 col-height" style="background-color: lightblue; color: black;">
+                <h2>Current Trip</h2>
+                @{
+                    using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
+                    {
+                        <p>
+                            <h5>Name</h5>
+                            <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
+                        </p>
+
+                        <p>
+                            <h5>Description</h5>
+                            <textarea name="MyTripViewModel.TripDescription"></textarea>
+                        </p>
+                        <p>
+                            <h5>Date</h5>
+                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                        </p>
+
+                        <div id="stopContainer" class="row">
+                            <div id="stopOrder" class="col-lg-1 text-right"></div>
+                            <div id="stops" class="col-lg-10"></div>
+                        </div>
+                        <br />
+                        <button>Save</button>
+                    }
                 }
-            }
+            </div>
         </div>
     </div>
 </div>
