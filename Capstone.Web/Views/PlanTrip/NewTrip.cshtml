@@ -42,22 +42,30 @@
                 </div>
 
                 <!--DETAILS-->
-                <div class="row" style="background-color: yellow; color: black;">
-                    <div class="col-lg-4">
-                        <h3 id="landmark_name">Name</h3>
-                        <img src="#" alt-text="" />
-                        <h3>At A Glance</h3>
-                        <h4 id="landmark_relative_cost">Relative Cost</h4>
-                        <h4 id="landmark_address">Address</h4>
-                        <h4 id="landmark_phone_number">Phone Number</h4>
-                        <h4 id="landmark_average_rating">Average Rating</h4>
-                        <a id="landmark_website_url" href="#">Link to External Site</a>
-                        <input type="hidden" id="landmark_id" />
+                <div class="row" style="background-color: yellow; color: black; padding: 20px;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="~/Content/Images/Casino/Jack_Casino.jpg" style="width: 300px;" alt-text="" />
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 id="landmark_name" style="margin-top: 0px;">Name</h3>
+                            <p id="landmark_description"></p>
+                        </div>
                     </div>
-                    <div class="col-lg-8">
-                        <h4>Description</h4>
-                        <p id="landmark_description"></p>
-                        <button id="addLandmarkToTripBtn">Add to Trip</button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3>Contact</h3>
+                            <h4 id="landmark_address_line1">Address</h4>
+                            <h4 id="landmark_address_line2"></h4>
+                            <h4 id="landmark_phone_number">Phone Number</h4>
+                            <a id="landmark_website_url" href="#"><span class="glyphicon glyphicon-new-window"></span> Link to External Site</a>
+                            <input type="hidden" id="landmark_id" />
+                        </div>
+                        <div class="col-lg-6">
+                            <h4 id="landmark_average_rating">Average Rating</h4>
+                            <h4 id="landmark_relative_cost">Relative Cost</h4>
+                            <button id="addLandmarkToTripBtn">Add to Trip</button>
+                        </div>
                     </div>
                 </div>
             </div>

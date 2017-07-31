@@ -41,9 +41,13 @@
                     websiteUrl: gMarkers[categoryName][i].WebsiteUrl,
                     description: gMarkers[categoryName][i].Description,
                     click: function (event) {
+                        var addressLine1 = event.customAddress.substring(0, event.customAddress.indexOf(", "));
+                        var addressLine2 = event.customAddress.substring(event.customAddress.indexOf(", ") + 2);
+
                         $("#landmark_name").html(event.landmarkName);
                         $("#landmark_relative_cost").html("Relative Cost ($): " + event.relativeCost + " out of 5");
-                        $("#landmark_address").html(event.customAddress);
+                        $("#landmark_address_line1").html(addressLine1);
+                        $("#landmark_address_line2").html(addressLine2);
                         $("#landmark_phone_number").html(event.phoneNumber);
                         $("#landmark_average_rating").html("Average Rating: " + event.averageRating);
                         $("#landmark_website_url").html(event.websiteUrl);
