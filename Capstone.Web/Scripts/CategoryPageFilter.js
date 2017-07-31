@@ -14,7 +14,7 @@
         }
     });
 
-        $("checkbox_relative_cost input").on("change", function () {
+        $(".checkbox_relative_cost input").on("change", function () {
             var id = $(this).parent().attr('id');
             var checked = this.checked;
 
