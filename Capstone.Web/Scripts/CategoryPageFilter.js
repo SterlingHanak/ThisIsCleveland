@@ -1,21 +1,17 @@
 ﻿$(document).ready(function () {
 
-    $(".checkbox_rating").on("click", function () {
-        var id = $(this).attr('id');
-        var checked = $(this).is(':checked');
+    $(".checkbox_rating input").on("change", function () {
+        var id = $(this).parent().attr('id');
+        var checked = this.checked;
 
-        if(checked) {
-            //$('[name = "avgRating-4"]').val(true); 
-            $(this).attr('checked', false);
+        if (checked) {
             $("." + id).show();
-        }
 
-        if (!checked) {
-            //$('[name = "avgRating-4"]').val(false);
-            $(this).attr('checked', true);
-            $("."+ id).hide();
         }
        
-         
+        if (!checked) {
+            $("." + id).hide();
+        }
+
     });
-    });
+});
