@@ -122,14 +122,8 @@ div.home-info > p {
     float: right;
 }
 
-/*.form-width{
-    width:200px;    
-    /*margin-left:490px;*/
-    /*padding: 8px;
-}*/
-
 .navbar-nav{
-    background-color:gray;
+    background-color: transparent;
     font-weight:900;
     font-family:cursive;
 }
@@ -165,10 +159,10 @@ div.home-info > p {
 /*CATEGORY VIEW*/
 .category-jumbo {
     border: ridge;
-    border-color: white;
+    border-color: #860038;
     border-radius: 6px;
     text-align: center;
-    background-color: gold;
+    background-color: #FDBB30;
     margin-bottom: 30px;
     margin-left: 10%;
     margin-right: 10%;
@@ -186,15 +180,15 @@ main {
 .category-jumbo > h2 {
     font-size: 100px;
     vertical-align: central;
-    color: crimson;
+    color: #860038;
 }
 
 .location-detail {
     border: ridge;
     border-color: black;
     border-radius: 6px;
-    background-color: crimson;
-    color: gold;
+    background-color: #860038;
+    color: #FDBB30;
     height: 350px;
     text-align: center;
 }
