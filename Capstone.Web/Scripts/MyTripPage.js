@@ -24,7 +24,7 @@
             realMarkers[categoryName] = [];
 
             // Add each Gmaps marker to map
-            var iconName = categoryName.replace(" ", "") + "_marker.png";
+            var iconName = categoryName.replace(/\s/g, '') + "_marker.png";
 
             for (var i = 0; i < gMarkers[categoryName].length; i++) {
                 var marker = map.addMarker({
