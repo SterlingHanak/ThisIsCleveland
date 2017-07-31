@@ -11,9 +11,10 @@
     <h2>@Model.Category</h2>
 </div>
 
-<div class="row">
+<span id="openCatBtn" style="font-size: 30px; cursor: pointer;">&#9776; Open</span>
 
-<div class="col-md-3 filter-container">
+<div class="col-md-3 filter-container sidenav" id="mySidenav">
+    <span id="closeCatBtn" class="closebtn" style="cursor: pointer;">X</span>
     <h2>Filter</h2>
     <hr />
     <h2>Rating</h2>
@@ -41,17 +42,15 @@
         @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10})
 </div>
 
-<div class="col-md-10">
 <div class="row location-row">
 @foreach (Landmark location in Model.Landmarks)
 {
     if (location.Categories.Contains(Model.Category))
     {
-
+        
         string avgRatingClass = location.AvgRating + "-rating";
         string relativeCostClass = location.RelativeCost + "-cost";
         <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
-        
                 <h2>@location.Name</h2>
                 <p>@location.Address</p>
                 <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
@@ -63,6 +62,4 @@
        
     }
 }
-</div>
-</div>
 </div>
