@@ -12,20 +12,23 @@ namespace Capstone.Web.Controllers
     {
         private IUserDAL userDAL;
         private ILandmarkDAL landmarkDAL;
+        private ITripDAL tripDAL;
 
-        public PlanTripController(IUserDAL userDAL, ILandmarkDAL landmarkDAL): base(userDAL)
+        public PlanTripController(IUserDAL userDAL, ILandmarkDAL landmarkDAL, ITripDAL tripDAL) 
+            : base(userDAL)
         {
             this.userDAL = userDAL;
             this.landmarkDAL = landmarkDAL;
+            this.tripDAL = tripDAL;
         }
 
         [HttpGet]
         public ActionResult NewTrip()
         {
-            //if (!base.IsAuthenticated)
-            //{
-            //    return RedirectToAction("Login", "Users");
-            //}
+            if (!base.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Users");
+            }
             MyTripViewModel myTripViewModel = PopulateMyTripViewModel();
             return View("NewTrip", myTripViewModel);
         }
@@ -38,28 +41,18 @@ namespace Capstone.Web.Controllers
                 return RedirectToAction("NewTrip", myTripViewModel);
             }
 
-            // Create new Trip
-            Trip trip = new Trip();
-
-            // Assign trip name, description, and date
-            trip.Name = myTripViewModel.TripName;
-            trip.Description = myTripViewModel.TripDescription;
-            trip.TripDate = myTripViewModel.TripDate;
-
-            // Assign trip landmarks
-            List<Landmark> landmarksInTrip = new List<Landmark>();
-            foreach (int landmarkId in myTripViewModel.SelectedLandmarkIds)
-            {
-                landmarksInTrip.Add(landmarkDAL.GetLandmark(landmarkId));
-            }
-            trip.Landmarks = landmarksInTrip;
-
             // Insert new trip into database
+            int currentUserId = userDAL.GetUserId(base.CurrentUser);
+            Trip newTrip = PopulateTrip(myTripViewModel);
+            int newTripId = tripDAL.SaveNewTrip(newTrip, currentUserId);
 
+            // Insert trip landmarks into database
+            for (int i = 0; i < myTripViewModel.SelectedLandmarkIds.Length; i++)
+            {
+                tripDAL.SaveTripLandmark(newTripId, myTripViewModel.SelectedLandmarkIds[i], i + 1);
+            }
 
-            // Get all trips associated with user
-
-
+            // Redirect user to view list of all their stored trips
             return RedirectToAction("MyTrips", "MyTrips");
         }
 
@@ -80,11 +73,32 @@ namespace Capstone.Web.Controllers
             List<Landmark> allLandmarks = landmarkDAL.GetAllLandmarks();
             foreach (Landmark landmark in allLandmarks)
             {
-                landmark.Schedule = landmarkDAL.GetSchedule(landmark.Id);
+                landmark.Schedule = landmarkDAL.GetLandmarkSchedule(landmark.Id);
                 landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
             }
 
             return myTripViewModel;
+        }
+
+        private Trip PopulateTrip(MyTripViewModel model)
+        {
+            // Create new Trip
+            Trip trip = new Trip();
+
+            // Assign trip name, description, and date
+            trip.Name = model.TripName;
+            trip.Description = model.TripDescription;
+            trip.TripDate = model.TripDate;
+
+            // Assign trip landmarks selected by user and bound to ViewModel
+            List<Landmark> landmarksInTrip = new List<Landmark>();
+            foreach (int landmarkId in model.SelectedLandmarkIds)
+            {
+                landmarksInTrip.Add(landmarkDAL.GetLandmark(landmarkId));
+            }
+            trip.Landmarks = landmarksInTrip;
+
+            return trip;
         }
     }
 }

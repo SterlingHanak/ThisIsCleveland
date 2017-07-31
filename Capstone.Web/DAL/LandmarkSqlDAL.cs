@@ -9,18 +9,20 @@ namespace Capstone.Web.DAL
 {
     public class LandmarkSqlDAL : ILandmarkDAL
     {
-        private string connectionString;
-        readonly string SQL_GetAllCategories = "SELECT * FROM category;";
-        readonly string SQL_GetAllLandmarks = "SELECT * FROM landmark;";
-        readonly string SQL_GetLandmark = "SELECT * FROM landmark WHERE id = @landmarkId;";
-        readonly string SQL_GetLandmarkHighlights = "SELECT highlight FROM landmark_highlight WHERE landmark_id = @landmarkId;";
-        readonly string SQL_GetLandmarkCategories = "SELECT name FROM category INNER JOIN landmark_category " +
-                                                    "ON category_id =  category.id WHERE landmark_id = @landmarkId;";
-        readonly string SQL_GetSchedule = "SELECT day.name, daily_hours.time_open, daily_hours.time_closed FROM daily_hours JOIN" +
-                                           " day ON day.id = daily_hours.day_id JOIN landmark ON landmark.id = daily_hours.landmark_id " +
-                                            "WHERE landmark_id = @landmarkId;";
-        readonly string SQL_GetAllLandmarksInCategory = "SELECT * FROM landmark JOIN landmark_category ON landmark_category.landmark_id = landmark.id " +
-                                            "JOIN category ON category.id = landmark_category.category_id WHERE category.name = @category;";
+        readonly string connectionString;
+
+        // Query to retrieve all possible landmark categories
+        const string SQL_GetAllCategories = "SELECT * FROM category;";
+
+        // Queries for retrieving Landmark objects
+        const string SQL_GetLandmark = "SELECT * FROM landmark WHERE id = @landmarkId;";
+        const string SQL_GetAllLandmarks = "SELECT * FROM landmark;";
+        const string SQL_GetAllLandmarksInCategory = "SELECT * FROM landmark JOIN landmark_category ON landmark_category.landmark_id = landmark.id JOIN category ON category.id = landmark_category.category_id WHERE category.name = @category;";
+        const string SQL_GetAllLandmarksInTrip = "SELECT * FROM landmark JOIN trip_landmark ON trip_landmark.landmark_id = landmark.id WHERE trip_landmark.trip_id = @tripId;";
+
+        // Queries for setting collection properties of Landmark
+        const string SQL_GetLandmarkCategories = "SELECT name FROM category INNER JOIN landmark_category ON category_id =  category.id WHERE landmark_id = @landmarkId;";
+        const string SQL_GetLandmarkSchedule = "SELECT day.name, daily_hours.time_open, daily_hours.time_closed FROM daily_hours JOIN day ON day.id = daily_hours.day_id JOIN landmark ON landmark.id = daily_hours.landmark_id WHERE landmark_id = @landmarkId;";
 
         public LandmarkSqlDAL(string connectionString)
         {
@@ -50,22 +52,22 @@ namespace Capstone.Web.DAL
             }
         }
 
-        public List<string> GetLandmarkCategories(int id)
+        public Landmark GetLandmark(int landmarkId)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(SQL_GetLandmarkCategories, conn);
-                    cmd.Parameters.AddWithValue("@landmarkId", id);
+                    SqlCommand cmd = new SqlCommand(SQL_GetLandmark, conn);
+                    cmd.Parameters.AddWithValue("@landmarkId", landmarkId);
                     SqlDataReader reader = cmd.ExecuteReader();
-                    List<string> listOfCategories = new List<string>();
+                    Landmark landmark = new Landmark();
                     while (reader.Read())
                     {
-                        listOfCategories.Add(Convert.ToString(reader["name"]));
+                        landmark = PopulateLandmarkObject(reader);
                     }
-                    return listOfCategories;
+                    return landmark;
                 }
             }
             catch (SqlException)
@@ -89,30 +91,6 @@ namespace Capstone.Web.DAL
                         listOfLandmarks.Add(PopulateLandmarkObject(reader));
                     }
                     return listOfLandmarks;
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-        }
-
-        public Landmark GetLandmark(int id)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(SQL_GetLandmark, conn);
-                    cmd.Parameters.AddWithValue("@landmarkId", id);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    Landmark landmark = new Landmark();
-                    while (reader.Read())
-                    {
-                        landmark = PopulateLandmarkObject(reader);
-                    }
-                    return landmark;
                 }
             }
             catch (SqlException)
@@ -145,15 +123,63 @@ namespace Capstone.Web.DAL
             }
         }
 
-        public Dictionary<string, Hours> GetSchedule(int id)
+        public List<Landmark> GetAllLandmarksInTrip(int tripId)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(SQL_GetSchedule, conn);
-                    cmd.Parameters.AddWithValue("@landmarkId", id);
+                    SqlCommand cmd = new SqlCommand(SQL_GetAllLandmarksInTrip, conn);
+                    cmd.Parameters.AddWithValue("@tripId", tripId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<Landmark> landmarksInTrip = new List<Landmark>();
+                    while (reader.Read())
+                    {
+                        landmarksInTrip.Add(PopulateLandmarkObject(reader));
+                    }
+                    return landmarksInTrip;
+                }
+            }
+            catch(SqlException)
+            {
+                throw;
+            }
+        }
+
+        public List<string> GetLandmarkCategories(int landmarkId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(SQL_GetLandmarkCategories, conn);
+                    cmd.Parameters.AddWithValue("@landmarkId", landmarkId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<string> listOfCategories = new List<string>();
+                    while (reader.Read())
+                    {
+                        listOfCategories.Add(Convert.ToString(reader["name"]));
+                    }
+                    return listOfCategories;
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+        public Dictionary<string, Hours> GetLandmarkSchedule(int landmarkId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(SQL_GetLandmarkSchedule, conn);
+                    cmd.Parameters.AddWithValue("@landmarkId", landmarkId);
                     SqlDataReader reader = cmd.ExecuteReader();
                     Dictionary<string, Hours> schedule = new Dictionary<string, Hours>();
                     while (reader.Read())
@@ -198,13 +224,11 @@ namespace Capstone.Web.DAL
             {
                 landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);
             }
-            //landmark.AnnualNumVisitors = Convert.ToInt32(reader["annual_num_visitors"]);
             landmark.WebsiteUrl = Convert.ToString(reader["website_url"]);
             landmark.Latitude = Convert.ToDouble(reader["latitude"]);
             landmark.Longitude = Convert.ToDouble(reader["longitude"]);
             return landmark;
         }
-
 
     }
 }

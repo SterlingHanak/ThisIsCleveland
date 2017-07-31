@@ -9,10 +9,11 @@ namespace Capstone.Web.DAL
 {
     public class UserSqlDAL : IUserDAL
     {
-        readonly string SQL_GetUser = "SELECT * FROM city_tours_user WHERE username = @username;";
-        readonly string SQL_RegisterUser = "INSERT INTO city_tours_user VALUES(@firstName, @lastName, @email, " +
-                                           "@username, @password, @salt, @accountCreationDate);";
-        private string connectionString;
+        readonly string connectionString;
+
+        const string SQL_GetUser = "SELECT * FROM city_tours_user WHERE username = @username;";
+        const string SQL_RegisterUser = "INSERT INTO city_tours_user VALUES(@firstName, @lastName, @email, @username, @password, @salt, @accountCreationDate);";
+        const string SQL_GetUserId = "SELECT id FROM city_tours_user WHERE username = @username;";
 
         public UserSqlDAL(string connectionString)
         {
@@ -49,6 +50,26 @@ namespace Capstone.Web.DAL
                 }
             }
             catch(SqlException)
+            {
+                throw;
+            }
+        }
+
+        public int GetUserId(string userName)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(SQL_GetUserId, conn);
+                    cmd.Parameters.AddWithValue("username", userName);
+
+                    int userId = Convert.ToInt32(cmd.ExecuteScalar());
+                    return userId;
+                }
+            }
+            catch (SqlException)
             {
                 throw;
             }

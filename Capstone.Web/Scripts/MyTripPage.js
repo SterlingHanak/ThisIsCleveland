@@ -90,36 +90,34 @@
         * ADD LANDMARK STOP TO THE "CURRENT TRIP" PANEL
         ***********************************************/
         var landmarkIds = [];
-        var dropSettings = landmarkIds.length > 1 ? "ondrop='drop(event)' ondragover='allowDrop(event)'" : "";
 
-        var drag = function(event) {
-            event.dataTransfer.setData("text", event.target.id);
-        }
+        // Enable sorting of #stops div with jQuery UI script
+        $("#stops").sortable();
+        $("#stops").disableSelection();
 
         $("#addLandmarkToTripBtn").on("click", function () {
-            var newLandmarkDiv = "<div id='" + $("#landmark_id").val() + "' draggable='true' " +
-                "ondragstart='drag' " + dropSettings + " style='background-color: pink;'>" +
-                $("#landmark_name").html() + "</div>";
+            // Add row for new stop order (#1, #2, #3, etc.)
+            var newStopOrderRow = "<div class='row'>" + (landmarkIds.length + 1) + "</div>";
+
+            // Add row for new landmark stop
+            var newStopRow = "<div id='landmark" + $("#landmark_id").val() + "' style='background-color: yellow; border: 2px solid orange;'>" +
+                "<span class='ui-icon ui-icon-caret-2-n-s' ></span>" + $("#landmark_name").html() + "</div>";
+
+            // Add each new rows to appropriate container
+            $(newStopOrderRow).appendTo("#stopOrder");
+            $(newStopRow).appendTo("#stops");
+
+            // Update array of stored landmark ids
             landmarkIds.push($("#landmark_id").val());
-            $(newLandmarkDiv).appendTo("#stops");
 
             // Create a new hidden input field that will bind to model after POST
             var landmarkIdHiddenField = "<input type='hidden' name='MyTripViewModel.SelectedLandmarkIds[" +
                 (landmarkIds.length - 1) + "]' value='" + landmarkIds[(landmarkIds.length - 1)]
                 + "' />";
 
-            // Append input field to div
-            $(landmarkIdHiddenField).appendTo("#stops");
+            // Append input field to new landmark stop row
+            var newStopDivId = "#landmark" + $("#landmark_id").val();
+            $(landmarkIdHiddenField).appendTo(newStopDivId);
         });
-
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
     }
 });

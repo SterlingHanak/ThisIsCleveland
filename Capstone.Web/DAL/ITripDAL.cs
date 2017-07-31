@@ -9,7 +9,8 @@ namespace Capstone.Web.DAL
 {
     public interface ITripDAL
     {
-        List<Trip> GetAllUserTrips(string username);
-        bool SaveNewTrip(Trip trip, string username);
+        List<Trip> GetAllUserTrips(int userId);
+        int SaveNewTrip(Trip trip, int userId);
+        bool SaveTripLandmark(int tripId, int landmarkId, int visitOrder);
     }
 }

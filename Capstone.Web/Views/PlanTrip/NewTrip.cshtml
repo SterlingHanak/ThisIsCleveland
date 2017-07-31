@@ -78,7 +78,11 @@
                         <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")"/>
                     </p>
 
-                    <div id="stops"></div>
+                    <div id="stopContainer" class="row">
+                        <div id="stopOrder" class="col-lg-1 text-right"></div>
+                        <div id="stops" class="col-lg-10"></div>
+                    </div>
+                    <br />
                     <button>Save</button>
                 }
             }
