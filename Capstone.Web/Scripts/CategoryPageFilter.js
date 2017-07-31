@@ -4,16 +4,18 @@
         var id = $(this).attr('id');
         var checked = $(this).is(':checked');
 
-        if(checked) {
-            //$('[name = "avgRating-4"]').val(true); 
-            $(this).attr('checked', false);
+        if(checked) {           
+            //$(this).attr('checked', false);
             $("." + id).show();
+            $(this).checked = false;
+           
         }
 
-        if (!checked) {
-            //$('[name = "avgRating-4"]').val(false);
-            $(this).attr('checked', true);
-            $("."+ id).hide();
+        if (!checked) {             
+            //$(this).attr('checked', true);
+            $("." + id).hide();
+            $(this).checked = true;
+          
         }
        
          
