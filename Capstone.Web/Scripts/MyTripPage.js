@@ -24,12 +24,14 @@
             realMarkers[categoryName] = [];
 
             // Add each Gmaps marker to map
+            var iconName = categoryName.replace(" ", "") + "_marker.png";
+
             for (var i = 0; i < gMarkers[categoryName].length; i++) {
                 var marker = map.addMarker({
                     lat: gMarkers[categoryName][i].Latitude,
                     lng: gMarkers[categoryName][i].Longitude,
                     title: gMarkers[categoryName][i].Name,
-                    //icon: "/Content/Markers/" + categoryName + "_marker.png",
+                    icon: "/Content/Markers/" + iconName,
                     landmarkId: gMarkers[categoryName][i].Id,
                     landmarkName: gMarkers[categoryName][i].Name,
                     relativeCost: gMarkers[categoryName][i].RelativeCost,
