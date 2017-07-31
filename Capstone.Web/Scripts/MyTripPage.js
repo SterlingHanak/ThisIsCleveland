@@ -50,7 +50,7 @@
                         $("#landmark_address_line2").html(addressLine2);
                         $("#landmark_phone_number").html(event.phoneNumber);
                         $("#landmark_average_rating").html("Average Rating: " + event.averageRating);
-                        $("#landmark_website_url").html(event.websiteUrl);
+                        $("#landmark_website_url").attr("href", "'https://www'" + event.websiteUrl);
                         $("#landmark_description").html(event.description);
                         $("#landmark_id").val(event.landmarkId);
                     }
