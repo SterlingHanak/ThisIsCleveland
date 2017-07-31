@@ -13,16 +13,18 @@
 
 <div class="row">
 
-<div class="col-md-2 filter-container">
+<div class="col-sm-4 filter-container">
     <h2>Filter</h2>
     <hr />
     <h2>Rating</h2>
     <div class="checkboxContainer">
-        <p id="1-rating" class="checkbox_rating">@Html.CheckBox("avgRating-1", true) <img src="~/Content/Images/1-star.png" style="width: 120px"></p>
-        <p id="2-rating" class="checkbox_rating">@Html.CheckBox("avgRating-2", true) <img src="~/Content/Images/2-star.png" class ="starStyle"/></p>
-        <p id="3-rating" class="checkbox_rating">@Html.CheckBox("avgRating-3", true) <img src="~/Content/Images/3-star.png" class ="starStyle" /></p>
-        <p id="4-rating" class="checkbox_rating">@Html.CheckBox("avgRating-4", true) <img src="~/Content/Images/4-star.png" class ="starStyle"/></p>
-        <p id="5-rating" class="checkbox_rating">@Html.CheckBox("avgRating-5", true) <img src="~/Content/Images/5-star.png" class ="starStyle" /></p>
+        <ul>
+            <li id="1-rating" class="checkbox_rating checkbox-inline">@Html.CheckBox("avgRating-1", true) <img src="~/Content/Images/1-star.png" style="width: 110px"></li>
+            <li id="2-rating" class="checkbox_rating checkbox-inline">@Html.CheckBox("avgRating-2", true) <img src="~/Content/Images/2-star.png" style="width: 110px" /></li>
+            <li id="3-rating" class="checkbox_rating checkbox-inline">@Html.CheckBox("avgRating-3", true) <img src="~/Content/Images/3-star.png" style="width: 110px" /></li>
+            <li id="4-rating" class="checkbox_rating checkbox-inline">@Html.CheckBox("avgRating-4", true) <img src="~/Content/Images/4-star.png" style="width: 110px" /></li>
+            <li id="5-rating" class="checkbox_rating checkbox-inline">@Html.CheckBox("avgRating-5", true) <img src="~/Content/Images/5-star.png" style="width: 110px" /></li>
+        </ul>
     </div>
 
     <h2>Cost</h2>
