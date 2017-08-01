@@ -5,38 +5,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container text-center">
-    <div class="login-margin">
-        <h1>Login</h1>
-        <br />
-        @using (Html.BeginForm("Login", "Users", FormMethod.Post))
-        {
 
+
+    <div class="container">
+
+        <div class="login-margin">
+            <h1 style="font-family:Caladea" >Login</h1>
+            <br />
+                        
             
+            @using (Html.BeginForm("Login", "Users", FormMethod.Post))
+            {
+
+
                 <div class="form-group row">
-                    <h5> Username </h5>           
-                        <div class="col-sm-2 col-sm-offset-5">
-                            @Html.TextBoxFor(m => Model.Username, new { @class = "form-control", @placeholder = "Username" })
-                            @Html.ValidationMessageFor(m => Model.Username, String.Empty, new { @class = "text-danger"})
-                        </div>
-                    </div>
-           
-                <div class="form-group row">
-                    <h5>  Password </h5>
-                    <div class="col-sm-2 col-sm-offset-5">
-                        @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password" })
-                        @Html.ValidationMessageFor(m => Model.Password, String.Empty, new { @class = "text-danger" })
-                        @Html.ValidationMessage("invalid-login")
+                    <h5> Username </h5>
+                    <div class="col-sm-4 col-sm-push-4">
+                        @Html.TextBoxFor(m => Model.Username, new { @class = "form-control", @placeholder = "Username" })
+                        @Html.ValidationMessageFor(m => Model.Username, String.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
 
-        }
-        <div class="row">
-            <p>Not A Member? Sign Up Today!</p>
-            <a href="@Url.Action("Register", "Users")">Register As New User</a>
+                    <div class="form-group row">
+                        <h5>  Password </h5>
+                        <div class="col-sm-4 col-sm-push-4">
+                            @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password" })
+                            @Html.ValidationMessageFor(m => Model.Password, String.Empty, new { @class = "text-danger" })
+                            @Html.ValidationMessage("invalid-login")
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit_button">Submit</button>
+
+            }
+            <div class="row">
+                <p>Not A Member? Sign Up Today!</p>
+                <a href="@Url.Action("Register", "Users")"><span class="login_register_color"> Register As New User</span></a>
+            </div>
         </div>
     </div>
-</div>
+
+
 
 

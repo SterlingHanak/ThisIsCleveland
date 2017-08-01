@@ -224,6 +224,7 @@
     <Content Include="Content\Images\Theatres\Hanna_Theatre.jpg" />
     <Content Include="Content\Images\Theatres\Ohio_Theatre.jpg" />
     <Content Include="Content\Images\Theatres\State_Theatre.jpg" />
+    <Content Include="Content\Images\travel_login.jpg" />
     <Content Include="Content\Markers\Casino_marker.png" />
     <Content Include="Content\Markers\ConcertVenues_marker.png" />
     <Content Include="Content\Markers\LibrariesandMuseums_marker.png" />

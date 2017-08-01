@@ -27,9 +27,9 @@ namespace Capstone.Web.Controllers
             foreach(Landmark landmark in viewModel.Landmarks)
             {
                 landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
+                
             }
-
-            viewModel.Category = "Schools";
+            viewModel.Category = "Theatres";
             return View("Category", viewModel);
         }
 
