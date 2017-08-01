@@ -21,19 +21,10 @@
         <div class="container-fluid" style="background-color:#984B43; ">
             <ul class="nav navbar-nav navbar">
                 <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home"></span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Things To Do</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Restaurants</a></li>
-                        <li><a href="#">Sports Venues</a></li>
-                        <li><a href="#">Parks</a></li>
-                    </ul>
-                </li>
+                <li>@Html.ActionLink("Things To Do", "Category", "ThingsToDo")</li>
                 <li>@Html.ActionLink("Plan Trip", "NewTrip", "PlanTrip")</li>
+                <li>@Html.ActionLink("My Trips", "MyTrips", "MyTrips")</li>
                 <li>@Html.ActionLink("About", "Visit", "Home")</li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
             </ul>
         </div>
     </div>
@@ -45,21 +36,23 @@
 <div class="footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4">
-                
-                    <p><a href="#" class="login_register_color"><span class="glyphicon glyphicon-map-marker"></span> 7100 Euclid Ave #140, Cleveland, OH 44103 </a></p>
-                <p><a href="#" class="login_register_color"><span class="glyphicon glyphicon-map-marker"></span> 7100 Euclid Ave #140, Cleveland, OH 44103 </a></p>
-                
-            </div>
             
-            <div class="col-sm-4 text-center" style="display:inline">
+            <div class="col-sm-4" style="display:inline">
                 <h4>About Us</h4>
                 <p>
-                    Cleveland Tours is the final capstone project of four.<br />
-                    NET students while attending the Tech Elevator coding <br />
-                    bootcamp in Cleveland, Ohio.  This website does not own <br />the rights to any of the images shown.
+                    Cleveland Tours is the final capstone project <br />of four
+                    .NET students from Tech Elevator's <br />coding 
+                    bootcamp in Cleveland, Ohio.  This <br />website does not own the rights to any of <br />the images shown.
                 </p>
             </div>
+            <div class="col-sm-4 col-sm-offset-1">
+
+                <p class="login_register_color" style="color:white"><span class="glyphicon glyphicon-map-marker icon_size">  &nbsp;</span>  7100 Euclid Ave #140, Cleveland, OH 44103</p>
+                <p class="login_register_color"style="color:white"><span class="glyphicon glyphicon-earphone icon_size"> &nbsp; </span>877-606-3203</p>
+                <p class="login_register_color"style="color:white"><span class="glyphicon glyphicon-envelope icon_size"> &nbsp; </span>hello@techelevator.com</p>
+
+            </div>
+
             <div class="col-sm-3 collaborators">
                 <h4>Collaborated By:</h4>
                 <p><a href=" =https://www.linkedin.com/in/launagreer/"><span class="login_register_color">Launa Greer</span></a></p>
@@ -68,6 +61,6 @@
                 <p><a href="https://www.linkedin.com/in/joshuarodriguez0917/"><span class="login_register_color">Joshua Rodriguez</span></a></p>
             </div>
         </div>
-        <p class="text-center">©2017 - All Rights Reserved.</p>
+        <p>©2017 - All Rights Reserved.</p>
     </div>
 </div>

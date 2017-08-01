@@ -77,7 +77,8 @@ li {
     /*margin-top: 20px;*/
     margin-bottom: 0px !important;
     color:white;
-    background-color:#984B43;
+    /*background-color:#984B43;*/
+    margin-top:15px;
 }
 
 /*Home View*/
@@ -154,7 +155,7 @@ div.home-info > p {
 
 .form-width2 {
     width: 300px;
-    margin-left: 45px;
+    padding-bottom:25px;
 }
 
 .login-margin {
@@ -185,14 +186,17 @@ div.home-info > p {
     text-align: center;
 }
 .register_margin {
-    /*margin-top: 5%;*/
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-top: 4%;
+    margin-right: 25%;
+    margin-left: 30%;
     background-color: #233237;
     opacity: 0.8;
     font-weight:bold;
     border-radius: 10px 150px 10px 140px;
     text-align: center;
+    padding-bottom:10px;
+    padding-top:10px;
+    
 }
 
 /*NEW TRIP*/
@@ -278,5 +282,10 @@ font-size: 16px;
 .footer_address{
   float: left;
   margin-left: -100px;
+  color:white;
 
+}
+.icon_size {
+    font-size: 25px;
+    color:white;
 }

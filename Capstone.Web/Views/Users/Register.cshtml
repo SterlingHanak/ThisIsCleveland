@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" style="height: 720px">
     <div class="register_margin">
         <h1>Register</h1>
         <br />
@@ -14,7 +14,6 @@
         <!--FIRST NAME-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
-                    <h3>First Name</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.TextBoxFor(m => Model.FirstName, new { @class = "form-control", @placeholder = "First Name" })
@@ -25,7 +24,6 @@
         <!--LAST NAME-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
-                    <h3>Last Name</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.TextBoxFor(m => Model.LastName, new { @class = "form-control", @placeholder = "Last Name" })
@@ -36,7 +34,6 @@
         <!--EMAIL-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
-                    <h3>Email</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.TextBoxFor(m => Model.EmailAddress, new { type = "email", @class = "form-control", @placeholder = "Email" })
@@ -47,7 +44,6 @@
         <!--USERNAME-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
-                    <h3>Username</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.TextBoxFor(m => Model.Username, new { @class = "form-control", @placeholder = "Username" })
@@ -58,7 +54,6 @@
         <!--PASSWORD-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
-                    <h3>Password</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password"})
@@ -71,7 +66,6 @@
         <!--PASSWORD-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
-                    <h3>Confirm Password</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.PasswordFor(m => Model.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirm Password" })
