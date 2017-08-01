@@ -117,22 +117,33 @@
          * ADD AND REMOVE MARKERS FROM MAP - SEARCH BOX
          *****************************************************/
         $("#searchBar").blur(function (event) {
+            // Define marker type
+            var markerType = "searchQuery";
+
             // Retrieve user search query
             var keywords = $("#searchBar").val();
 
-            $.ajax({
-                url: "/PlanTrip/LandmarksFromKeywordsJSON/",
-                type: "GET",
-                data: { "keywords": keywords },
-                dataType: "json"
+            // If user has typed search query, retrieve landmarks that are close matches
+            if (keywords !== "" && keywords !== "undefined") {
+                $.ajax({
+                    url: "/PlanTrip/LandmarksFromKeywordsJSON/",
+                    type: "GET",
+                    data: { "keywords": keywords },
+                    dataType: "json"
 
-            // If json data retrieval successful, display all markers on map corresponding to search query
-            }).done(function (data) {
-                gMarkers["searchQuery"] = data;
-                GMaps.prototype.addMarkersOfType("searchQuery");
-            });
+                    // If json data retrieval successful, display all markers on map corresponding to search query
+                }).done(function (data) {
+                    gMarkers[markerType] = data;
+                    GMaps.prototype.addMarkersOfType(markerType);
+                });
+            }
+            else {
+                // Otherwise, if search field is blank, remove all markers of type
+                if (markerType in realMarkers) {
+                    GMaps.prototype.removeMarkersOfType(markerType);
+                }
+            }
         });
-
 
         /**********************************************
         * ADD LANDMARK STOP TO THE "CURRENT TRIP" PANEL
