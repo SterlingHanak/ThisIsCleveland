@@ -61,10 +61,12 @@
                     <h3>Password</h3>
                 </div>
                 <div class="form-width2 col-sm-4">
-                    @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password"})
                     @Html.ValidationMessageFor(m => Model.Password, String.Empty, new { @class = "text-danger" })
+                    
                 </div>
             </div>
+            
 
         <!--PASSWORD-->
             <div class="row">
@@ -77,7 +79,11 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+           
+
+            <button type="submit" class="btn btn-primary btn-lg submit_button">Submit</button>
         }
     </div>
 </div>
+
+
