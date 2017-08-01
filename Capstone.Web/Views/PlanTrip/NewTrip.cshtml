@@ -13,13 +13,22 @@
             <h2>Filter By:</h2>
             @{
                 <p>
+                    <h5>Starting Point</h5>
+                    @Html.TextBox("startingPoint", String.Empty, new { @id = "startingPoint", @placeholder = "Starting Address" })
+                </p>
+                
+                <p>
                     <span>Radius (miles)</span>
                     @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
+                    <hr />
                 </p>
 
                     <p>
                         @Html.TextBox("search", String.Empty, new {@id = "searchBar", @placeholder = "Enter Search Terms" })
-                        <button class="clearFilter"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                        <br />
+                        <button id="displaySearchResults"><span class="glyphicon glyphicon-pushpin"></span><h5>Display Search Results</h5></button>
+                        <button id="clearSearch"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
+                        <hr />
                     </p>
 
                 foreach (string category in Model.Categories)
