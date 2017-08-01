@@ -44,40 +44,86 @@
 
 @*@#("~/Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg"*@
 
-<div class="row location-row">
-@for (int i = 0; i < Model.Landmarks.Count; i++)
+<div class="row">
+@foreach (Landmark location in Model.Landmarks)
 {
-    Landmark location = Model.Landmarks[i];
 
     if (location.Categories.Contains(Model.Category))
     {
         string avgRatingClass = location.AvgRating + "-rating";
         string relativeCostClass = location.RelativeCost + "-cost";
 
+        <div class="panel-group col-md-4 location-detail">
+            <a data-toggle="collapse" href="#collapse1">@location.Name</a>
+            <div id="collapse1" class="panel-collapse collapse">
+                <p class="panel-body">@location.Address</p>
+                <p class="panel-body"><span class="glyphicon glyphicon-phone-alt"></span> @location.PhoneNumber</p>
+                <p class="panel-body"><span class="glyphicon glyphicon-globe"></span> @location.Description</p>
+            </div>
+        </div>
+
+        //int rowMaxLength = 3;
+        //int numDivsInRow = 0;
+
+        @*<div class="row">
+            @{
+                for (int j = i;  j < Model.Landmarks.Count - 3 && numDivsInRow < rowMaxLength; j++, numDivsInRow++)
+                {
+                    <div class="col-md-4 location-detail">
+                        <a href="#" data-toggle="collapse" data-target=@("#collapse-" + j)>
+                            <img class="location-detail" src="#">
+                        </a>
+                    </div>
+                    numDivsInRow++;
+                }
+
+                for (int k = i; k >= Model.Landmarks.Count - 3 && k < Model.Landmarks.Count; k++)
+                {
+                    <div class="col-md-4 location-detail">
+                        <a href="#" data-toggle="collapse" data-target=@("#collapse-" + k)>
+                            <img class="location-detail" src="#">
+                        </a>
+                    </div>
+                    numDivsInRow++;
+                }
+
+                <div class="row">
+                    @{
+                        for (int m = 0; m < numDivsInRow; m++)
+                        {
+                            <div id=@("collapse-" + i) class="col-md-12 location-detail @avgRatingClass @relativeCostClass panel-collapse collapse">
+                                <p>@location.Address</p>
+                                <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
+                                <p>@location.Description</p>
+
+                                <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
+                                <button type="submit">Add To Trip</button>
+                            </div>
+                        }
+                    }
+                </div>
+            }
+        </div>*@
+
+
+
+    @*<div class="row">
         <div class="col-md-4 location-detail">
             <a href="#" data-toggle="collapse" data-target=@("#collapse-" + i)>
                 <img class="location-detail" src="~/Content/Images/Casino/Jack_Casino.jpg">
             </a>
         </div>
-
+    </div>
+    <div class="row">
         <div id=@("collapse-" + i) class="col-md-12 location-detail @avgRatingClass @relativeCostClass panel-collapse collapse">
-            @*<div class="panel-body">*@
                 <p>@location.Address</p>
                 <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
                 <p>@location.Description</p>
 
                 <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
                 <button type="submit">Add To Trip</button>
-            @*</div>*@
         </div>
-
-        @*<div class="col-md-4 panel-group location-detail @avgRatingClass @relativeCostClass">
-            <div class="panel panel-default">
-                    <a href="#collapse1">
-                    </a>
-            </div>
-
-        </div>*@    
+    </div>*@
     }
 }
 </div>
