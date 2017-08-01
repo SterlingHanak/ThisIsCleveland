@@ -10,15 +10,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
     <script src="~/Scripts/CategoryPageFilter.js" defer></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYxMPXOynYi4GV8fthCoCb7xwDirAAJU8"></script>
-    <script src="~/Scripts/gmaps.js" defer></script> 
+    <script src="~/Scripts/gmaps.js" defer></script>
     <script src="~/Scripts/MyTripPage.js" defer></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" style="background-color:#984B43; margin-bottom:0px">
         @Html.Action("GetAuthenticatedUser", "CityTours")
-        <div class="container-fluid" style="background-color: transparent;">
+        <div class="container-fluid" style="background-color:#984B43; ">
             <ul class="nav navbar-nav navbar">
                 <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home"></span></a></li>
                 <li class="dropdown">
@@ -37,28 +37,37 @@
             </ul>
         </div>
     </div>
-    <section style="margin-top: 120px;">
+    <section class="full_background">
         @RenderBody()
     </section>
-
 </body>
 </html>
-
-<footer>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <h4>About Us</h4>
-            <p>Cleveland Tours is the final capstone project of four .NET students while attending the Tech Elevator coding
-            bootcamp in Cleveland, Ohio.  This website does not own the rights to any of the images shown.</p>
+<div class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                
+                    <p><a href="#" class="login_register_color"><span class="glyphicon glyphicon-map-marker"></span> 7100 Euclid Ave #140, Cleveland, OH 44103 </a></p>
+                <p><a href="#" class="login_register_color"><span class="glyphicon glyphicon-map-marker"></span> 7100 Euclid Ave #140, Cleveland, OH 44103 </a></p>
+                
+            </div>
+            
+            <div class="col-sm-4 text-center" style="display:inline">
+                <h4>About Us</h4>
+                <p>
+                    Cleveland Tours is the final capstone project of four.<br />
+                    NET students while attending the Tech Elevator coding <br />
+                    bootcamp in Cleveland, Ohio.  This website does not own <br />the rights to any of the images shown.
+                </p>
+            </div>
+            <div class="col-sm-3 collaborators">
+                <h4>Collaborated By:</h4>
+                <p><a href=" =https://www.linkedin.com/in/launagreer/"><span class="login_register_color">Launa Greer</span></a></p>
+                <p><a href="https://www.linkedin.com/in/juna-khatri/"><span class="login_register_color">Juna Khatri</span></a></p>
+                <p><a href="https://www.linkedin.com/in/sterling-hanak/"><span class="login_register_color">Sterling Hanak</span></a></p>
+                <p><a href="https://www.linkedin.com/in/joshuarodriguez0917/"><span class="login_register_color">Joshua Rodriguez</span></a></p>
+            </div>
         </div>
-        <div class="col-md-3">
-            <h4>Collaborated By:</h4>
-            <p><a href=" =https://www.linkedin.com/in/launagreer/">Launa Greer</a></p>
-            <p><a href="https://www.linkedin.com/in/juna-khatri/">Juna Khatri</a></p>
-            <p><a href="https://www.linkedin.com/in/sterling-hanak/">Sterling Hanak</a></p>
-            <p><a href="https://www.linkedin.com/in/joshuarodriguez0917/">Joshua Rodriguez</a></p>
-        </div>
+        <p class="text-center">©2017 - All Rights Reserved.</p>
     </div>
-    <p>©2017 - All Rights Reserved.</p>
-</footer>
+</div>

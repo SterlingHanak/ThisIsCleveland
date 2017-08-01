@@ -1,6 +1,23 @@
 ﻿body {
-    background-color:black;
-    color:white;
+    /*color: white;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
+    opacity:0.8;*/
+    background-color:#233237;
+    height:500px;
+}
+
+.boxesPadding{
+    padding-bottom:20px;
+}
+
+
+
+html{
+    margin: 0px;
 }
 
 ul {
@@ -56,9 +73,11 @@ li {
     display: block;
 }
 
-footer {
-    margin-top: 30px;
+.footer {
+    /*margin-top: 20px;*/
     margin-bottom: 0px !important;
+    color:white;
+    background-color:#984B43;
 }
 
 /*Home View*/
@@ -123,7 +142,7 @@ div.home-info > p {
 }
 
 .navbar-nav{
-    background-color: transparent;
+    background-color: #984B43;
     font-weight:900;
     font-family:cursive;
 }
@@ -139,12 +158,27 @@ div.home-info > p {
 }
 
 .login-margin {
-    /*margin-top: 10%;*/
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-top: 8%;
+    margin-left: 30%;
+    margin-right: 30%;
     text-align: center;
-    background-color: #5B666B;
+    background-color: #233237;
+    opacity:0.8;
     border-radius: 10px 100px 10px 100px;
+    font-weight:bold;
+    padding-bottom: 30px;
+    padding-top: 20px;
+   
+}
+
+.full_background {
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size:100%;
+    background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
+    opacity: 0.8;    
 }
 
 ::-webkit-input-placeholder {
@@ -154,7 +188,9 @@ div.home-info > p {
     /*margin-top: 5%;*/
     margin-right: 10%;
     margin-left: 10%;
-    background-color: #5B666B;
+    background-color: #233237;
+    opacity: 0.8;
+    font-weight:bold;
     border-radius: 10px 150px 10px 140px;
     text-align: center;
 }
@@ -225,48 +261,22 @@ main {
     margin-left: 50px;
 }
 
-.login_Background {  
-    border-radius: 10px;
-    background-image: url("/Content/Images/travel_login.jpg");  
-}
-
 .submit_button{
    background-color: #5FB68C;
 }
 .login_register_color {
     color: #5FB68C;
+    font-size: 16px;
+}
+.collaborators{
+float: right;
+margin-right:-100px;
+display: inline;
+font-size: 16px;
 }
 
-/*Password meter*/
-#pass {
-    margin-left: 25%;
-    height: 45px;
-    width: 500px;
-    border-radius: 3px;
-    border: 1px solid grey;
-    padding: 10px;
-    font-size: 18px;
-}
+.footer_address{
+  float: left;
+  margin-left: -100px;
 
-#meter_wrapper {
-    border: 1px solid grey;
-    margin-left: 38%;
-    margin-top: 20px;
-    width: 200px;
-    height: 35px;
-    border-radius: 3px;
-}
-
-#meter {
-    width: 0px;
-    height: 35px;
-    border-radius:
-}
-
-#pass_type {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-left: 45%;
-    text-align: center;
-    color: grey;
 }
