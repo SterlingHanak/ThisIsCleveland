@@ -304,7 +304,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\MyTripPage.js" />
+    <Content Include="Scripts\MyTripsPage.js" />
+    <Content Include="Scripts\NewTripPage.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
