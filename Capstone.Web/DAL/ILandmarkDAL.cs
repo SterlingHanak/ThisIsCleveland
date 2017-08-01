@@ -14,6 +14,7 @@ namespace Capstone.Web.DAL
         List<Landmark> GetAllLandmarks();
         List<Landmark> GetAllLandmarksInCategory(string category);
         List<Landmark> GetAllLandmarksInTrip(int tripId);
+        List<Landmark> GetAllLandmarksFromKeywords(string keywords);
         List<string> GetLandmarkCategories(int landmarkId);
         Dictionary<string, Hours> GetLandmarkSchedule(int landmarkId);
     }

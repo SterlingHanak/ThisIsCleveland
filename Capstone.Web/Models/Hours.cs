@@ -8,7 +8,7 @@ namespace Capstone.Web.Models
 {
     public class Hours
     {
-        public DateTime TimeOpen { get; set; }
-        public DateTime TimeClosed { get; set; }
+        public string TimeOpen { get; set; }
+        public string TimeClosed { get; set; }
     }
 }

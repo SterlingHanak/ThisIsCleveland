@@ -59,6 +59,21 @@ namespace Capstone.Web.Controllers
         public ActionResult LandmarksInCategoryJSON(string category)
         {
             List<Landmark> landmarks = landmarkDAL.GetAllLandmarksInCategory(category);
+            foreach (Landmark landmark in landmarks)
+            {
+                landmark.Schedule = landmarkDAL.GetLandmarkSchedule(landmark.Id);
+            }
+            return Json(landmarks, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult LandmarksFromKeywordsJSON(string keywords)
+        {
+            List<Landmark> landmarks = landmarkDAL.GetAllLandmarksFromKeywords(keywords);
+            foreach (Landmark landmark in landmarks)
+            {
+                landmark.Schedule = landmarkDAL.GetLandmarkSchedule(landmark.Id);
+                landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
+            }
             return Json(landmarks, JsonRequestBehavior.AllowGet);
         }
 
