@@ -13,9 +13,9 @@
             lng: -81.6944
         });
 
-         /*****************************************************
-         * ADD AND REMOVE MARKERS FROM MAP - CATEGORY CHECKBOX
-         *****************************************************/
+        /*****************************************************
+        * FUNCTIONS: ADD AND REMOVE MARKERS FROM MAP
+        *****************************************************/
         var gMarkers = {};
         var realMarkers = {};
 
@@ -90,6 +90,15 @@
             realMarkers[categoryName] = [];
         }
 
+        /*****************************************************************
+        * CLICK EVENT - CATEGORY FILTER
+        * 
+        * Retrieves landmark data from given category following a checkbox
+        * click. Calls a method to add markers to map using this data. When
+        * checkbox is unchecked, calls a method to remove markers of that
+        * category.
+        ******************************************************************/
+
         $(".category").on("click", function () {
             // Retrieve user-selected category from checkbox
             var categoryName = event.target.name;
@@ -102,7 +111,7 @@
                     data: { "category": categoryName },
                     dataType: "json"
 
-                // If json data retrieval successful, display all markers on map corresponding to category
+                    // If json data retrieval successful, display all markers on map corresponding to category
                 }).done(function (data) {
                     gMarkers[categoryName] = data;
                     GMaps.prototype.addMarkersOfType(categoryName, categoryName);
@@ -113,35 +122,35 @@
             }
         });
 
-         /*****************************************************
-         * ADD AND REMOVE MARKERS FROM MAP - SEARCH BOX
-         *****************************************************/
-        $("#searchBar").blur(function (event) {
-            // Define marker type
-            var markerType = "searchQuery";
+        /****************************************************************
+        * CLICK EVENTS - SEARCH FILTER - GET LANDMARK DATA BY KEY WORDS
+        *****************************************************************/
+        // Define marker type
+        var markerType = "searchQuery";
+
+        $("#displaySearchResults").click(function (event) {
 
             // Retrieve user search query
             var keywords = $("#searchBar").val();
 
             // If user has typed search query, retrieve landmarks that are close matches
-            if (keywords !== "" && keywords !== "undefined") {
-                $.ajax({
-                    url: "/PlanTrip/LandmarksFromKeywordsJSON/",
-                    type: "GET",
-                    data: { "keywords": keywords },
-                    dataType: "json"
+            $.ajax({
+                url: "/PlanTrip/LandmarksFromKeywordsJSON/",
+                type: "GET",
+                data: { "keywords": keywords },
+                dataType: "json"
 
-                    // If json data retrieval successful, display all markers on map corresponding to search query
-                }).done(function (data) {
-                    gMarkers[markerType] = data;
-                    GMaps.prototype.addMarkersOfType(markerType);
-                });
-            }
-            else {
-                // Otherwise, if search field is blank, remove all markers of type
-                if (markerType in realMarkers) {
-                    GMaps.prototype.removeMarkersOfType(markerType);
-                }
+                // If json data retrieval successful, display all markers on map corresponding to search query
+            }).done(function (data) {
+                gMarkers[markerType] = data;
+                GMaps.prototype.addMarkersOfType(markerType);
+            });
+        });
+
+        $("#clearSearch").click(function (event) {
+            // Remove markers related to search if they exist
+            if (markerType in realMarkers) {
+                GMaps.prototype.removeMarkersOfType(markerType);
             }
         });
 

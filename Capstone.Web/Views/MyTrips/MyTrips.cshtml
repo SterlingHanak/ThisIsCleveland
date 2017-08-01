@@ -5,26 +5,36 @@
 }
 
 <h2>MyTrips</h2>
-@{
-    if (Model.Count == 0)
-    {
-        <h4>No Trips Saved</h4>
-    }
-    else
-    {
-        foreach (Trip t in Model)
-        {
-            <h4>@t.Name</h4>
-            <h4>Date of Travel: @t.TripDate</h4>
-            <p>@t.Description</p>
-            <h4>Sites</h4>
-            <ul>
-                @foreach (Landmark landmark in t.Landmarks)
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            @{
+                if (Model.Count == 0)
                 {
-                    <li>@landmark.Name</li>
+                    <h4>No Trips Saved</h4>
                 }
-            </ul>
-        }
-    }
-}
+                else
+                {
+                    <div id="accordion">
+                        @{
+                            for (int i = 0; i < Model.Count(); i++)
+                            {
+                                Trip t = Model[i];
+                                <h3>@(i + 1 + ": " + t.Name)</h3>
+                                <h4>Date of Travel: @t.TripDate.ToShortDateString()</h4>
+                                <p>@t.Description</p>
+                                <h4>Sites</h4>
+                            }
+                        }
+                    </div>
+                }
+            }
+        </div>
+        <div id ="#routeMap" class="col-lg-6" style="width: 500px;"></div>
+        <button>Walking</button>
+        <button>Driving</button>
+    </div>
+</div>
+
+
 
