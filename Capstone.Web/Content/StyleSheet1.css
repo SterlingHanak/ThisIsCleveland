@@ -169,7 +169,6 @@ div.home-info > p {
     font-weight:bold;
     padding-bottom: 30px;
     padding-top: 20px;
-   
 }
 
 .full_background {
@@ -288,4 +287,31 @@ font-size: 16px;
 .icon_size {
     font-size: 25px;
     color:white;
+}
+
+h1{
+    
+}
+
+.detail-container{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100%;
+    width:100%;
+    opacity:0;
+    transition:.5s ease;
+    background-color:crimson;
+}
+
+.detail-container:hover .overlay{
+    opacity:1;
 }
