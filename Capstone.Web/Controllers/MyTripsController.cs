@@ -24,6 +24,11 @@ namespace Capstone.Web.Controllers
 
         public ActionResult MyTrips()
         {
+            if (!base.IsAuthenticated)
+            {
+                RedirectToAction("Login", "Home");
+            }
+            
             // Get all trips associated with current user
             int currentUserId = userDAL.GetUserId(base.CurrentUser);
             List<Trip> allUserTrips = tripDAL.GetAllUserTrips(currentUserId);
