@@ -243,12 +243,13 @@ main {
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    left: -30px;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    margin-top: 5%;
+    color: white;
+    text-align: right;
 }
 
 .closebtn {
@@ -284,6 +285,14 @@ font-size: 16px;
     color:white;
 }
 
+.category-icon-div {
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
 h1 {
     font-family: Snell Roundhand, cursive;
 }
@@ -294,17 +303,17 @@ h1 {
     height:auto;
 }
 
-.overlay{
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    height:100%;
-    width:100%;
-    opacity:0;
-    transition:.5s ease;
-    background-color:crimson;
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #860038;
 }
 
 .location-detail:hover .overlay{
