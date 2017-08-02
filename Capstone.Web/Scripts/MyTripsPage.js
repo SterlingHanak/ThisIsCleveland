@@ -12,12 +12,13 @@
             lng: -81.6944
         });
 
-        $(".ui-accordion-header-active").accordion({
-            activate: function (event, ui) {}
+        $(".tripDiv").on("hover", function (event) {
+            $(this).css("background-color", "lightblue");
         });
 
-        $(".ui-accordion-header-active").on("accordionactivate", function (event, ui) {
-            alert("Hey!");
+        $(".tripDiv").on("click", function(event) {
+            // Get trip id
+            var tripId = $(this).attr("id");
         });
     }
 });

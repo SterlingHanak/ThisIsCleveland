@@ -33,10 +33,15 @@ namespace Capstone.Web.Controllers
             int currentUserId = userDAL.GetUserId(base.CurrentUser);
             List<Trip> allUserTrips = tripDAL.GetAllUserTrips(currentUserId);
 
-            // Assign landmarks to each trip
-            foreach (Trip t in allUserTrips)
+            // Assign landmarks to each trip and include landmark categories
+            for (int i = 0; i < allUserTrips.Count; i++)
             {
-                t.Landmarks = landmarkDAL.GetAllLandmarksInTrip(t.Id);
+                Trip trip = allUserTrips[i];
+                trip.Landmarks = landmarkDAL.GetAllLandmarksInTrip(trip.Id);
+                foreach (Landmark landmark in trip.Landmarks)
+                {
+                    landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
+                }
             }
 
             return View("MyTrips", allUserTrips);

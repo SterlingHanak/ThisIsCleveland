@@ -98,15 +98,18 @@
                     <p>
                         <h5>Name</h5>
                         <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
+                        @Html.ValidationMessageFor(m => Model.TripName)
                     </p>
 
                         <p>
                             <h5>Description</h5>
                             <textarea name="MyTripViewModel.TripDescription"></textarea>
+                            @Html.ValidationMessageFor(m => Model.TripDescription)
                         </p>
                         <p>
                             <h5>Date</h5>
                             <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            @Html.ValidationMessageFor(m => Model.TripDate)
                         </p>
 
                         <div id="stopContainer" class="row">

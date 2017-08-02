@@ -107,9 +107,11 @@ namespace Capstone.Web.Controllers
 
             // Assign trip landmarks selected by user and bound to ViewModel
             List<Landmark> landmarksInTrip = new List<Landmark>();
-            foreach (int landmarkId in model.SelectedLandmarkIds)
+            for (int i = 0; i < model.SelectedLandmarkIds.Length; i++)
             {
+                int landmarkId = model.SelectedLandmarkIds[i];
                 landmarksInTrip.Add(landmarkDAL.GetLandmark(landmarkId));
+                landmarksInTrip[i].Categories = landmarkDAL.GetLandmarkCategories(landmarkId);
             }
             trip.Landmarks = landmarksInTrip;
 

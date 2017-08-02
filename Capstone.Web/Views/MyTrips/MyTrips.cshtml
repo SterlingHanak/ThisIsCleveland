@@ -7,7 +7,50 @@
 <input id="MyTripsPgLocator" type="hidden" />
 
 <h2>MyTrips</h2>
+
+<div class="container-fluid" style="margin: 0px 10px; background-color: darkgray; padding-top: 10px; padding-bottom: 20px;">
+    @{
+        if (Model.Count == 0)
+        {
+            <h4>No Trips Saved</h4>
+        }
+        else
+        {
+            for (int i = 0; i < Model.Count; i++)
+            {
+                Trip trip = Model[i];
+                <div id=@(trip.Id) class="tripDiv col-md-4">
+                    @{ 
+                            string landmarkFolderName = trip.Landmarks[i].Categories[0].Replace(" ", String.Empty);
+                            string landmarkImgName = trip.Landmarks[i].Name.Replace(" ", "_") + ".jpg";
+                    }
+                    <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="max-height: 100%; max-width: 100%"/>
+                    <h3 class="text-center">@trip.Name</h3>
+                    <h4 class="text-center">@trip.TripDate.ToShortDateString()</h4>
+                </div>
+            }
+        }
+    }
+</div>
+
+<div class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px;">
+    <div class="col-md-12">
+        <div id="routeMap" style="height: 500px"></div>
+        <button style="color: black;">Walking</button>
+        <button style="color: black;">Driving</button>
+        <div id="tripDirections"></div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px;">
+    <h1>Directions</h1>
+</div>
+
+
+
+
 <div class="container-fluid" style="margin: 0px 10px;">
+
     <div class="col-md-6">
         @{
             if (Model.Count == 0)
@@ -22,9 +65,9 @@
                         {
                             Trip t = Model[i];
                             <h3 id=@(t.Id) style="background-color: aqua; border: 2px solid blue; padding: 5px;">@(i + 1 + ": " + t.Name + " | " + t.TripDate.ToShortDateString())</h3>
-                            <input id=@(t.Id + "-tripName") type="hidden" value=@t.Name />
-                            <input id=@(t.Id + "-tripDate") type="hidden" value=@t.TripDate.ToShortDateString()/>
                             <div>
+                                <input id=@(t.Id + "-tripName") type="hidden" value=@t.Name />
+                                <input id=@(t.Id + "-tripDate") type="hidden" value=@t.TripDate.ToShortDateString() />
                                 <h4>Date of Travel: @t.TripDate.ToShortDateString()</h4>
                                 <p>@t.Description</p>
                                 <h4>Sites</h4>
@@ -46,11 +89,5 @@
                 </div>
             }
         }
-    </div>
-    <div class="col-md-6">
-        <div id="routeMap" style="height: 500px"></div>
-        <button style="color: black;">Walking</button>
-        <button style="color: black;">Driving</button>
-        <div id="tripDirections"></div>
     </div>
 </div>
