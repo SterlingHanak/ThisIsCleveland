@@ -56,24 +56,24 @@
                 dataType: "json"
 
             }).done(function (data) {
-                var categoryIds = [];
+                categoryName = data;
                 for (var i = 0; i < data.length; i++)
                 {
        
-                    var name = data[i].Name;
-                    var address = data[i].Address;
+                    var name = Landmarks[i].Name;
+                    var address = data.Landmarks[i].Address;
                     var phoneNumber = data[i].PhoneNumber;
                     var description = data[i].Description;
                     var websiteUrl = data[i].WebsiteUrl;
                     var relativeCost = data[i].RelativeCost;
                     var avgRating = data[i].AvgRating;
-                    var newDiv = '<div>'
-                    $(newDiv).appendTo("#location-detail");
-                 
-                }
-               
 
+                    var newDiv = "<div>" + "<p>" + name + "<p>" + "</div>";
+                    $(newDiv).appendTo(".location-detail");
+
+                    //var newStopRow = "<div id='landmark" + $("#landmark_id").val() + "' style='background-color: yellow; border: 2px solid orange;'>" +
+                    //    "<span class='ui-icon ui-icon-caret-2-n-s' ></span>" + $("#landmark_name").html() + "</div>";                
+                }              
             }               
         )});
-
 });

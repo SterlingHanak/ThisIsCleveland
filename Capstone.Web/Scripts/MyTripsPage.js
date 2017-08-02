@@ -51,12 +51,15 @@
 
                     // Print directions
                     var directionsService = new google.maps.DirectionsService;
-                    var directionsRequest = new google.maps.DirectionsRequest;
-                    directionsRequest = {
+                    directionsService.route({
                         origin: new google.maps.LatLng(originLatitude, originLongitude),
-                        destination: new google.maps.LatLng(),
+                        destination: new google.maps.LatLng(destinationLatitude, destinationLongitude),
                         travelMode: 'DRIVING'
-                    };
+                    },
+                        //callback: function (e) {
+
+                        //};
+                    );
 
                     routeMap.getRoutes({
                         origin: [originLatitude, originLongitude],
