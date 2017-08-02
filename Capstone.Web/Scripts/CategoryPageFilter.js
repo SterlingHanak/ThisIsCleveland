@@ -47,4 +47,17 @@
 
 
 
+        $(".categoryIcons").on("click", function () {
+            var categoryName = $(this).val();
+
+            if ($(this).is(':clicked')) {
+                $.ajax({
+                    url: "/ThingsToDo/CategoryJson/",
+                    type: "GET",
+                    data: { "category": categoryName },
+                    dataType: "json"
+                });
+
+        }
+
 });

@@ -33,5 +33,18 @@ namespace Capstone.Web.Controllers
             return View("Category", viewModel);
         }
 
+        public ActionResult CategoryJson(string category)
+        {
+            ThingsToDoViewModel viewModel = new ThingsToDoViewModel();
+            viewModel.Landmarks = landmarkDAL.GetAllLandmarks();
+            foreach (Landmark landmark in viewModel.Landmarks)
+            {
+                landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
+
+            }
+            viewModel.Category = category;
+            return View("Category", JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

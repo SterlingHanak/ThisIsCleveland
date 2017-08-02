@@ -6,9 +6,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="category-jumbo">
-    @*<img East 4th />*@
+<div class="category-jumbo" @*style="background-image: url(../../Content/Images/East4thColor.jpg)"*@>
     <h2>@Model.Category</h2>
+</div>
+
+<div class="row category-icon-div" style="margin-left: 25%; margin-right: 25%; background-color: white; color: black;">
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="restaurantIcon" value="Restaurants"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Restaurant.jpg" /></a>
+        <p>Restaurants</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="schoolIcon" value="Schools"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/School.jpg" /></a>
+        <p>Schools</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="concertIcon" value="Concert Venues"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Concert.jpg" /></a>
+        <p>Concert Venues</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="theatreIcon" value="Theatres"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Theatre.jpg" /></a>
+        <p>Theatres</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" id="museumIcon" value="Libraries and Museums"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Museum.jpg" /></a>
+        <p>Museums and Library</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="sportIcon" value="Sports Venues"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Sports.jpg" /></a>
+        <p>Sport Venues</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="parkIcon" value="Nature and Parks"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Park.jpg"/></a>
+        <p>Parks</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="shoppingIcon" value="Shopping Centers"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Shopping.jpg" /></a>
+        <p>Shopping</p>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="categoryIcons" id="casinoIcon" value="Casino"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Casino.jpg" /></a>
+        <p>Casino</p>
+    </div>
 </div>
 
 <span id="openCatBtn" style="font-size: 30px; cursor: pointer;">&#9776; Filter Options</span>
