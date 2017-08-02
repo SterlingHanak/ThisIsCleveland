@@ -1,14 +1,17 @@
 ﻿@{
-   
+
 }
 
 <body class="home_background">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" @*data-interval="false*@>
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -63,28 +66,26 @@
         </p>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 home-box">
+
+        <div class="home-info row">
+            <div class="col-sm-4">
                 <img src="~/Content/Images/PlayhouseSquare.jpg" width="600" />
+                <div class="homepage_paragraph">
+                    <p class="homepage_info">Cleveland has a rich history that is showcased by its many famous locations; including Playhouse Square, the Agora Theatre and Ballroom, and the Rock and Roll Hall of Fame.</p>
+                </div>
             </div>
-            <div class="col-md-5 home-info">
-                <p>Cleveland has a rich history that is showcased by its many famous locations; including Playhouse Square, the Agora Theatre and Ballroom, and the Rock and Roll Hall of Fame.</p>
+
+            <div class="col-sm-4">
+                <img src="~/Content/Images/CavsFire.jpeg" width="600" />
+                <div class="homepage_paragraph">
+                    <p class="homepage_info">Cleveland is home to several top level teams and athletes; including the 2016 American League Champion Indians, current UFC Heavyweight Champion Stipe Miocic, and the 2016 NBA Champion Cavaliers.</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-5 home-info">
-                <p>Cleveland is home to several top level teams and athletes; including the 2016 American League Champion Indians, current UFC Heavyweight Champion Stipe Miocic, and the 2016 NBA Champion Cavaliers.</p>
-            </div>
-            <div class="col-md-7 home-box">
-                <img src="~/Content/Images/CavsFire.jpeg" id="middle-img" width="600" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-7 home-box">
+            <div class="col-sm-4">
                 <img src="~/Content/Images/Flats.jpg" width="600" />
-            </div>
-            <div class="col-md-5 home-info">
-                <p>Cleveland never sleeps with such a vibrant and exciting night life.  From the always popular East 4th Street all the way down to the Flats, there are countless entertaining bars and restaurants to behold.</p>
+                <div class="homepage_paragraph">
+                    <p class="homepage_info">Cleveland never sleeps with such a vibrant and exciting night life.  From the always popular East 4th Street all the way down to the Flats, there are countless entertaining bars and restaurants to behold.</p>
+                </div>
             </div>
         </div>
     </div>

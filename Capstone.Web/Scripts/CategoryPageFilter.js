@@ -8,72 +8,81 @@
             $("." + id).show();
 
         }
-       
+
         if (!checked) {
             $("." + id).hide();
         }
     });
 
-        $(".checkbox_relative_cost input").on("change", function () {
-            var id = $(this).parent().attr('id');
-            var checked = this.checked;
+    $(".checkbox_relative_cost input").on("change", function () {
+        var id = $(this).parent().attr('id');
+        var checked = this.checked;
 
-            if (checked) {
-                $("." + id).show();
+        if (checked) {
+            $("." + id).show();
 
-            }
-
-            if (!checked) {
-                $("." + id).hide();
-            }
-
-        });
-
-        $("#openCatBtn").on("click", function (event) {
-            document.getElementById("mySidenav").style.width = "250px";
-        });
-
-        $("#closeCatBtn").on("click", function (event) {
-            document.getElementById("mySidenav").style.width = "0px";
-        });
-
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
         }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+        if (!checked) {
+            $("." + id).hide();
         }
 
+    });
+
+    $("#openCatBtn").on("click", function (event) {
+        document.getElementById("mySidenav").style.width = "250px";
+    });
+
+    $("#closeCatBtn").on("click", function (event) {
+        document.getElementById("mySidenav").style.width = "0px";
+    });
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 
 
-        $(".categoryIcons").on("click", function () {
-            var categoryName = $(this).attr("value");
-            $.ajax({
-                url: "/ThingsToDo/CategoryJson/",
-                type: "GET",
-                data: { "category": categoryName },
-                dataType: "json"
 
-            }).done(function (data) {
-                categoryName = data;
-                for (var i = 0; i < data.length; i++)
-                {
+    $(".categoryIcons").on("click", function () {
        
-                    var name = Landmarks[i].Name;
-                    var address = data.Landmarks[i].Address;
-                    var phoneNumber = data[i].PhoneNumber;
-                    var description = data[i].Description;
-                    var websiteUrl = data[i].WebsiteUrl;
-                    var relativeCost = data[i].RelativeCost;
-                    var avgRating = data[i].AvgRating;
+        var categoryName = $(this).attr("value");
+        $.ajax({
+            url: "/ThingsToDo/CategoryJson/",
+            type: "GET",
+            data: { "category": categoryName },
+            dataType: "json"
 
-                    var newDiv = "<div>" + "<p>" + name + "<p>" + "</div>";
-                    $(newDiv).appendTo(".location-detail");
+        }).done(function (data) {
 
-                    //var newStopRow = "<div id='landmark" + $("#landmark_id").val() + "' style='background-color: yellow; border: 2px solid orange;'>" +
-                    //    "<span class='ui-icon ui-icon-caret-2-n-s' ></span>" + $("#landmark_name").html() + "</div>";                
-                }              
-            }               
-        )});
+
+            for (var i = 0; i < data.Landmarks.length; i++) {
+
+                var name = data.Landmarks[i].Name;
+                var address = data.Landmarks[i].Address;
+                var phoneNumber = data.Landmarks[i].PhoneNumber;
+                var description = data.Landmarks[i].Description;
+                var websiteUrl = data.Landmarks[i].WebsiteUrl;
+                var avgRating = data.Landmarks[i].AvgRating;
+                var relativeCost = data.Landmarks[i].RelativeCost;
+             
+                $(".location-detail").append("<div><p>" + name + "</p>" +
+                    "<p>" + address + "</p>" +
+                    "<p> " + phoneNumber + "</p>" +
+                    "<p> " + description + "</p>" +
+                    "<p>" + websiteUrl + "</p>" +
+                    "<p>" + avgRating + "</p>" +
+                    "<p>" + relativeCost + "</p>" +
+                    "</div>")
+
+            }
+
+
+        }
+
+            
+    )});
 });
