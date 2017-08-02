@@ -49,6 +49,23 @@
                     var destinationLatitude = data[i + 1].Latitude;
                     var destinationLongitude = data[i + 1].Longitude;
 
+                    // Draw directions
+                    routeMap.getRoutes({
+                        origin: [originLatitude, originLongitude],
+                        destination: [destinationLatitude, destinationLongitude],
+                        callback: function (e) {
+                            for (var j = 0; j < e.routes.length; j++) {
+                                var legs = e.routes[j];
+                                for (var k = 0; k < legs.length; k++) {
+                                    var steps = legs[k];
+                                    for (var m = 0; m < steps; m++) {
+                                        $("#routeDirections").append("<p>" + steps[m].instructions + "</p>");
+                                    }
+                                }
+                            }
+                        }
+                    });
+
                     // Draw route between current and next landmark
                     routeMap.drawRoute({
                         origin: [originLatitude, originLongitude],
@@ -56,11 +73,14 @@
                         travelMode: 'driving',
                         strokeColor: '#131540',
                         strokeOpacity: 0.6,
-                        strokeWeight: 6
+                        strokeWeight: 6,
+                        step: function (e) {
+                            $("#routeDirections").append("<p>" + e.instructions + "</p>");
+                        }
                     });
 
+                    // Plot marker on last landmark
                     if (i == data.length - 2) {
-                        // Plot marker on last landmark
                         var lastMarker = routeMap.addMarker({
                             lat: destinationLatitude,
                             lng: destinationLongitude,
