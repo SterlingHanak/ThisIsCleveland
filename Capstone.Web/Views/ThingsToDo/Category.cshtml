@@ -80,7 +80,6 @@
         @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10})
 </div>
 
-@*@#("~/Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg"*@
 
 <div class="row location-row">
     @foreach (Landmark location in Model.Landmarks)
@@ -93,10 +92,11 @@
 
             <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
                 <div class="detail-container">
-                    <h2>@location.Name</h2>
-                    <img style= "height: 300px; max-width: 100%;" src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg") />
+                    <h2 style="margin-top: 10px; font-size: 25px;">@location.Name</h2>
+                    <img style= "height: 275px; max-width: 100%;" class="img-fluid" src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg") />
                 </div>
-                <div class="overlay" style="color: white;">
+                <div class="overlay" style="color: #FDBB30; margin: auto;">
+                    <h2 style="margin-top: 10px; font-size: 25px;">@location.Name</h2>
                     <p>@location.Address</p>
                     <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
                     <p>@location.Description</p>
@@ -105,70 +105,6 @@
                     <button type="submit">Add To Trip</button>
                 </div>
             </div>
-
         }
     }
 </div>
-
-        @*<div class="row">
-            @{
-                for (int j = i;  j < Model.Landmarks.Count - 3 && numDivsInRow < rowMaxLength; j++, numDivsInRow++)
-                {
-                    <div class="col-md-4 location-detail">
-                        <a href="#" data-toggle="collapse" data-target=@("#collapse-" + j)>
-                            <img class="location-detail" src="#">
-                        </a>
-                    </div>
-                    numDivsInRow++;
-                }
-
-                for (int k = i; k >= Model.Landmarks.Count - 3 && k < Model.Landmarks.Count; k++)
-                {
-                    <div class="col-md-4 location-detail">
-                        <a href="#" data-toggle="collapse" data-target=@("#collapse-" + k)>
-                            <img class="location-detail" src="#">
-                        </a>
-                    </div>
-                    numDivsInRow++;
-                }
-
-                <div class="row">
-                    @{
-                        for (int m = 0; m < numDivsInRow; m++)
-                        {
-                            <div id=@("collapse-" + i) class="col-md-12 location-detail @avgRatingClass @relativeCostClass panel-collapse collapse">
-                                <p>@location.Address</p>
-                                <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
-                                <p>@location.Description</p>
-
-                                <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
-                                <button type="submit">Add To Trip</button>
-                            </div>
-                        }
-                    }
-                </div>
-            }
-        </div>*@
-
-
-
-    @*<div class="row">
-        <div class="col-md-4 location-detail">
-            <a href="#" data-toggle="collapse" data-target=@("#collapse-" + i)>
-                <img class="location-detail" src="~/Content/Images/Casino/Jack_Casino.jpg">
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div id=@("collapse-" + i) class="col-md-12 location-detail @avgRatingClass @relativeCostClass panel-collapse collapse">
-                <p>@location.Address</p>
-                <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
-                <p>@location.Description</p>
-
-                <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
-                <button type="submit">Add To Trip</button>
-        </div>
-    </div>*@
-    @*}
-}
-</div>*@
