@@ -94,6 +94,7 @@
             <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
                 <div class="detail-container">
                     <h2>@location.Name</h2>
+                    <img src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg")/>
                 </div>
                 <div class="overlay" style="color: white;">
                     <p>@location.Address</p>
