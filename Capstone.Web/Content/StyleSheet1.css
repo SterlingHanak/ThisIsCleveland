@@ -74,11 +74,12 @@ li {
 }
 
 .footer {
-    /*margin-top: 20px;*/
     margin-bottom: 0px !important;
     color:white;
-    /*background-color:#984B43;*/
+    background-color:#233237;
     margin-top:15px;
+    opacity:1 !important;
+    padding-top:20px;
 }
 
 /*Home View*/
@@ -182,7 +183,7 @@ div.home-info > p {
     background-position: center;
     background-size:100%;
     background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
-    opacity: 0.8;    
+    /*opacity: 0.9;*/    
 }
 
 ::-webkit-input-placeholder {

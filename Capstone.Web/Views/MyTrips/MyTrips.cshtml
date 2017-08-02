@@ -42,52 +42,6 @@
     </div>
 </div>
 
-<div class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px;">
+<div id="routeDirections"class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px; background-color: white; color: black;">
     <h1>Directions</h1>
-</div>
-
-
-
-
-<div class="container-fluid" style="margin: 0px 10px;">
-
-    <div class="col-md-6">
-        @{
-            if (Model.Count == 0)
-            {
-                <h4>No Trips Saved</h4>
-            }
-            else
-            {
-                <div id="accordion" style="background-color: ghostwhite; color: #585252; padding: 10px;">
-                    @{
-                        for (int i = 0; i < Model.Count(); i++)
-                        {
-                            Trip t = Model[i];
-                            <h3 id=@(t.Id) style="background-color: aqua; border: 2px solid blue; padding: 5px;">@(i + 1 + ": " + t.Name + " | " + t.TripDate.ToShortDateString())</h3>
-                            <div>
-                                <input id=@(t.Id + "-tripName") type="hidden" value=@t.Name />
-                                <input id=@(t.Id + "-tripDate") type="hidden" value=@t.TripDate.ToShortDateString() />
-                                <h4>Date of Travel: @t.TripDate.ToShortDateString()</h4>
-                                <p>@t.Description</p>
-                                <h4>Sites</h4>
-                                @{
-                                    var numLandmarks = t.Landmarks.Count();
-                                    <input id=@(t.Id + "-numLandmarks") type="hidden" value=@numLandmarks/>
-                                    for (int j = 0; j < numLandmarks; j++)
-                                    {
-                                        Landmark landmark = t.Landmarks[j];
-                                        <h4 id=@(t.Id + "-landmarkName-" + j)>landmark.Name</h4>
-                                        <input id=@(t.Id + "-landmarkAddress-" + j) type="hidden" value=@landmark.Address />
-                                        <input id=@(t.Id + "-landmarkLatitude-" + j) type="hidden" value=@landmark.Latitude />
-                                        <input id=@(t.Id + "-landmarkLongitude-" + j) type="hidden" value=@landmark.Longitude />
-                                    }
-                                }
-                            </div>
-                         }
-                    }
-                </div>
-            }
-        }
-    </div>
 </div>
