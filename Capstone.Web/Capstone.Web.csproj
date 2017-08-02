@@ -183,7 +183,7 @@
     <Content Include="Content\Images\LibrariesandMuseums\Rock_and_Roll_Hall_of_Fame.jpg" />
     <Content Include="Content\Images\NatureandParks\Big_Creek_Reservation.jpg" />
     <Content Include="Content\Images\NatureandParks\Cleveland_Metroparks_Zoo.jpg" />
-    <Content Include="Content\Images\NatureandParks\Edgewater_Park.jpeg" />
+    <Content Include="Content\Images\NatureandParks\Edgewater_Park.jpg" />
     <Content Include="Content\Images\NatureandParks\Greater_Cleveland_Aquarium.jpg" />
     <Content Include="Content\Images\NatureandParks\Huntington_Beach_and_Reservation.jpg" />
     <Content Include="Content\Images\NatureandParks\Rocky_River_Reservation.jpg" />
@@ -255,7 +255,7 @@
     <Content Include="Content\Images\SportsVenues\Progressive_Field.jpg" />
     <Content Include="Content\Images\SportsVenues\Quicken_Loans_Arena.jpg" />
     <Content Include="Content\Images\SunsetSkyline.jpg" />
-    <Content Include="Content\Images\Theatres\AllenTheater.jpg" />
+    <Content Include="Content\Images\Theatres\Allen_Theatre.jpg" />
     <Content Include="Content\Images\Theatres\Connor_Palace.jpg" />
     <Content Include="Content\Images\Theatres\Hanna_Theatre.jpg" />
     <Content Include="Content\Images\Theatres\Ohio_Theatre.jpg" />

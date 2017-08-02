@@ -78,7 +78,7 @@
                 $(".location-row").append("<div class='" + avgRating + "-rating " + relativeCost + "-cost col-md-4 location-detail'>" +
                     "<div class='detail-container'><h2 style='margin-top: 10px; font-size: 25px;'>" + name + "</h2>" +
                     "<img style='height: 275px; max-width: 100%;' class='img-fluid' src='../Content/Images/" +
-                    categoryName.replace(/\s/g, '') + "/" + name.replace(/\s/g, '_').replace(":", "") + ".jpg'/></div>" +
+                    categoryName.replace(/\s/g, '') + "/" + name.replace(/\s/g, '_').replace(":", "").replace("'", "") + ".jpg'/></div>" +
                     "<div class='overlay' style='color: #FDBB30; margin: auto;'>" +
                     "<h2 style='margin-top: 10px; font-size: 25px;'>" + name + "</h2>" +
                     "<p>" + address + "</p>" +
