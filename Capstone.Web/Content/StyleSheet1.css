@@ -322,7 +322,7 @@ h1 {
     background-color:crimson;
 }
 
-.detail-container:hover .overlay{
+.location-detail:hover .overlay{
     opacity:1;
 }
 

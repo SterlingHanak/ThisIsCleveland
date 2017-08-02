@@ -56,8 +56,10 @@
                 dataType: "json"
 
             }).done(function (data) {
+                var categoryIds = [];
                 for (var i = 0; i < data.length; i++)
                 {
+       
                     var name = data[i].Name;
                     var address = data[i].Address;
                     var phoneNumber = data[i].PhoneNumber;
@@ -65,6 +67,9 @@
                     var websiteUrl = data[i].WebsiteUrl;
                     var relativeCost = data[i].RelativeCost;
                     var avgRating = data[i].AvgRating;
+                    var newDiv = '<div>'
+                    $(newDiv).appendTo("#location-detail");
+                 
                 }
                
 

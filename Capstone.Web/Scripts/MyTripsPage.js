@@ -49,7 +49,15 @@
                     var destinationLatitude = data[i + 1].Latitude;
                     var destinationLongitude = data[i + 1].Longitude;
 
-                    // Draw directions
+                    // Print directions
+                    var directionsService = new google.maps.DirectionsService;
+                    var directionsRequest = new google.maps.DirectionsRequest;
+                    directionsRequest = {
+                        origin: new google.maps.LatLng(originLatitude, originLongitude),
+                        destination: new google.maps.LatLng(),
+                        travelMode: 'DRIVING'
+                    };
+
                     routeMap.getRoutes({
                         origin: [originLatitude, originLongitude],
                         destination: [destinationLatitude, destinationLongitude],
