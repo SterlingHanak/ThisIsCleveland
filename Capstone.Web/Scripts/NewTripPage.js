@@ -52,7 +52,7 @@
                     click: function (event) {
                         var addressLine1 = event.customAddress.substring(0, event.customAddress.indexOf(", "));
                         var addressLine2 = event.customAddress.substring(event.customAddress.indexOf(", ") + 2);
-                        var landmarkPicName = categoryName.replace(/\s/g, '') + "/" + event.landmarkName.replace(/\s/g, '_');
+                        var landmarkPicName = categoryName.replace(/\s/g, '') + "/" + event.landmarkName.replace(/\s/g, '_').replace(":", "").replace("'", "");
 
                         $("#landmark_pic").attr("src", "../Content/Images/" + landmarkPicName + ".jpg");
                         $("#landmark_name").html(event.landmarkName);
