@@ -27,7 +27,7 @@
                 $("." + id).hide();
             }
 
-    });
+        });
 
         $("#openCatBtn").on("click", function (event) {
             document.getElementById("mySidenav").style.width = "250px";
@@ -48,16 +48,27 @@
 
 
         $(".categoryIcons").on("click", function () {
-            var categoryName = $(this).val();
+            var categoryName = $(this).attr("value");
+            $.ajax({
+                url: "/ThingsToDo/CategoryJson/",
+                type: "GET",
+                data: { "category": categoryName },
+                dataType: "json"
 
-            if ($(this).is(':clicked')) {
-                $.ajax({
-                    url: "/ThingsToDo/CategoryJson/",
-                    type: "GET",
-                    data: { "category": categoryName },
-                    dataType: "json"
-                });
+            }).done(function (data) {
+                for (var i = 0; i < data.length; i++)
+                {
+                    var name = data[i].Name;
+                    var address = data[i].Address;
+                    var phoneNumber = data[i].PhoneNumber;
+                    var description = data[i].Description;
+                    var websiteUrl = data[i].WebsiteUrl;
+                    var relativeCost = data[i].RelativeCost;
+                    var avgRating = data[i].AvgRating;
+                }
+               
 
-        }
+            }               
+        )});
 
 });
