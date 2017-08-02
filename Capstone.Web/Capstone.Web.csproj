@@ -164,6 +164,13 @@
     <Content Include="Content\Images\NatureAndParks\Huntington_Beach_and_Reservation.jpg" />
     <Content Include="Content\Images\NatureAndParks\Rocky_River_Reservation.jpg" />
     <Content Include="Content\Images\PlayhouseSquare.jpg" />
+    <Content Include="Content\Images\ProjectExtras\AHAFunTimes.jpg" />
+    <Content Include="Content\Images\ProjectExtras\EdgewaterParkFun.jpg" />
+    <Content Include="Content\Images\ProjectExtras\EdgewaterParkFun2.jpg" />
+    <Content Include="Content\Images\ProjectExtras\FunTimes1.jpg" />
+    <Content Include="Content\Images\ProjectExtras\FunTimes2.jpg" />
+    <Content Include="Content\Images\ProjectExtras\NightFunTimes.jpg" />
+    <Content Include="Content\Images\ProjectExtras\WaterFunTimes.jpg" />
     <Content Include="Content\Images\Restaurants\Barrio.jpg" />
     <Content Include="Content\Images\Restaurants\Blue_Point_Grille.jpg" />
     <Content Include="Content\Images\Restaurants\Brasa_Grill_Brazilian_Steakhouse.jpg" />
@@ -367,7 +374,6 @@
     <Content Include="Views\ThingsToDo\Category.cshtml" />
     <Content Include="Views\MyTrips\MyTrips.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Shared\Home_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
