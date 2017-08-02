@@ -48,7 +48,7 @@
                     var marker = routeMap.addMarker({
                         lat: originLatitude,
                         lng: originLongitude,
-                        title: "#" + (i + 1) + ": " + data[0].Name,
+                        title: "#" + (i + 1) + ": " + data[i].Name,
                         icon: "/Content/Markers/" + categoryName.replace(/\s/g, '') + "_marker.png",
                     });
 
