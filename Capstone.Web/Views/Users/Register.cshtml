@@ -47,6 +47,7 @@
                 </div>
                 <div class="form-width2 col-sm-4">
                     @Html.TextBoxFor(m => Model.Username, new { @class = "form-control", @placeholder = "Username" })
+                   
                     @Html.ValidationMessageFor(m => Model.Username, String.Empty, new { @class = "text-danger" })
                 </div>
             </div>
@@ -56,14 +57,17 @@
                 <div class="form-group col-sm-4 text-right">
                 </div>
                 <div class="form-width2 col-sm-4">
-                    @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password"})
-                    @Html.ValidationMessageFor(m => Model.Password, String.Empty, new { @class = "text-danger" })
-                    
+                    <div id="content">
+                        <div id="register">
+                            @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Password", @id = "password" })
+                            <span id="result"></span>
+                            @Html.ValidationMessageFor(m => Model.Password, String.Empty, new { @class = "text-danger" })
+                        </div>
+                    </div>
                 </div>
-              
             </div>
-            
 
+           
         <!--PASSWORD-->
             <div class="row">
                 <div class="form-group col-sm-4 text-right">
@@ -73,8 +77,6 @@
                     @Html.ValidationMessageFor(m => Model.ConfirmPassword, String.Empty, new { @class = "text-danger" })
                 </div>
             </div>
-
-           
 
             <button type="submit" class="btn btn-primary btn-lg submit_button">Submit</button>
         }
