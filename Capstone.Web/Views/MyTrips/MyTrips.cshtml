@@ -4,36 +4,53 @@
     ViewBag.Title = "MyTrips";
 }
 
-<input id="MyTripsPgLocator" type="hidden"/>
+<input id="MyTripsPgLocator" type="hidden" />
 
 <h2>MyTrips</h2>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-            @{
-                if (Model.Count == 0)
-                {
-                    <h4>No Trips Saved</h4>
-                }
-                else
-                {
-                    <div id="accordion">
-                        @{
-                            for (int i = 0; i < Model.Count(); i++)
-                            {
-                                Trip t = Model[i];
-                                <h3>@(i + 1 + ": " + t.Name)</h3>
+<div class="container-fluid" style="margin: 0px 10px;">
+    <div class="col-md-6">
+        @{
+            if (Model.Count == 0)
+            {
+                <h4>No Trips Saved</h4>
+            }
+            else
+            {
+                <div id="accordion" style="background-color: ghostwhite; color: #585252; padding: 10px;">
+                    @{
+                        for (int i = 0; i < Model.Count(); i++)
+                        {
+                            Trip t = Model[i];
+                            <h3 id=@(t.Id) style="background-color: aqua; border: 2px solid blue; padding: 5px;">@(i + 1 + ": " + t.Name + " | " + t.TripDate.ToShortDateString())</h3>
+                            <input id=@(t.Id + "-tripName") type="hidden" value=@t.Name />
+                            <input id=@(t.Id + "-tripDate") type="hidden" value=@t.TripDate.ToShortDateString()/>
+                            <div>
                                 <h4>Date of Travel: @t.TripDate.ToShortDateString()</h4>
                                 <p>@t.Description</p>
                                 <h4>Sites</h4>
-                            }
-                        }
-                    </div>
-                }
+                                @{
+                                    var numLandmarks = t.Landmarks.Count();
+                                    <input id=@(t.Id + "-numLandmarks") type="hidden" value=@numLandmarks/>
+                                    for (int j = 0; j < numLandmarks; j++)
+                                    {
+                                        Landmark landmark = t.Landmarks[j];
+                                        <h4 id=@(t.Id + "-landmarkName-" + j)>landmark.Name</h4>
+                                        <input id=@(t.Id + "-landmarkAddress-" + j) type="hidden" value=@landmark.Address />
+                                        <input id=@(t.Id + "-landmarkLatitude-" + j) type="hidden" value=@landmark.Latitude />
+                                        <input id=@(t.Id + "-landmarkLongitude-" + j) type="hidden" value=@landmark.Longitude />
+                                    }
+                                }
+                            </div>
+                         }
+                    }
+                </div>
             }
-        </div>
-        <div id ="#routeMap" class="col-lg-6" style="width: 500px;"></div>
-        <button>Walking</button>
-        <button>Driving</button>
+        }
+    </div>
+    <div class="col-md-6">
+        <div id="routeMap" style="height: 500px"></div>
+        <button style="color: black;">Walking</button>
+        <button style="color: black;">Driving</button>
+        <div id="tripDirections"></div>
     </div>
 </div>
