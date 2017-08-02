@@ -77,6 +77,16 @@ namespace Capstone.Web.Controllers
             return Json(landmarks, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult LandmarksInTripJSON(int tripId)
+        {
+            List<Landmark> landmarksInTrip = landmarkDAL.GetAllLandmarksInTrip(tripId);
+            foreach (Landmark landmark in landmarksInTrip)
+            {
+                landmark.Categories = landmarkDAL.GetLandmarkCategories(landmark.Id);
+            }
+            return Json(landmarksInTrip, JsonRequestBehavior.AllowGet);
+        }
+
         private MyTripViewModel PopulateMyTripViewModel()
         {
             MyTripViewModel myTripViewModel = new MyTripViewModel();
