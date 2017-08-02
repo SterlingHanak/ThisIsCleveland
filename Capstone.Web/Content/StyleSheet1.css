@@ -149,7 +149,7 @@ div.home-info > p {
 }
 
 .navbar-nav{
-    background-color: #984B43;
+    background-color: #18121E;
     font-weight:900;
     font-family:cursive;
 }
@@ -187,8 +187,8 @@ div.home-info > p {
     /*opacity: 0.9;*/    
 }
 
-.home_background{
-
+.home_background {
+    background-image: url('Images/ProjectExtras/patrick-tomasso-208114.jpg');
 }
 
 ::-webkit-input-placeholder {
@@ -351,7 +351,7 @@ h1 {
     font-size: larger;
 }
 .shared_navbar {
-  background-color:#984B43;
+  background-color:#18121E;
    height:60px;
    font-size: 20px;
    margin-right: 20px;
