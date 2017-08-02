@@ -13,13 +13,14 @@
     <script src="~/Scripts/gmaps.js" defer></script>
     <script src="~/Scripts/NewTripPage.js" defer></script>
     <script src="~/Scripts/MyTripsPage.js" defer></script>
+    <script src="~/Scripts/passwordValidation.js" defer></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="navbar" style="background-color:#984B43; margin-bottom:0px">
         @Html.Action("GetAuthenticatedUser", "CityTours")
-        <div class="container-fluid" style="background-color:#984B43; ">
+        <div class="container-fluid shared_navbar">
             <ul class="nav navbar-nav navbar">
                 <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home"></span></a></li>
                 <li>@Html.ActionLink("Things To Do", "Category", "ThingsToDo")</li>
@@ -48,20 +49,20 @@
             </div>
             <div class="col-sm-4 col-sm-offset-1">
 
-                <p class="login_register_color" style="color:white"><span class="glyphicon glyphicon-map-marker icon_size">  &nbsp;</span>  7100 Euclid Ave #140, Cleveland, OH 44103</p>
+                <p class="login_register_color"style="color:white"><span class="glyphicon glyphicon-map-marker icon_size">  &nbsp;</span>  7100 Euclid Ave #140, Cleveland, OH 44103</p>
                 <p class="login_register_color"style="color:white"><span class="glyphicon glyphicon-earphone icon_size"> &nbsp; </span>877-606-3203</p>
-                <p class="login_register_color"style="color:white"><span class="glyphicon glyphicon-envelope icon_size"> &nbsp; </span>hello@techelevator.com</p>
-
+                <p class="login_register_color"style="color:white"><span class="glyphicon glyphicon-envelope icon_size"> &nbsp; </span>hello@techelevator.com</p>               
             </div>
 
             <div class="col-sm-3 collaborators">
                 <h4>Collaborated By:</h4>
-                <p><a href=" =https://www.linkedin.com/in/launagreer/"><span class="login_register_color">Launa Greer</span></a></p>
+                <p><a href="https://www.linkedin.com/in/launagreer/"><span class="login_register_color">Launa Greer</span></a></p>
                 <p><a href="https://www.linkedin.com/in/juna-khatri/"><span class="login_register_color">Juna Khatri</span></a></p>
                 <p><a href="https://www.linkedin.com/in/sterling-hanak/"><span class="login_register_color">Sterling Hanak</span></a></p>
                 <p><a href="https://www.linkedin.com/in/joshuarodriguez0917/"><span class="login_register_color">Joshua Rodriguez</span></a></p>
             </div>
         </div>
         <p>©2017 - All Rights Reserved.</p>
+        
     </div>
 </div>
