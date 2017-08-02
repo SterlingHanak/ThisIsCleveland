@@ -44,26 +44,32 @@
 
 @*@#("~/Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg"*@
 
-<div class="row">
-@foreach (Landmark location in Model.Landmarks)
-{
-
-    if (location.Categories.Contains(Model.Category))
+<div class="row location-row">
+    @foreach (Landmark location in Model.Landmarks)
     {
-        string avgRatingClass = location.AvgRating + "-rating";
-        string relativeCostClass = location.RelativeCost + "-cost";
+        if (location.Categories.Contains(Model.Category))
+        {
 
-        <div class="panel-group col-md-4 location-detail">
-            <a data-toggle="collapse" href="#collapse1">@location.Name</a>
-            <div id="collapse1" class="panel-collapse collapse">
-                <p class="panel-body">@location.Address</p>
-                <p class="panel-body"><span class="glyphicon glyphicon-phone-alt"></span> @location.PhoneNumber</p>
-                <p class="panel-body"><span class="glyphicon glyphicon-globe"></span> @location.Description</p>
+            string avgRatingClass = location.AvgRating + "-rating";
+            string relativeCostClass = location.RelativeCost + "-cost";
+
+            <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
+                <div class="detail-container">
+                    <h2>@location.Name</h2>
+                </div>
+                <div class="overlay" style="color: white;">
+                    <p>@location.Address</p>
+                    <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
+                    <p>@location.Description</p>
+
+                    <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
+                    <button type="submit">Add To Trip</button>
+                </div>
             </div>
-        </div>
 
-        //int rowMaxLength = 3;
-        //int numDivsInRow = 0;
+        }
+    }
+</div>
 
         @*<div class="row">
             @{
@@ -124,6 +130,6 @@
                 <button type="submit">Add To Trip</button>
         </div>
     </div>*@
-    }
+    @*}
 }
-</div>
+</div>*@
