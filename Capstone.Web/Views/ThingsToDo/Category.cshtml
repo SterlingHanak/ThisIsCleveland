@@ -28,7 +28,7 @@
         <p>Theatres</p>
     </div>
     <div class="col-md-4">
-        <a href="#" id="museumIcon" value="Libraries and Museums"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Museum.jpg" /></a>
+        <a href="#" class="categoryIcons"  id ="museumIcon" value="Libraries and Museums"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Museum.jpg" /></a>
         <p>Museums and Library</p>
     </div>
     <div class="col-md-4">
@@ -94,6 +94,7 @@
             <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
                 <div class="detail-container">
                     <h2>@location.Name</h2>
+                    <img src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg")/>
                 </div>
                 <div class="overlay" style="color: white;">
                     <p>@location.Address</p>
