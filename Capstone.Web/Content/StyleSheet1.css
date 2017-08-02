@@ -95,13 +95,14 @@ li {
 
 .carousel-headline {
     position: absolute;
-    bottom: 50%;
-    left: 12%;
+    bottom: 62%;
+    left: 16%;
     color: white;
-    font-size: 110px;
+    font-size: 130px;
     text-align: center;
     text-shadow: 7px 5px 7px #333;
-    font-family: Rockwell
+    font-family:'Copperplate Gothic';
+    font-weight:400;
 }
 
 .carousel-indicators {
@@ -184,6 +185,10 @@ div.home-info > p {
     background-size:100%;
     background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
     /*opacity: 0.9;*/    
+}
+
+.home_background{
+
 }
 
 ::-webkit-input-placeholder {
