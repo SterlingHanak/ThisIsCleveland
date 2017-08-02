@@ -30,12 +30,19 @@
                 routeMap.setCenter(data[0].Latitude, data[0].Longitude);
 
                 for (var i = 0; i < data.length - 1; i++) {
+                    // Print starting location name to Directions div
+                    $('#routeDirections').append("<h4>" + data[i].Name + " to " + data[data.length - 1].Name + "</h4>");
+                    //$('#routeDirections').append("<div id='" + "waypoint-" + i + "'></div>");
+
                     // Current landmark coordinates
                     var originLatitude = data[i].Latitude;
                     var originLongitude = data[i].Longitude;
+                    var destinationLatitude = data[i + 1].Latitude;
+                    var destinationLongitude = data[i + 1].Longitude;
 
                     // Retrieve category name of current landmark
                     var categoryName = data[i].Categories[i];
+
 
                     // Add marker to current landmark
                     var marker = routeMap.addMarker({
@@ -45,35 +52,13 @@
                         icon: "/Content/Markers/" + categoryName.replace(/\s/g, '') + "_marker.png",
                     });
 
-                    // Next landmark coordinates
-                    var destinationLatitude = data[i + 1].Latitude;
-                    var destinationLongitude = data[i + 1].Longitude;
-
-                    // Print directions
-                    var directionsService = new google.maps.DirectionsService;
-                    directionsService.route({
-                        origin: new google.maps.LatLng(originLatitude, originLongitude),
-                        destination: new google.maps.LatLng(destinationLatitude, destinationLongitude),
-                        travelMode: 'DRIVING'
-                    },
-                        //callback: function (e) {
-
-                        //};
-                    );
-
-                    routeMap.getRoutes({
+                    // Print direction step
+                    routeMap.travelRoute({
                         origin: [originLatitude, originLongitude],
                         destination: [destinationLatitude, destinationLongitude],
-                        callback: function (e) {
-                            for (var j = 0; j < e.routes.length; j++) {
-                                var legs = e.routes[j];
-                                for (var k = 0; k < legs.length; k++) {
-                                    var steps = legs[k];
-                                    for (var m = 0; m < steps; m++) {
-                                        $("#routeDirections").append("<p>" + steps[m].instructions + "</p>");
-                                    }
-                                }
-                            }
+                        travelMode: 'driving',
+                        step: function (e) {
+                            $('#routeDirections').append('<p>' + e.instructions + '</p>');
                         }
                     });
 
@@ -85,9 +70,6 @@
                         strokeColor: '#131540',
                         strokeOpacity: 0.6,
                         strokeWeight: 6,
-                        step: function (e) {
-                            $("#routeDirections").append("<p>" + e.instructions + "</p>");
-                        }
                     });
 
                     // Plot marker on last landmark
