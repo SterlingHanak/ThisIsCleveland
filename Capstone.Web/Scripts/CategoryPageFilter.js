@@ -77,15 +77,15 @@
 
                 $(".location-row").append("<div class='" + avgRating + "-rating " + relativeCost + "-cost col-md-4 location-detail'>" +
                     "<div class='detail-container'><h2 style='margin-top: 10px; font-size: 25px;'>" + name + "</h2>" +
-                    "<img style='height: 275px; max-width: 100%;' class='img-fluid' src='../Content/Images/" +
+                    "<img class='img-fluid category-detail-img' src='../Content/Images/" +
                     categoryName.replace(/\s/g, '') + "/" + name.replace(/\s/g, '_').replace(":", "").replace("'", "") + ".jpg'/></div>" +
                     "<div class='overlay' style='color: #FDBB30; margin: auto;'>" +
                     "<h2 style='margin-top: 10px; font-size: 25px;'>" + name + "</h2>" +
                     "<p>" + address + "</p>" +
                     "<p><span class='glyphicon glyphicon-phone-alt'></span> " + phoneNumber + "</p>" +
                     "<p> " + description + "</p>" +
-                    "<p><span class='glyphicon glyphicon-globe'></span> " + websiteUrl + "</p></div>" +
-                    "<button type='submit'>Add To Trip</button>");
+                    "<p><span class='glyphicon glyphicon-globe'></span> " + websiteUrl + "</p>" +
+                    "<button type='submit'>Add To Trip</button></div></div>");
             }
         }            
     )});
