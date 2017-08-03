@@ -219,11 +219,7 @@ li {
 
 /*CATEGORY VIEW*/
 .category-jumbo {
-    border: ridge;
-    border-color: #860038;
-    border-radius: 6px;
     text-align: center;
-    background-color: #860038;
     margin-bottom: 30px;
     margin-left: 10%;
     margin-right: 10%;
@@ -239,9 +235,15 @@ main {
 }
 
 .category-jumbo > h2 {
-    font-size: 80px;
+    font-size: 90px;
+    font-weight: bold;
     vertical-align: central;
     color: #FDBB30;
+    text-shadow: 20px 12px 12px #111;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    right: 15%;
 }
 
 .location-detail {
@@ -251,6 +253,7 @@ main {
     color: #FDBB30;
     height: 350px;
     text-align: center;
+    padding: 0px !important;
 }
 
 .sidenav {
@@ -302,7 +305,10 @@ font-size: 16px;
 }
 
 .category-body {
-    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+    background-image: url('Images/HomepageBackground/paul-299941.jpg');
+    background-size: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .category-icon-div {
