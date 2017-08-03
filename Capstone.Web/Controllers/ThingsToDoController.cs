@@ -36,13 +36,7 @@ namespace Capstone.Web.Controllers
         public ActionResult CategoryJson(string category)
         {
             ThingsToDoViewModel viewModel = new ThingsToDoViewModel();
-            //viewModel.Landmarks = landmarkDAL.GetAllLandmarks();
             viewModel.Landmarks = landmarkDAL.GetAllLandmarksInCategory(category);
-            //foreach (Landmark landmark in viewModel.Landmarks)
-            //{
-            //    landmark.Categories = landmarkDAL.GetAllLandmarksInCategory(category);
-
-            //}
             viewModel.Category = category;
             return Json(viewModel, JsonRequestBehavior.AllowGet);
         }

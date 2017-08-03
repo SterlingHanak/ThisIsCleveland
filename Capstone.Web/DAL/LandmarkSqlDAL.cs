@@ -16,8 +16,8 @@ namespace Capstone.Web.DAL
 
         // Queries for retrieving Landmark objects
         const string SQL_GetLandmark = "SELECT * FROM landmark WHERE id = @landmarkId;";
-        const string SQL_GetAllLandmarks = "SELECT * FROM landmark;";
-        const string SQL_GetAllLandmarksInCategory = "SELECT * FROM landmark JOIN landmark_category ON landmark_category.landmark_id = landmark.id JOIN category ON category.id = landmark_category.category_id WHERE category.name = @category;";
+        const string SQL_GetAllLandmarks = "SELECT * FROM landmark ORDER BY name;";
+        const string SQL_GetAllLandmarksInCategory = "SELECT * FROM landmark JOIN landmark_category ON landmark_category.landmark_id = landmark.id JOIN category ON category.id = landmark_category.category_id WHERE category.name = @category ORDER BY landmark.name;";
         const string SQL_GetAllLandmarksInTrip = "SELECT * FROM landmark JOIN trip_landmark ON trip_landmark.landmark_id = landmark.id WHERE trip_landmark.trip_id = @tripId;";
         const string SQL_GetAllLandmarksFromKeywords = "SELECT * FROM landmark LEFT JOIN park ON park.landmark_id = landmark.id LEFT JOIN park_activity ON park_activity.park_id = park.id LEFT JOIN restaurant ON restaurant.landmark_id = landmark.id LEFT JOIN landmark_category ON landmark_category.landmark_id = landmark.id LEFT JOIN category ON category.id = landmark_category.category_id WHERE LOWER(landmark.name) LIKE @search OR LOWER(landmark.address) LIKE @search OR LOWER(landmark.description) LIKE @search OR LOWER(park_activity.activity) LIKE @search OR LOWER(restaurant.cuisine_type) LIKE @search OR LOWER(category.name) LIKE @search;";
 

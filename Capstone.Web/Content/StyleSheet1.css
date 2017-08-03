@@ -13,8 +13,6 @@
     padding-bottom:20px;
 }
 
-
-
 html, body {
     max-width: 100% !important; 
     overflow-x: hidden !important;
@@ -112,15 +110,15 @@ li {
 
 .home-info-bar {
     text-align: center;
-    font-size: 220%;
-    background-color: #18121E;
+    font-size: 260%;
+    /*background-color: #18121E;*/
     color: white;
     padding: 100px;
 }
 
 .home-info {
-    padding-top:150px;
-    padding-bottom:150px;
+    padding-top:0px;
+    padding-bottom:100px;
 }
 
 .about_headers{
@@ -134,10 +132,16 @@ li {
     font-size:130%;
     text-align:center;
     font-weight:bold;
+    background-color:#18121E;
+    opacity:0.8;
 }
 
 .about_background {
-    background-color: #18121E;
+    /*background-color: #18121E !important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-repeat:repeat-y !important;
 }
 
 .homepage_paragraph{
@@ -145,9 +149,10 @@ li {
     font-weight:bold;
     height:150px;
     font-size:22px;
-    opacity:0.9;
+    /*opacity:0.9;*/
     text-align:center;
-    background-color:#18121E;
+    /*background-color:#18121E;*/
+    padding-top:10px;
 }
 
 .navbar-nav{
@@ -185,12 +190,16 @@ li {
     background-size: cover;
     background-position: center;
     background-size:100%;
-    background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
+    background-image: url('Images/5284805606_34a2f9f5a3_o.jpg') !important;
     /*opacity: 0.9;*/    
 }
 
 .home_background {
-    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y !important;
 }
 
 ::-webkit-input-placeholder {
@@ -207,7 +216,7 @@ li {
     text-align: center;
     padding-bottom:10px;
     padding-top:10px;
-    
+    background-repeat:no-repeat
 }
 
 /*NEW TRIP*/
