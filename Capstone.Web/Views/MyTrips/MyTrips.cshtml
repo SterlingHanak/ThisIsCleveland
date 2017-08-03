@@ -10,7 +10,7 @@
 
 <h2 style="color: white;" class="text-center">MyTrips</h2>
 
-<div class="container-fluid" style="margin: 10px; background-color: darkgray; padding-top: 10px; padding-bottom: 20px; width:100%; height: 300px;">
+<div class="container-fluid pre-scrollable" style="margin: 10px; background-color: darkgray; padding-top: 10px; padding-bottom: 20px; width:100%; height: 300px;">
     @{
         if (Model.Count == 0)
         {
@@ -25,7 +25,7 @@
                     continue;
                 }
                 Trip trip = Model[i];
-                <div id=@(trip.Id) class="container-fluid tripDiv" style="height: 50%;margin: 0px;">
+                <div id=@(trip.Id) class="container-fluid tripDiv" style="height: 50%;margin: 0px; padding: 20px;">
                     @{
                         string landmarkFolderName = trip.Landmarks[0].Categories[0].Replace(" ", String.Empty);
                         string landmarkImgName = trip.Landmarks[0].Name.Replace(" ", "_") + ".jpg";
@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="col-sm-3">
 
-                            <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="max-height: 100%; max-width: 100%" class="text-left" />
+                            <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="height: 55%;width: 55%" class="text-left" />
                         </div>
 
                         <div class="col-sm-3">
@@ -45,9 +45,13 @@
                         <div class="col-sm-3">
                             <h3> @trip.Description</h3>
                         </div>
-                        
+
                     </div>
-                    <button type="submit" id="delete_trip" class="text-center"> Delete Trip</button>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="submit" id="delete_trip" class="btn btn-primary submit_button"> Delete Trip</button>
+                        </div>
+                    </div>
                 </div>
                             }
 
@@ -56,14 +60,19 @@
 </div>
 
 <div class="container-fluid" style="margin-top: 20px; margin-bottom: 20px;">
-    <div class="col-md-12">
-        <div id="routeMap" style="height: 500px"></div>
-        <button style="color: black;">Walking</button>
-        <button style="color: black;">Driving</button>
-        <div id="tripDirections"></div>
-    </div>
-</div>
+    <div class="row">
 
-<div id="routeDirections" class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px; background-color: white; color: black;">
-    <h1>Directions</h1>
+        <div id="routeDirections" class="col-sm-4 pre-scrollable" style=" margin-top: 20px; margin-bottom: 20px; color: white; float:left; width: 600px;">
+            <h1>Directions</h1>
+        </div>
+
+        <div class="col-sm-8">
+            <div id="routeMap" style="height: 600px; border:10px solid #984B43"></div>
+            <button style="color: black;" class="btn btn-primary submit_button">Walking</button>
+            <button style="color: black;" class=" btn btn-primary submit_button">Driving</button>
+            <div id="tripDirections"></div>
+        </div>
+   
+       
+    </div>
 </div>
