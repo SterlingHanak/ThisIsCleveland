@@ -111,8 +111,9 @@ li {
 .home-info-bar {
     text-align: center;
     font-size: 260%;
-    /*background-color: #18121E;*/
-    color: white;
+    /*color: #FDBB30;*/
+    color:white;
+    text-shadow:4px 5px 1px #111;
     padding: 100px;
 }
 
@@ -121,38 +122,37 @@ li {
     padding-bottom:100px;
 }
 
-.about_headers{
-    color:#EAC67A;
-    text-align:center;
-    font-size:250%;
+.about_headers {
+    color: #FDBB30;
+    text-shadow: 4px 5px 1px #111;
+    text-align: center;
+    font-size: 250%;
 }
 
-.about_paragraph{
-    color:white;
-    font-size:130%;
-    text-align:center;
-    font-weight:bold;
-    background-color:#18121E;
-    opacity:0.8;
+.about_paragraph {
+    color: #cccccc;
+    text-shadow: 4px 5px 1px #111;
+    font-size: 130%;
+    font-weight: bold;
 }
 
 .about_background {
-    /*background-color: #18121E !important;*/
-    background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;
+    background-color: #18121E !important;
+    /*background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;*/
     background-size:100%;
     background-repeat:no-repeat;
     background-repeat:repeat-y !important;
 }
 
-.homepage_paragraph{
+.homepage_paragraph {
+    font-weight: bold;
+    height: 150px;
+    font-size: 25px;
+    /*color: #FDBB30;*/
     color:white;
-    font-weight:bold;
-    height:150px;
-    font-size:22px;
-    /*opacity:0.9;*/
-    text-align:center;
-    /*background-color:#18121E;*/
-    padding-top:10px;
+    text-shadow: 4px 5px 1px #111;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .navbar-nav{
