@@ -12,7 +12,7 @@
         <div class="col-lg-2 col-height" style="background-color: orange; color: black;">
             <h2>Filter By:</h2>
             @{
-                <p>
+                @*<p>
                     <h5>Starting Point</h5>
                     @Html.TextBox("startingPoint", String.Empty, new { @id = "startingPoint", @placeholder = "Starting Address" })
                 </p>
@@ -21,31 +21,61 @@
                     <span>Radius (miles)</span>
                     @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
                     <hr />
-                </p>
+                </p>*@
 
-                    <p>
+                    @*<p>
                         @Html.TextBox("search", String.Empty, new {@id = "searchBar", @placeholder = "Enter Search Terms" })
                         <br />
                         <button id="displaySearchResults"><span class="glyphicon glyphicon-pushpin"></span><h5>Display Search Results</h5></button>
                         <button id="clearSearch"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
                         <hr />
-                    </p>
+                    </p>*@
 
-                foreach (string category in Model.Categories)
+                @*foreach (string category in Model.Categories)
                 {
                     <p>
                         @Html.CheckBox(category, false, new { value = category, @class = "category" })
                         <span>@category</span>
                     </p>
 
-                }
+                }*@
             }
         </div>
 
         <!--MAP AND DETAIL SECTIONS-->
         <div class="col-lg-10 col-height">
             <!--MAP-->
-            <div class="row" style="background-color: blue;">
+            <div class="row" style="background-color: none;">
+                <h4 style="color: white;"><span class="glyphicon glyphicon-filter"></span>Filter By:</h4>
+                <div id="filterTabs" class="display:inline;">
+                    <ul>
+                        <li><a href="#filterTabs-category">Category</a></li>
+                        <li><a href="#filterTabs-keywordSearch">Keyword Search</a></li>
+                        <li><a href="#filterTabs-mileRadius">Mile Radius</a></li>
+                    </ul>
+                    <div id="filterTabs-category" style="background-color: lightgray;">
+                        <ul style="background-color: lightgray;">
+                            @foreach (string category in Model.Categories)
+                            {
+                            <li>
+                                @Html.CheckBox(category, false, new { id = category, value = category, @class = "category", style = "margin-right: 5px;" })
+                                <label for=@category><img src="~/Content/Images/Icons/Casino.jpg" style="height: 10px;"/></label>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    <div id="filterTabs-keywordSearch" style="background-color: lightgray;">
+                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms" })
+                        <button id="displaySearchResults"><span class="glyphicon glyphicon-pushpin"></span><h5 style="inline-block;">Display Search Results</h5></button>
+                        <button id="clearSearch"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
+                    </div>
+                    <div id="filterTabs-mileRadius" style="background-color: lightgray;">
+                        <span>Starting Point</span>
+                        @Html.TextBox("startingPoint", String.Empty, new { @id = "startingPoint", @placeholder = "Starting Address", style = "margin-right: 2%;" })
+                        <span>Radius (miles)</span>
+                        @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
+                    </div>
+                </div>
                 <div id="map" class="col-lg-12" style="height: 400px;"></div>
             </div>
 
@@ -98,7 +128,7 @@
                     <p>
                         <h5>Name</h5>
                         <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
-                        @Html.ValidationMessageFor(m => Model.TripName)
+                        @Html.ValidationMessage("MyTripViewModel.TripName")
                     </p>
 
                         <p>
