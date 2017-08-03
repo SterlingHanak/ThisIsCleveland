@@ -364,6 +364,7 @@ h1 {
     opacity: 0;
     transition: .5s ease;
     background-color: #860038;
+    overflow: auto;
 }
 
 .location-detail:hover .overlay{
