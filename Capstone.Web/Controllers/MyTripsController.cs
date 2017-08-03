@@ -51,7 +51,7 @@ namespace Capstone.Web.Controllers
         public ActionResult DeleteTrip(int tripId)
         {
             MyTripViewModel model = new MyTripViewModel();
-            
+            tripDAL.DeleteTripLandmark(tripId);
             tripDAL.DeleteTrip(tripId);
             return View("My Trips", model);
         }

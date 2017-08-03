@@ -93,13 +93,14 @@
 
     //Deleting trip  
     $("#delete_trip").on("click", function () {
-        var tripId = $(this).parent().attr('id');      
+        var tripId = $(this).parent().attr('id');
+         $("#" + tripId).remove();      
         $.ajax({
             type: "POST",
             url: "/MyTrips/DeleteTrip/",
             data: {"tripId": tripId },
             success: function () {
-                $("#" + tripId).remove();
+              
             }
         });
     });
