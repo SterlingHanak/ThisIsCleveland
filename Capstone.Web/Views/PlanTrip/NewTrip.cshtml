@@ -57,10 +57,10 @@
                         <ul style="background-color: lightgray;">
                             @foreach (string category in Model.Categories)
                                 {
-                                    string imageUrl = category.Replace(" ", "") + "/" + category.Replace(" ", "_").Replace(":", "").Replace("'", "");
+                                    string imageName = category.Replace(" ", "") + "Icon.jpg";
                             <li>
-                                @Html.CheckBox(category, false, new { id = category, value = category, @class = "category", style = "margin-right: 5px;" })
-                                <label for=@category><img src="~/Content/Images/Icons/Casino.jpg" style="height: 10px;"/></label>
+                                @Html.CheckBox(category, false, new { id = category.Replace(" ", ""), value = category, @class = "category", style = "margin-right: 5px; display: none;" })
+                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 4em;"/></label>
                             </li>
                             }
                         </ul>
