@@ -7,7 +7,7 @@
     background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
     opacity:0.8;*/
     background-color:#233237;
-    height:500px;
+    /*height:500px;*/
 }
 
 .boxesPadding{
@@ -16,8 +16,9 @@
 
 
 
-html{
+html, body, section{
     margin: 0px;
+    padding:0px;
 }
 
 ul {
@@ -137,9 +138,7 @@ li {
 }
 
 .about_background {
-    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');*/
     background-color: #18121E;
-    background-image: url('Images/HomepageBackground/yannik-wenk-267315.jpg');
 }
 
 .homepage_paragraph{
