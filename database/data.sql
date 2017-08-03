@@ -96,6 +96,15 @@ INSERT INTO landmark VALUES ('Galleria at Erieview', '1301 E 9th st, Cleveland, 
 --INSERT INTO landmark VALUES ('Huntington Convention Center', '300 Lakeside Ave E, Cleveland, OH 44113', '216.928.1600', 'The Huntington Convention Center is a convention center built by Cuyahoga County, Ohio, beneath the Cleveland Mall.', 2013, 4.4, 1, null, 'clevelandconventions.com', 41.504181, -81.694145); 
 INSERT INTO landmark VALUES ('Tower City Center', '230 W Huron Rd, Cleveland, OH 44113', '216.623.4750', 'Tower City Center is a large mixed-use facility located on Public Square.  The facility is composed of a number of interconnected office buildings, including the landmark Terminal Tower, a shopping mall, a casino, two hotels, and the main hub of Cleveland''s four rapid transit lines.', 1927, 3.9, 0, null, 'towercitycenter.com', 41.497927, -81.693518);
  
+ --Additional Landmarks as of 8/2/2017
+INSERT INTO landmark VALUES ('Cleveland Museum of Art', '11150 East Blvd, Cleveland, OH 44106', '216.421.7350', 'Located in the Wade Park District, in the University Circle neighborhood on Cleveland''s east side. Internationally renowned for its substantial holdings of Asian and Egyptian art, the museum houses a diverse permanent collection of more than 45,000 works of art from around the world. The museum has remained historically true to the vision of its founders, keeping general admission free to the public and with a $755 million endowment it is the fourth wealthiest in the nation. With about 705,000 visitors annually, it is one of the most visited art museums in the world.', 1913, 4.9, 0, 705000, 'clevelandart.org', 41.509041, -81.61207);
+INSERT INTO landmark VALUES ('Cleveland Institute of Art', '11610 Euclid Ave, Cleveland, OH 44106', '800.223.4700', 'One of the nation''s leading independent colleges of art and design.  In 2013, 2014, and 2015, Cleveland Institute of Art was named a Best Midwestern College by the Princeton Review. In 2015 CIA was the only college of art and design to achieve this designation.', 1882, 4.6, 0, 534, 'www.cia.edu', 41.510432, -81.602415);
+INSERT INTO landmark VALUES (' A Christmas Story House', '3159 W 11th St, Cleveland, OH 44109', '216.298.4919', 'A Christmas Story House is a museum in Cleveland, Ohio''s Tremont neighborhood. The 19th-century Victorian, which was used in the exterior scenes of Ralphie Parker''s house in the 1983 film A Christmas Story, was purchased by a private developer in 2004 and has been restored and renovated to appear as it did both inside and outside in the film. The museum is part of a complex of three buildings devoted to the film, and is open to the public year-round.', 2006, 4.6, 1, null, 'www.achristmasstoryhouse.com', 41.468729, -81.687393);
+INSERT INTO landmark VALUES ('Cleveland Museum of National History', '1 Wade Oval Dr, Cleveland, OH 44106', '216.231.4600', 'Museum collections total more than four million specimens and include specimens of paleontology, zoology, archaeology, mineralogy, ornithology, and a variety of other scientific subjects.  A beloved full-scale model of a Stegosaurus on the lawn delights Cleveland children.', 1920, 4.7, 2, null, 'www.cmnh.org', 41.511522, -81.61288);
+INSERT INTO landmark VALUES ('Cleveland Clothing Co.', '342 Euclid Ave, Cleveland, OH 44114', '216.736.8879', 'Award-winning apparel brand spreading Cleveland pride one shirt at a time since 2008.  The shop not only houses the CLE Clothing Co. brand products, but also carries over 40 other local artisans, designers and makers.', 2012, 4.3, 0, null, 'cleclothingco.myshopify.com', 41.499514 , -81.690427);
+INSERT INTO landmark VALUES ('Heinen''s of Downtown Cleveland', '900 Euclid Ave, Cleveland, OH 44115', '216.302.3020', 'Welcome to your new go-to shopping destination. Our store is stocked with national brand grocery items along with the freshest, highest quality produce, freshly-made prepared meals, full service meat and seafood counters, and an award-winning wine and cheese department. The beautiful and historic Rotunda is a great place to sit and enjoy lunch or dinner, to grab something to go, or to join friends after work for a glass of wine or beer and enjoy appetizers from the chef’s menu in our second floor lounge.', 2015, 4.6, 0, null, 'heinens.com/downtown/', 41.500037, -81.686112);
+INSERT INTO landmark VALUES ('Severance Hall', '11001 Euclid Ave, Cleveland, OH 44106', '216.231.7300', 'Severance Hall is a concert hall located in the University Circle neighborhood of Cleveland, Ohio. The hall has been the home of the Cleveland Orchestra since its opening on February 5, 1931. Severance Hall is listed on the National Register of Historic Places as part of the Wade Park District.', 1931, 4.9, 0, 2000, 'clevelandorchestra.com', 41.506348, -81.609336);
+INSERT INTO landmark VALUES ('Barley House Cleveland', '1261 W 6th St, Cleveland, OH 44113', '216.623.1700', 'Lively spot for eclectic eats, beer & a post-10 PM bar scene with a dress code & bottle service.', null, 3.7, 2, null, 'barleyhousecleveland.com', 41.500587, -81.699174);
 
 --Categories
 INSERT INTO category VALUES ('Restaurants');
@@ -187,6 +196,15 @@ INSERT INTO landmark_category VALUES (75, 4);
 INSERT INTO landmark_category VALUES (76, 7);
 INSERT INTO landmark_category VALUES (77, 7);
 INSERT INTO landmark_category VALUES (77, 9);
+--ADDED 8/2/2017
+INSERT INTO landmark_category VALUES (78, 6);
+INSERT INTO landmark_category VALUES (79, 2);
+INSERT INTO landmark_category VALUES (80, 6);
+INSERT INTO landmark_category VALUES (81, 6);
+INSERT INTO landmark_category VALUES (82, 7);
+INSERT INTO landmark_category VALUES (83, 7);
+INSERT INTO landmark_category VALUES (84, 3);
+INSERT INTO landmark_category VALUES (85, 1);
 
 --Restaurant Detail
 INSERT INTO restaurant VALUES (1, 'casual', 'Gastropub');
@@ -212,6 +230,31 @@ INSERT INTO restaurant VALUES (20, 'casual', 'Modern American');
 INSERT INTO restaurant VALUES (21, 'business casual', 'Italian');
 INSERT INTO restaurant VALUES (22, 'casual', 'Modern American');
 INSERT INTO restaurant VALUES (23, 'business casual', 'Modern American');
+--ADDED 8/3/2017
+INSERT INTO restaurant VALUES (24, 'casual', 'Gastropub');
+INSERT INTO restaurant VALUES (25, 'casual', 'Italian');
+INSERT INTO restaurant VALUES (26, 'business casual', 'Seafood');
+INSERT INTO restaurant VALUES (27, 'casual', 'Bar and Grill');
+INSERT INTO restaurant VALUES (28, 'casual', 'Bar and Grill');
+INSERT INTO restaurant VALUES (29, 'casual', 'Bar and Grill');
+INSERT INTO restaurant VALUES (30, 'casual', 'Mexican');
+INSERT INTO restaurant VALUES (31, 'casual', 'Cajun');
+INSERT INTO restaurant VALUES (32, 'business casual', 'Dessert');
+INSERT INTO restaurant VALUES (33, 'business casual', 'Italian');
+INSERT INTO restaurant VALUES (34, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (35, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (36, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (37, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (38, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (39, 'casual', 'Sushi');
+INSERT INTO restaurant VALUES (40, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (41, 'casual', 'Mexican');
+INSERT INTO restaurant VALUES (42, 'casual', 'Barbecue');
+INSERT INTO restaurant VALUES (43, 'casual', 'Asian');
+INSERT INTO restaurant VALUES (44, 'casual', 'Bar and Grill');
+INSERT INTO restaurant VALUES (45, 'casual', 'Bar and Grill');
+INSERT INTO restaurant VALUES (46, 'casual', 'Modern American');
+INSERT INTO restaurant VALUES (85, 'casual', 'Modern American');
 
 --Park Details
 INSERT INTO park VALUES (32, 1, 1, 1, 1, 419);
@@ -622,5 +665,47 @@ INSERT INTO daily_hours VALUES (4, 77, '10:00:00', '19:00:00');
 INSERT INTO daily_hours VALUES (5, 77, '10:00:00', '19:00:00');
 INSERT INTO daily_hours VALUES (6, 77, '10:00:00', '19:00:00');
 INSERT INTO daily_hours VALUES (7, 77, '12:00:00', '17:00:00');
+--ADDED 8/3/2017
+INSERT INTO daily_hours VALUES (2, 78, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (3, 78, '10:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (4, 78, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (5, 78, '10:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (6, 78, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (7, 78, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (1, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (2, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (3, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (4, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (5, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (6, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (7, 80, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (1, 81, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (2, 81, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (3, 81, '10:00:00', '22:00:00');
+INSERT INTO daily_hours VALUES (4, 81, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (5, 81, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (6, 81, '10:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (7, 81, '12:00:00', '17:00:00');
+INSERT INTO daily_hours VALUES (1, 82, '11:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (2, 82, '11:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (3, 82, '11:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (4, 82, '11:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (5, 82, '11:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (6, 82, '11:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (7, 82, '12:00:00', '18:00:00');
+INSERT INTO daily_hours VALUES (1, 83, '08:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (2, 83, '08:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (3, 83, '08:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (4, 83, '08:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (5, 83, '08:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (6, 83, '09:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (7, 83, '09:00:00', '21:00:00');
+INSERT INTO daily_hours VALUES (1, 85, '11:00:00', '02:30:00');
+INSERT INTO daily_hours VALUES (2, 85, '11:00:00', '02:30:00');
+INSERT INTO daily_hours VALUES (3, 85, '11:00:00', '02:30:00');
+INSERT INTO daily_hours VALUES (4, 85, '11:00:00', '02:30:00');
+INSERT INTO daily_hours VALUES (5, 85, '11:00:00', '02:30:00');
+INSERT INTO daily_hours VALUES (6, 85, '11:00:00', '02:30:00');
+INSERT INTO daily_hours VALUES (7, 85, '11:00:00', '02:30:00');
 
 COMMIT;
