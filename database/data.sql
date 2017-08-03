@@ -205,6 +205,12 @@ INSERT INTO landmark_category VALUES (82, 7);
 INSERT INTO landmark_category VALUES (83, 7);
 INSERT INTO landmark_category VALUES (84, 3);
 INSERT INTO landmark_category VALUES (85, 1);
+--ADDED HOUSE OF BLUES AND THE Q AS CONCERT VENUES/Changed incorrect spelling
+INSERT INTO landmark_category VALUES (31, 3);
+INSERT INTO landmark_category VALUES (54, 3);
+UPDATE landmark SET name = 'A Christmas Story House' WHERE id = 80;
+UPDATE landmark SET name = 'Cleveland Museum of Natural History' WHERE id = 81;
+UPDATE landmark SET name = 'House of Blues' WHERE id = 31;
 
 --Restaurant Detail
 INSERT INTO restaurant VALUES (1, 'casual', 'Gastropub');

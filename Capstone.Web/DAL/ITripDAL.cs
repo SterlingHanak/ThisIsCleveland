@@ -12,6 +12,7 @@ namespace Capstone.Web.DAL
         List<Trip> GetAllUserTrips(int userId);
         int SaveNewTrip(Trip trip, int userId);
         bool SaveTripLandmark(int tripId, int landmarkId, int visitOrder);
-        bool DeleteTripLandmark(int landmarkId);
+        bool DeleteTrip(int tripId);
+        bool DeleteTripLandmark(int tripId);
     }
 }

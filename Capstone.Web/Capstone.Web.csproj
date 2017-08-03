@@ -150,6 +150,7 @@
     <Content Include="Content\Images\cleveland-skyline-in-black-watercolor-on-white-background-pablo-romero.jpg" />
     <Content Include="Content\Images\ConcertVenues\Grog_Shop.jpg" />
     <Content Include="Content\Images\ConcertVenues\Jacobs_Pavilion_at_Nautica.jpg" />
+    <Content Include="Content\Images\ConcertVenues\Severance_Hall.jpg" />
     <Content Include="Content\Images\ConcertVenues\The_Agora_Theatre_and_Ballroom.jpg" />
     <Content Include="Content\Images\ConcertVenues\The_Odeon_Concert_Club.JPG" />
     <Content Include="Content\Images\East4thColor.jpg" />
@@ -166,6 +167,7 @@
     <Content Include="Content\Images\HomepageBackground\patrick-hendry-227811.jpg" />
     <Content Include="Content\Images\HomepageBackground\patrick-tomasso-216284.jpg" />
     <Content Include="Content\Images\HomepageBackground\paul-299941.jpg" />
+    <Content Include="Content\Images\HomepageBackground\Rock_Hall.jpg" />
     <Content Include="Content\Images\HomepageBackground\sergei-akulich-277035.jpg" />
     <Content Include="Content\Images\HomepageBackground\yannik-wenk-267315.jpg" />
     <Content Include="Content\Images\iconic-cleveland-statue-frozen-in-time-fine-art-photography.jpg" />
@@ -178,6 +180,9 @@
     <Content Include="Content\Images\Icons\Shopping.jpg" />
     <Content Include="Content\Images\Icons\Sports.jpg" />
     <Content Include="Content\Images\Icons\Theatre.jpg" />
+    <Content Include="Content\Images\LibrariesandMuseums\A_Christmas_Story_House.jpg" />
+    <Content Include="Content\Images\LibrariesandMuseums\Cleveland_Museum_of_Art.jpg" />
+    <Content Include="Content\Images\LibrariesandMuseums\Cleveland_Museum_of_Natural_History.jpg" />
     <Content Include="Content\Images\LibrariesandMuseums\Cleveland_Public_Library_Central.jpg" />
     <Content Include="Content\Images\LibrariesandMuseums\Great_Lakes_Science_Center.jpg" />
     <Content Include="Content\Images\LibrariesandMuseums\Rock_and_Roll_Hall_of_Fame.jpg" />
@@ -196,6 +201,7 @@
     <Content Include="Content\Images\ProjectExtras\NightFunTimes.jpg" />
     <Content Include="Content\Images\ProjectExtras\patrick-tomasso-208114.jpg" />
     <Content Include="Content\Images\ProjectExtras\WaterFunTimes.jpg" />
+    <Content Include="Content\Images\Restaurants\Barley_House_Cleveland.jpg" />
     <Content Include="Content\Images\Restaurants\Barrio.jpg" />
     <Content Include="Content\Images\Restaurants\Blue_Point_Grille.jpg" />
     <Content Include="Content\Images\Restaurants\Brasa_Grill_Brazilian_Steakhouse.jpg" />
@@ -243,12 +249,15 @@
     <Content Include="Content\Images\Restaurants\Winking_Lizard_Tavern.jpg" />
     <Content Include="Content\Images\Restaurants\Zocalo_Tequileria.jpg" />
     <Content Include="Content\Images\Schools\Case_Western_Reserve_University.jpg" />
+    <Content Include="Content\Images\Schools\Cleveland_Institute_of_Art.jpg" />
     <Content Include="Content\Images\Schools\Cleveland_State_University.jpg" />
     <Content Include="Content\Images\Schools\Cuyahoga_Community_College.jpg" />
     <Content Include="Content\Images\Schools\John_Carroll_University.jpg" />
     <Content Include="Content\Images\Schools\Notre_Dame_College.jpg" />
     <Content Include="Content\Images\Schools\Tech_Elevator.jpg" />
+    <Content Include="Content\Images\ShoppingCenters\Cleveland_Clothing_Co..jpg" />
     <Content Include="Content\Images\ShoppingCenters\Galleria_at_Erieview.jpg" />
+    <Content Include="Content\Images\ShoppingCenters\Heinen%27s_of_Downtown_Cleveland.jpg" />
     <Content Include="Content\Images\ShoppingCenters\Tower_City_Center.jpg" />
     <Content Include="Content\Images\ShoppingCenters\West_Side_Market.jpg" />
     <Content Include="Content\Images\SportsVenues\FirstEnergy_Stadium.jpg" />
@@ -314,6 +323,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="font_awesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -323,6 +333,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="font_awesome\fontawesome-webfont.eot" />
+    <Content Include="font_awesome\fontawesome-webfont.ttf" />
+    <Content Include="font_awesome\fontawesome-webfont.woff" />
+    <Content Include="font_awesome\fontawesome-webfont.woff2" />
+    <Content Include="font_awesome\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -387,7 +402,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
-    <Content Include="Views\Users\LeavingSite.cshtml" />
+    <Content Include="Views\Users\ChangePassword.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\CityTours\_AuthenticationBar.cshtml" />
     <Content Include="Views\PlanTrip\NewTrip.cshtml" />

@@ -2,10 +2,7 @@
     // If on MyTrips page, run following commands:
 
     if ($("#MyTripsPgLocator").length) {
-        $("#accordion").accordion({
-            heightStyle: "content"
-        });
-
+      
         var routeMap = new GMaps({
             div: '#routeMap',
             lat: 41.4993,
@@ -31,10 +28,10 @@
 
                 for (var i = 0; i < data.length - 1; i++) {
                     // Print starting location name to Directions div
-                    $('#routeDirections').append("<h4>" + data[i].Name + " to " + data[data.length - 1].Name + "</h4>");
-                    //$('#routeDirections').append("<div id='" + "waypoint-" + i + "'></div>");
+                    $('#routeDirections').append(`<div data-leg="${i}"><h4>` + data[i].Name + " to " + data[i + 1].Name + "</h4></div>");
 
                     // Current landmark coordinates
+
                     var originLatitude = data[i].Latitude;
                     var originLongitude = data[i].Longitude;
                     var destinationLatitude = data[i + 1].Latitude;
@@ -52,14 +49,15 @@
                         icon: "/Content/Markers/" + categoryName.replace(/\s/g, '') + "_marker.png",
                     });
 
+                    var stepFunction = new stepPrinter(i);
+
+
                     // Print direction step
                     routeMap.travelRoute({
                         origin: [originLatitude, originLongitude],
                         destination: [destinationLatitude, destinationLongitude],
                         travelMode: 'driving',
-                        step: function (e) {
-                            $('#routeDirections').append('<p>' + e.instructions + '</p>');
-                        }
+                        step: stepFunction.printStep,
                     });
 
                     // Draw route between current and next landmark
@@ -86,18 +84,24 @@
         });
     }
 
+    function stepPrinter(leg) {
+        this.printStep = function (e) {
+            console.log(`Step Direction for ${leg} - ${e.instructions}`);
+            $(`div[data-leg=${leg}]`).append('<p>' + e.instructions + '</p>');
+        }
+    }
 
     //Deleting trip  
     $("#delete_trip").on("click", function () {
         var tripId = $(this).parent().attr('id');
-        $("#" + tripId).remove();
-        //$.ajax({
-        //    type: "POST",
-        //    url: "/MyTrips/DeleteTripLandmark/",
-        //    data: {"tripId": tripId },
-        //    success: function (msg) {
-               
-        //    }
-        //});
+         $("#" + tripId).remove();      
+        $.ajax({
+            type: "POST",
+            url: "/MyTrips/DeleteTrip/",
+            data: {"tripId": tripId },
+            success: function () {
+              
+            }
         });
+    });
 });

@@ -13,7 +13,8 @@ namespace Capstone.Web.DAL
         const string SQL_GetAllUserTrips = "SELECT * FROM trip JOIN city_tours_user ON city_tours_user.id = trip.city_tours_user_id WHERE city_tours_user.id = @userId;";
         const string SQL_SaveNewTrip = "INSERT INTO trip VALUES(@userId, @name, @description, @trip_date); SELECT SCOPE_IDENTITY();";
         const string SQL_SaveTripLandmark = "INSERT INTO trip_landmark VALUES(@tripId, @landmarkId, @visitOrder);";
-        const string SQL_DeleteTrip = "DELETE FROM trip_landmark WHERE landmark_id = @landmarkId;";
+        const string SQL_DeleteTrip = "DELETE FROM trip WHERE id = @tripId;";
+        const string SQL_DeleteTrip_Landmark = "DELETE FROM trip_landmark WHERE trip_id = @tripId;";
 
         public TripSqlDAL(string connectionString)
         {
@@ -91,7 +92,7 @@ namespace Capstone.Web.DAL
             }
         }
 
-        public bool DeleteTripLandmark(int landmarkId)
+        public bool DeleteTrip(int tripId)
         {
             try
             {
@@ -99,8 +100,28 @@ namespace Capstone.Web.DAL
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(SQL_DeleteTrip, conn);
-                    cmd.Parameters.AddWithValue("landmarkId", landmarkId);
+                    cmd.Parameters.AddWithValue("tripId", tripId);
                    
+                    int numRowsAffected = cmd.ExecuteNonQuery();
+                    return numRowsAffected > 0;
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+        public bool DeleteTripLandmark(int tripId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(SQL_DeleteTrip_Landmark, conn);
+                    cmd.Parameters.AddWithValue("tripId", tripId);
+
                     int numRowsAffected = cmd.ExecuteNonQuery();
                     return numRowsAffected > 0;
                 }
