@@ -110,15 +110,15 @@ li {
 
 .home-info-bar {
     text-align: center;
-    font-size: 220%;
-    background-color: #18121E;
+    font-size: 260%;
+    /*background-color: #18121E;*/
     color: white;
     padding: 100px;
 }
 
 .home-info {
-    padding-top:150px;
-    padding-bottom:150px;
+    padding-top:0px;
+    padding-bottom:100px;
 }
 
 .about_headers{
@@ -149,9 +149,10 @@ li {
     font-weight:bold;
     height:150px;
     font-size:22px;
-    opacity:0.9;
+    /*opacity:0.9;*/
     text-align:center;
-    background-color:#18121E;
+    /*background-color:#18121E;*/
+    padding-top:10px;
 }
 
 .navbar-nav{
@@ -227,7 +228,11 @@ li {
 
 /*CATEGORY VIEW*/
 .category-jumbo {
+    border: ridge;
+    border-color: #860038;
+    border-radius: 6px;
     text-align: center;
+    background-color: #FDBB30;
     margin-bottom: 30px;
     margin-left: 10%;
     margin-right: 10%;
@@ -243,15 +248,9 @@ main {
 }
 
 .category-jumbo > h2 {
-    font-size: 90px;
-    font-weight: bold;
+    font-size: 80px;
     vertical-align: central;
-    color: #FDBB30;
-    text-shadow: 20px 12px 12px #111;
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    right: 15%;
+    color: #860038;
 }
 
 .location-detail {
@@ -261,7 +260,6 @@ main {
     color: #FDBB30;
     height: 350px;
     text-align: center;
-    padding: 0px !important;
 }
 
 .sidenav {
@@ -313,10 +311,7 @@ font-size: 16px;
 }
 
 .category-body {
-    background-image: url('Images/HomepageBackground/paul-299941.jpg');
-    background-size: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
 }
 
 .category-icon-div {
@@ -377,7 +372,6 @@ h1 {
     opacity: 0;
     transition: .5s ease;
     background-color: #860038;
-    overflow: auto;
 }
 
 .location-detail:hover .overlay{
