@@ -46,5 +46,13 @@ namespace Capstone.Web.Controllers
 
             return View("MyTrips", allUserTrips);
         }
+
+        [HttpPost]
+        public ActionResult DeleteTripLandmark(int landmarkId)
+        {
+            MyTripViewModel model = new MyTripViewModel();
+            tripDAL.DeleteTripLandmark(landmarkId);
+            return View("My Trips", model);
+        }
     }
 }
