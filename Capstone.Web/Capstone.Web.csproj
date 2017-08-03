@@ -323,6 +323,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="font_awesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -332,6 +333,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="font_awesome\fontawesome-webfont.eot" />
+    <Content Include="font_awesome\fontawesome-webfont.ttf" />
+    <Content Include="font_awesome\fontawesome-webfont.woff" />
+    <Content Include="font_awesome\fontawesome-webfont.woff2" />
+    <Content Include="font_awesome\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
