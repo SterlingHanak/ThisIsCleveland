@@ -1,5 +1,6 @@
 ﻿@using Capstone.Web.Models;
 @model List<Trip>
+
 @{
     ViewBag.Title = "MyTrips";
 }
@@ -18,18 +19,26 @@
         {
             for (int i = 0; i < Model.Count; i++)
             {
+                if (Model[i].Landmarks.Count == 0)
+                {
+                    continue;
+                }
                 Trip trip = Model[i];
                 <div id=@(trip.Id) class="tripDiv col-md-4">
-                    @{ 
-                            string landmarkFolderName = trip.Landmarks[i].Categories[0].Replace(" ", String.Empty);
-                            string landmarkImgName = trip.Landmarks[i].Name.Replace(" ", "_") + ".jpg";
+                    @{
+                        string landmarkFolderName = trip.Landmarks[0].Categories[0].Replace(" ", String.Empty);
+                        string landmarkImgName = trip.Landmarks[0].Name.Replace(" ", "_") + ".jpg";
                     }
-                    <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="max-height: 100%; max-width: 100%"/>
+                    <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="max-height: 100%; max-width: 100%" />
                     <h3 class="text-center">@trip.Name</h3>
                     <h4 class="text-center">@trip.TripDate.ToShortDateString()</h4>
+                    <h3> @trip.Description</h3>
+                    <button type="submit" id="delete_trip"> Delete Trip</button>
                 </div>
-            }
-        }
+
+                  }
+                       
+                       }
     }
 </div>
 
@@ -42,6 +51,6 @@
     </div>
 </div>
 
-<div id="routeDirections"class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px; background-color: white; color: black;">
+<div id="routeDirections" class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px; background-color: white; color: black;">
     <h1>Directions</h1>
 </div>

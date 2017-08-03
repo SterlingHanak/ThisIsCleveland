@@ -12,7 +12,7 @@
             lng: -81.6944
         });
 
-        $(".tripDiv").on("click", function(event) {
+        $(".tripDiv").on("click", function (event) {
             // Get trip id
             var tripId = $(this).attr("id");
 
@@ -23,7 +23,7 @@
                 data: { "tripId": tripId },
                 dataType: "json"
 
-            // If json data retrieval successful, display route on map
+                // If json data retrieval successful, display route on map
             }).done(function (data) {
 
                 // Center map on coordinates of first landmark
@@ -85,4 +85,19 @@
             });
         });
     }
+
+
+    //Deleting trip  
+    $("#delete_trip").on("click", function () {
+        var tripId = $(this).parent().attr('id');
+        $("#" + tripId).remove();
+        //$.ajax({
+        //    type: "POST",
+        //    url: "/MyTrips/DeleteTripLandmark/",
+        //    data: {"tripId": tripId },
+        //    success: function (msg) {
+               
+        //    }
+        //});
+        });
 });

@@ -1,17 +1,29 @@
-﻿@{
-    Layout = null;
+﻿@using Capstone.Web.Models;
+@model ChangePasswordViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Change Password</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            @using (Html.BeginForm("ChangePassword", "Users", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.NewPassword)
+                    @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control", placeHolder = "New Password" })
+                    @Html.ValidationMessageFor(m => m.NewPassword)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword)
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeHolder = "Confirm Password" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+                <button type="submit" class="btn btn-default text-center">Change Password</button>
+            }
+        </div>
+        </div>
+</div>
