@@ -84,7 +84,7 @@
 
             <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
                 <div class="detail-container">
-                    <h2 style="margin-top: 10px; font-size: 25px;">@location.Name</h2>
+                    <h2 style="margin-top: 10px; width: 100%; font-size: 25px;">@location.Name</h2>
                     <img  class="img-fluid category-detail-img" src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg") />
                 </div>
                 <div class="overlay" style="color: #FDBB30; margin: auto;">
@@ -94,7 +94,7 @@
                     <p>@location.Description</p>
 
                     <p><span class="glyphicon glyphicon-globe"></span>  @("https://" + location.WebsiteUrl)</p>
-                    <button type="submit">Add To Trip</button>
+                    <button type="submit" style="background-color: white; color: black;">Add To Trip</button>
                 </div>
             </div>
         }
