@@ -132,10 +132,16 @@ li {
     font-size:130%;
     text-align:center;
     font-weight:bold;
+    background-color:#18121E;
+    opacity:0.8;
 }
 
 .about_background {
-    background-color: #18121E !important;
+    /*background-color: #18121E !important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-repeat:repeat-y !important;
 }
 
 .homepage_paragraph{
@@ -188,7 +194,11 @@ li {
 }
 
 .home_background {
-    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;
+    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y !important;
 }
 
 ::-webkit-input-placeholder {
@@ -205,7 +215,7 @@ li {
     text-align: center;
     padding-bottom:10px;
     padding-top:10px;
-    
+    background-repeat:no-repeat
 }
 
 /*NEW TRIP*/
