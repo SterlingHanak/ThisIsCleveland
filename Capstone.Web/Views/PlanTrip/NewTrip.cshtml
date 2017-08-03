@@ -7,45 +7,44 @@
 
 <div class="container-fluid" style="margin-right: -15px;">
     <div class="row" style="background-color: #E14658; color: white;"><h1>New Trip</h1></div>
-    <div class="row">
-        <!--FILTER SECTION-->
-        <div class="col-lg-2 col-height" style="background-color: orange; color: black;">
-            <h2>Filter By:</h2>
+    <div class="row" style="margin-left: 2%;">
+        <!--CURRENT TRIP SECTION-->
+        <div class="col-sm-3 col-md-3 col-lg-3 col-height" style="background-color: #a0f327; color: black;">
+            <h2>Current Trip</h2>
             @{
-                @*<p>
-                    <h5>Starting Point</h5>
-                    @Html.TextBox("startingPoint", String.Empty, new { @id = "startingPoint", @placeholder = "Starting Address" })
-                </p>
-                
-                <p>
-                    <span>Radius (miles)</span>
-                    @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
-                    <hr />
-                </p>*@
-
-                    @*<p>
-                        @Html.TextBox("search", String.Empty, new {@id = "searchBar", @placeholder = "Enter Search Terms" })
-                        <br />
-                        <button id="displaySearchResults"><span class="glyphicon glyphicon-pushpin"></span><h5>Display Search Results</h5></button>
-                        <button id="clearSearch"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
-                        <hr />
-                    </p>*@
-
-                @*foreach (string category in Model.Categories)
+                using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
                 {
                     <p>
-                        @Html.CheckBox(category, false, new { value = category, @class = "category" })
-                        <span>@category</span>
+                        <h5>Name</h5>
+                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
+                        @Html.ValidationMessage("MyTripViewModel.TripName")
                     </p>
 
-                }*@
+                    <p>
+                        <h5>Description</h5>
+                        <textarea name="MyTripViewModel.TripDescription"></textarea>
+                        @Html.ValidationMessageFor(m => Model.TripDescription)
+                    </p>
+                        <p>
+                            <h5>Date</h5>
+                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            @Html.ValidationMessageFor(m => Model.TripDate)
+                        </p>
+
+                        <div id="stopContainer" class="row">
+                            <div id="stopOrder" class="col-lg-1 text-right"></div>
+                            <div id="stops" class="col-lg-10"></div>
+                        </div>
+                        <br />
+                        <button>Save</button>
+                }
             }
         </div>
 
         <!--MAP AND DETAIL SECTIONS-->
-        <div class="col-lg-10 col-height">
-            <!--MAP-->
-            <div class="row" style="background-color: none;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-height">
+            <div class="row">
+                <!--FILTER SECTION-->
                 <h4 style="color: white;"><span class="glyphicon glyphicon-filter"></span>Filter By:</h4>
                 <div id="filterTabs" class="display:inline;">
                     <ul>
@@ -77,11 +76,13 @@
                         @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
                     </div>
                 </div>
-                <div id="map" class="col-lg-12" style="height: 400px;"></div>
+                <!--MAP-->
+                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-" style="height: 400px;"></div>
             </div>
 
             <!--DETAILS-->
-            <div class="row" style="background-color: yellow; color: black; padding: 20px;">
+            <div id="landmarkDetailsSection" class="row" style="background-color: yellow; color: black; padding: 20px;">
+                <div class="row"><button id="closeLandmarkDetailsBtn"style="float: right;"><span class="glyphicon glyphicon-remove-sign"></span></button></div>
                 <div class="row">
                     <div class="col-lg-6">
                         <img id="landmark_pic" src="~/Content/Images/Casino/Jack_Casino.jpg" style="width: 300px;" alt-text="" />
@@ -118,39 +119,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!--CURRENT TRIP SECTION-->
-        <div class="col-lg-4 col-height" style="background-color: #a0f327; color: black;">
-            <h2>Current Trip</h2>
-            @{
-                using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
-                {
-                    <p>
-                        <h5>Name</h5>
-                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
-                        @Html.ValidationMessage("MyTripViewModel.TripName")
-                    </p>
-
-                        <p>
-                            <h5>Description</h5>
-                            <textarea name="MyTripViewModel.TripDescription"></textarea>
-                            @Html.ValidationMessageFor(m => Model.TripDescription)
-                        </p>
-                        <p>
-                            <h5>Date</h5>
-                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
-                            @Html.ValidationMessageFor(m => Model.TripDate)
-                        </p>
-
-                        <div id="stopContainer" class="row">
-                            <div id="stopOrder" class="col-lg-1 text-right"></div>
-                            <div id="stops" class="col-lg-10"></div>
-                        </div>
-                        <br />
-                        <button>Save</button>
-                }
-            }
         </div>
     </div>
 </div>
