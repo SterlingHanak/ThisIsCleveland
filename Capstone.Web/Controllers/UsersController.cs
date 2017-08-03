@@ -20,7 +20,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpGet]
-        [Route("login")]
+        [Route("Users/Login")]
         public ActionResult Login()
         {
             if (base.IsAuthenticated)
@@ -33,7 +33,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpPost]
-        [Route("login")]
+        [Route("Users/Login")]
         public ActionResult Login(LoginViewModel model)
         {
             if(!ModelState.IsValid)
@@ -73,7 +73,7 @@ namespace Capstone.Web.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("LeavingSite", "Users", new { destination = urlParams["landingPage"] });
+                    return RedirectToAction("Index", "Home", new { destination = urlParams["landingPage"] });
                 }
             }
             else
@@ -83,7 +83,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpGet]
-        [Route("users/register")]
+        [Route("Users/Register")]
         public ActionResult Register()
         {
             if (base.IsAuthenticated)
@@ -96,7 +96,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpPost]
-        [Route("users/register")]
+        [Route("Users/Register")]
         public ActionResult Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -139,8 +139,8 @@ namespace Capstone.Web.Controllers
 
         [HttpGet]
         [CityToursAuthorizationFilter]
-        [Route("users/{username}/changepassword")]
-        public ActionResult ChangePassword(string username)
+        [Route("Users/ChangePassword")]
+        public ActionResult ChangePassword()
         {
             if (base.IsAuthenticated)
             {
@@ -153,14 +153,15 @@ namespace Capstone.Web.Controllers
 
         [HttpPost]
         [CityToursAuthorizationFilter]
-        [Route("users/{username}/changepassword")]
-        public ActionResult ChangePassword(string username, ChangePasswordViewModel model)
+        [Route("Users/ChangePassword")]
+        public ActionResult ChangePassword(ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View("ChangePassword", model);
             }
 
+            string username = base.CurrentUser;
             HashProvider hashProvider = new HashProvider();
             string hashedPassword = hashProvider.HashPassword(model.NewPassword);
             userDAL.ChangePassword(username, hashedPassword);
@@ -169,14 +170,7 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpGet]
-        [Route("leavingsite")]
-        public ActionResult LeavingSite()
-        {
-            return View("LeavingSite");
-        }
-
-        [HttpGet]
-        [Route("logout")]
+        [Route("Logout")]
         public ActionResult Logout()
         {
             base.LogUserOut();
