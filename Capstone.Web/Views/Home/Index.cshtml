@@ -1,93 +1,97 @@
 ﻿@{
-
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body class="home_background">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" @*data-interval="false*@>
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-        </ol>
+    <body class="home_background">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" @*data-interval="false*@>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+            </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
 
-            <div class="item active">
-                <img class="carousel-img" src="~/Content/Images/ProjectExtras/FunTimes1.jpg" alt="Downtown Cleveland">
+                <div class="item active">
+                    <img class="carousel-img" src="~/Content/Images/ProjectExtras/FunTimes1.jpg" alt="Downtown Cleveland">
+                </div>
+
+                <div class="item">
+                    <img class="carousel-img" src="~/Content/Images/ProjectExtras/FunTimes2.jpg" alt="Color Run Cleveland">
+                </div>
+
+                <div class="item">
+                    <img class="carousel-img" src="~/Content/Images/ProjectExtras/LeBronJames.jpg" alt="Cavs Parade in Cleveland">
+                </div>
+
+                <div class="item">
+                    <img class="carousel-img" src="~/Content/Images/ProjectExtras/NightFunTimes.jpg" alt="Nightlife in Cleveland">
+                </div>
+
+                <div class="item">
+                    <img class="carousel-img" src="~/Content/Images/HomepageBackground/Rock_Hall.jpg" alt="Rock Hall Cleveland">
+                </div>
+
+                <div class="item">
+                    <img class="carousel-img" src="~/Content/Images/ProjectExtras/20398237_845072615669813_1514067463233339392_n.jpg" alt="Watersports Cleveland">
+                </div>
+
             </div>
 
-            <div class="item">
-                <img class="carousel-img" src="~/Content/Images/ProjectExtras/FunTimes2.jpg" alt="Color Run Cleveland">
-            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
-            <div class="item">
-                <img class="carousel-img" src="~/Content/Images/ProjectExtras/LeBronJames.jpg" alt="Cavs Parade in Cleveland">
+            <div class="carousel-headline">
+                <p>This is CLEVELAND</p>
             </div>
-
-            <div class="item">
-                <img class="carousel-img" src="~/Content/Images/ProjectExtras/NightFunTimes.jpg" alt="Nightlife in Cleveland">
-            </div>
-
-            <div class="item">
-                <img class="carousel-img" src="~/Content/Images/HomepageBackground/Rock_Hall.jpg" alt="Rock Hall Cleveland">
-            </div>
-
-            <div class="item">
-                <img class="carousel-img" src="~/Content/Images/ProjectExtras/20398237_845072615669813_1514067463233339392_n.jpg" alt="Watersports Cleveland">
-            </div>
-
         </div>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-        <div class="carousel-headline">
-            <p>This is CLEVELAND</p>
+        <div class="home-info-bar">
+            <p class="home_page_font">
+                Planning a trip to "The Land"?  Located along the coast of Lake Erie, Cleveland has no shortage of fun and exciting things to do.
+                "Believeland" is home to championship-calibur sport teams, award winning restaurants, historic theatre and concert venues, and everything in between.
+                If there's one guarantee, it's that you'll never be bored in Cleveland, Ohio!
+            </p>
         </div>
-    </div>
-
-    <div class="home-info-bar">
-        <p class="home_page_font">
-            Planning a trip to "The Land"?  Located along the coast of Lake Erie, Cleveland has no shortage of fun and exciting things to do.
-            "Believeland" is home to championship-calibur sport teams, award winning restaurants, historic theatre and concert venues, and everything in between.
-            If there's one guarantee, it's that you'll never be bored in Cleveland, Ohio!
-        </p>
-    </div>
 
 
-    <div class="container-fluid">
-        <div class="home-info row">
-            <div class="col-sm-4">
-                <img src="~/Content/Images/PlayhouseSquare.jpg" width="450" />
-                <div class="homepage_paragraph">
-                    <p class="homepage_info">Cleveland has a rich history that is showcased by its many famous locations; including Playhouse Square, the Agora Theatre and Ballroom, and the Rock and Roll Hall of Fame.</p>
+        <div class="container-fluid">
+            <div class="home-info row">
+
+                <div class="col-sm-4">
+                    <img width="600" src="~/Content/Images/PlayhouseSquare.jpg" />
+                    <div class="homepage_paragraph">
+                        <p class="homepage_info">Cleveland has a rich history that is showcased by its many famous locations; including Playhouse Square, the Agora Theatre and Ballroom, and the Rock and Roll Hall of Fame.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-sm-4">
-                <img src="~/Content/Images/CavsFire.jpeg" width="450" />
-                <div class="homepage_paragraph">
-                    <p class="homepage_info">Cleveland is home to several top level teams and athletes; including the 2016 American League Champion Indians, current UFC Heavyweight Champion Stipe Miocic, and the 2016 NBA Champion Cavaliers.</p>
+                <div class="col-sm-4">
+                    <img width="600" src="~/Content/Images/CavsFire.jpeg" />
+                    <div class="homepage_paragraph">
+                        <p class="homepage_info">Cleveland is home to several top level teams and athletes; including the 2016 American League Champion Indians, current UFC Heavyweight Champion Stipe Miocic, and the 2016 NBA Champion Cavaliers.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-4">
-                <img src="~/Content/Images/Flats.jpg" width="450" />
-                <div class="homepage_paragraph">
-                    <p class="homepage_info">Cleveland never sleeps with such a vibrant and exciting night life.  From the always popular East 4th Street all the way down to the Flats, there are countless entertaining bars and restaurants to behold.</p>
+
+                <div class="col-sm-4">
+                    <img width="600" src="~/Content/Images/Flats.jpg" />
+                    <div class="homepage_paragraph">
+                        <p class="homepage_info">Cleveland never sleeps with such a vibrant and exciting night life.  From the always popular East 4th Street all the way down to the Flats, there are countless entertaining bars and restaurants to behold.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </div>
-</body>
+    </body>

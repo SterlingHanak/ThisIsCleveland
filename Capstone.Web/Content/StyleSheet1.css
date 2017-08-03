@@ -13,8 +13,6 @@
     padding-bottom:20px;
 }
 
-
-
 html, body {
     max-width: 100% !important; 
     overflow-x: hidden !important;
@@ -137,7 +135,7 @@ li {
 }
 
 .about_background {
-    background-color: #18121E;
+    background-color: #18121E !important;
 }
 
 .homepage_paragraph{
@@ -185,12 +183,12 @@ li {
     background-size: cover;
     background-position: center;
     background-size:100%;
-    background-image: url('Images/5284805606_34a2f9f5a3_o.jpg');
+    background-image: url('Images/5284805606_34a2f9f5a3_o.jpg') !important;
     /*opacity: 0.9;*/    
 }
 
 .home_background {
-    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;
 }
 
 ::-webkit-input-placeholder {
