@@ -10,7 +10,7 @@
 
 <h2 style="color: white;">MyTrips</h2>
 
-<div class="container-fluid" style="margin: 0px 10px; background-color: darkgray; padding-top: 10px; padding-bottom: 20px;">
+<div class="container-fluid" style="margin: 0px 10px; background-color: darkgray; padding-top: 10px; padding-bottom: 20px; height:20%">
     @{
         if (Model.Count == 0)
         {
@@ -25,7 +25,7 @@
                     continue;
                 }
                 Trip trip = Model[i];
-                <div id=@(trip.Id) class="tripDiv col-md-4">
+                <div id=@(trip.Id) class="container-fluid tripDiv" style="height: 50%;margin: 0px 10px" >
                     @{
                         string landmarkFolderName = trip.Landmarks[0].Categories[0].Replace(" ", String.Empty);
                         string landmarkImgName = trip.Landmarks[0].Name.Replace(" ", "_") + ".jpg";
@@ -36,14 +36,13 @@
                     <h3> @trip.Description</h3>
                     <button type="submit" id="delete_trip"> Delete Trip</button>
                 </div>
+                           }
 
-                  }
-                       
-                       }
+                        }
     }
 </div>
 
-<div class="container-fluid" style="margin: 0px 10px; margin-top: 20px; margin-bottom: 20px;">
+<div class="container-fluid" style="margin-top: 20px; margin-bottom: 20px;">
     <div class="col-md-12">
         <div id="routeMap" style="height: 500px"></div>
         <button style="color: black;">Walking</button>
