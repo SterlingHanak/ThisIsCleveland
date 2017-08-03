@@ -96,9 +96,9 @@ li {
 .carousel-headline {
     position: absolute;
     bottom: 62%;
-    left: 17%;
+    left: 23%;
     color: white;
-    font-size: 80px;
+    font-size: 720%;
     text-align: center;
     text-shadow: 7px 5px 7px #333;
     font-family:'Copperplate Gothic';
@@ -112,7 +112,7 @@ li {
 
 .home-info-bar {
     text-align: center;
-    font-size: 30px;
+    font-size: 220%;
     background-color: #18121E;
     color: white;
     padding: 100px;
@@ -124,15 +124,22 @@ li {
 }
 
 .about_headers{
-    color:white;
+    color:#EAC67A;
+    text-align:center;
+    font-size:250%;
 }
 
 .about_paragraph{
     color:white;
+    font-size:130%;
+    text-align:center;
+    font-weight:bold;
 }
 
-.about_main {
-    background-color:darkgoldenrod;
+.about_background {
+    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');*/
+    background-color: #18121E;
+    background-image: url('Images/HomepageBackground/yannik-wenk-267315.jpg');
 }
 
 .homepage_paragraph{
