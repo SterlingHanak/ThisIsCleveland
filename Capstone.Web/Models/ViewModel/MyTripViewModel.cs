@@ -13,7 +13,6 @@ namespace Capstone.Web.Models
         [Required(ErrorMessage = "This field is required.")]
         public string TripName { get; set; }
 
-        [Required(ErrorMessage = "This field is required.")]
         public string TripDescription { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]

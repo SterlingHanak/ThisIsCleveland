@@ -52,7 +52,7 @@
                     click: function (event) {
                         var addressLine1 = event.customAddress.substring(0, event.customAddress.indexOf(", "));
                         var addressLine2 = event.customAddress.substring(event.customAddress.indexOf(", ") + 2);
-                        var landmarkPicName = categoryName.replace(/\s/g, '') + "/" + event.landmarkName.replace(/\s/g, '_');
+                        var landmarkPicName = categoryName.replace(/\s/g, '') + "/" + event.landmarkName.replace(/\s/g, '_').replace(":", "").replace("'", "");
 
                         $("#landmark_pic").attr("src", "../Content/Images/" + landmarkPicName + ".jpg");
                         $("#landmark_name").html(event.landmarkName);
@@ -68,10 +68,13 @@
                         // Hours of Operation
                         var daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
                         for (var i = 0; i < daysOfWeek.length; i++) {
-                            if (event.schedule[daysOfWeek[i]] != "undefined") {
-                                var containerId = "#" + daysOfWeek[i] + "_hours";
+                            var containerId = "#" + daysOfWeek[i] + "_hours";
+                            if (daysOfWeek[i] in event.schedule) {
                                 var message = event.schedule[daysOfWeek[i]].TimeOpen + " - " + event.schedule[daysOfWeek[i]].TimeClosed;
                                 $(containerId).html(message);
+                            }
+                            else {
+                                $(containerId).html("CLOSED");
                             }
                         }
                     }
@@ -186,6 +189,13 @@
             // Append input field to new landmark stop row
             var newStopDivId = "#landmark" + $("#landmark_id").val();
             $(landmarkIdHiddenField).appendTo(newStopDivId);
+        });
+
+        /**********************************************
+        * FILTER DOCK
+        ***********************************************/
+        $("#filterTabs").tabs({
+            collapsible: true
         });
     }
 });

@@ -6,50 +6,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="category-jumbo" @*style="background-image: url(../../Content/Images/East4thColor.jpg)"*@>
-    <h2>@Model.Category</h2>
+<div class="category-jumbo">
+    <h2 id="currentCategoryTitle">@Model.Category</h2>
 </div>
 
-<div class="row category-icon-div" style="margin-left: 25%; margin-right: 25%; background-color: white; color: black;">
-    <div class="col-md-4">
+<div class=" category-icon-div container-fluid">
+    <div>
+        <span id="openCatBtn">     &#9776;</span>
+    </div>
+    <div>
         <a href="#" class="categoryIcons" id="restaurantIcon" value="Restaurants"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Restaurant.jpg" /></a>
-        <p>Restaurants</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="schoolIcon" value="Schools"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/School.jpg" /></a>
-        <p>Schools</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="concertIcon" value="Concert Venues"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Concert.jpg" /></a>
-        <p>Concert Venues</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="theatreIcon" value="Theatres"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Theatre.jpg" /></a>
-        <p>Theatres</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons"  id ="museumIcon" value="Libraries and Museums"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Museum.jpg" /></a>
-        <p>Museums and Library</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="sportIcon" value="Sports Venues"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Sports.jpg" /></a>
-        <p>Sport Venues</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="parkIcon" value="Nature and Parks"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Park.jpg"/></a>
-        <p>Parks</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="shoppingIcon" value="Shopping Centers"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Shopping.jpg" /></a>
-        <p>Shopping</p>
     </div>
-    <div class="col-md-4">
+    <div>
         <a href="#" class="categoryIcons" id="casinoIcon" value="Casino"><img style="height: 40px; width: 40px;" src="~/Content/Images/Icons/Casino.jpg" /></a>
-        <p>Casino</p>
     </div>
 </div>
 
-<span id="openCatBtn" style="font-size: 30px; cursor: pointer;">&#9776; Filter Options</span>
 
 <div class="col-md-3 filter-container sidenav" id="mySidenav">
     <span id="closeCatBtn" class="closebtn" style="cursor: pointer;">X</span>
@@ -80,7 +73,6 @@
         @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10})
 </div>
 
-@*@#("~/Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg"*@
 
 <div class="row location-row">
     @foreach (Landmark location in Model.Landmarks)
@@ -93,10 +85,11 @@
 
             <div class="col-md-4 location-detail @avgRatingClass @relativeCostClass">
                 <div class="detail-container">
-                    <h2>@location.Name</h2>
-                    <img src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg")/>
+                    <h2 style="margin-top: 10px; font-size: 25px;">@location.Name</h2>
+                    <img style= "height: 275px; max-width: 100%;" class="img-fluid" src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg") />
                 </div>
-                <div class="overlay" style="color: white;">
+                <div class="overlay" style="color: #FDBB30; margin: auto;">
+                    <h2 style="margin-top: 10px; font-size: 25px;">@location.Name</h2>
                     <p>@location.Address</p>
                     <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
                     <p>@location.Description</p>
@@ -105,70 +98,6 @@
                     <button type="submit">Add To Trip</button>
                 </div>
             </div>
-
         }
     }
 </div>
-
-        @*<div class="row">
-            @{
-                for (int j = i;  j < Model.Landmarks.Count - 3 && numDivsInRow < rowMaxLength; j++, numDivsInRow++)
-                {
-                    <div class="col-md-4 location-detail">
-                        <a href="#" data-toggle="collapse" data-target=@("#collapse-" + j)>
-                            <img class="location-detail" src="#">
-                        </a>
-                    </div>
-                    numDivsInRow++;
-                }
-
-                for (int k = i; k >= Model.Landmarks.Count - 3 && k < Model.Landmarks.Count; k++)
-                {
-                    <div class="col-md-4 location-detail">
-                        <a href="#" data-toggle="collapse" data-target=@("#collapse-" + k)>
-                            <img class="location-detail" src="#">
-                        </a>
-                    </div>
-                    numDivsInRow++;
-                }
-
-                <div class="row">
-                    @{
-                        for (int m = 0; m < numDivsInRow; m++)
-                        {
-                            <div id=@("collapse-" + i) class="col-md-12 location-detail @avgRatingClass @relativeCostClass panel-collapse collapse">
-                                <p>@location.Address</p>
-                                <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
-                                <p>@location.Description</p>
-
-                                <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
-                                <button type="submit">Add To Trip</button>
-                            </div>
-                        }
-                    }
-                </div>
-            }
-        </div>*@
-
-
-
-    @*<div class="row">
-        <div class="col-md-4 location-detail">
-            <a href="#" data-toggle="collapse" data-target=@("#collapse-" + i)>
-                <img class="location-detail" src="~/Content/Images/Casino/Jack_Casino.jpg">
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div id=@("collapse-" + i) class="col-md-12 location-detail @avgRatingClass @relativeCostClass panel-collapse collapse">
-                <p>@location.Address</p>
-                <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
-                <p>@location.Description</p>
-
-                <p><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</p>
-                <button type="submit">Add To Trip</button>
-        </div>
-    </div>*@
-    @*}
-}
-</div>*@
