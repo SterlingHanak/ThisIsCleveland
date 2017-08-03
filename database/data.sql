@@ -195,7 +195,6 @@ INSERT INTO landmark_category VALUES (74, 6);
 INSERT INTO landmark_category VALUES (75, 4);
 INSERT INTO landmark_category VALUES (76, 7);
 INSERT INTO landmark_category VALUES (77, 7);
-INSERT INTO landmark_category VALUES (77, 9);
 --ADDED 8/2/2017
 INSERT INTO landmark_category VALUES (78, 6);
 INSERT INTO landmark_category VALUES (79, 2);
@@ -211,6 +210,7 @@ INSERT INTO landmark_category VALUES (54, 3);
 UPDATE landmark SET name = 'A Christmas Story House' WHERE id = 80;
 UPDATE landmark SET name = 'Cleveland Museum of Natural History' WHERE id = 81;
 UPDATE landmark SET name = 'House of Blues' WHERE id = 31;
+UPDATE landmark SET name = 'Wilbert''s Food & Music' WHERE id = 29;
 
 --Restaurant Detail
 INSERT INTO restaurant VALUES (1, 'casual', 'Gastropub');

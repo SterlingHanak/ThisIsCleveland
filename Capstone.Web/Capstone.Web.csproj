@@ -149,7 +149,9 @@
     <Content Include="Content\Images\CleRock.jpg" />
     <Content Include="Content\Images\cleveland-skyline-in-black-watercolor-on-white-background-pablo-romero.jpg" />
     <Content Include="Content\Images\ConcertVenues\Grog_Shop.jpg" />
+    <Content Include="Content\Images\ConcertVenues\House_of_Blues.jpg" />
     <Content Include="Content\Images\ConcertVenues\Jacobs_Pavilion_at_Nautica.jpg" />
+    <Content Include="Content\Images\ConcertVenues\Quicken_Loans_Arena.jpg" />
     <Content Include="Content\Images\ConcertVenues\Severance_Hall.jpg" />
     <Content Include="Content\Images\ConcertVenues\The_Agora_Theatre_and_Ballroom.jpg" />
     <Content Include="Content\Images\ConcertVenues\The_Odeon_Concert_Club.JPG" />
@@ -216,7 +218,7 @@
     <Content Include="Content\Images\Restaurants\Harry_Buffalo.jpg" />
     <Content Include="Content\Images\Restaurants\Hofbräuhaus.jpg" />
     <Content Include="Content\Images\Restaurants\Hot_Sauce_Williams.jpg" />
-    <Content Include="Content\Images\Restaurants\House_of_Blues_%28Restaurant%29.jpg" />
+    <Content Include="Content\Images\Restaurants\House_of_Blues.jpg" />
     <Content Include="Content\Images\Restaurants\Hyde_Park_Prime_Steakhouse.jpg" />
     <Content Include="Content\Images\Restaurants\Lago_East_Bank.jpg" />
     <Content Include="Content\Images\Restaurants\Lola.jpg" />
@@ -244,7 +246,7 @@
     <Content Include="Content\Images\Restaurants\TownHall.jpg" />
     <Content Include="Content\Images\Restaurants\Tremont_Taphouse.jpg" />
     <Content Include="Content\Images\Restaurants\Wahlburgers.jpg" />
-    <Content Include="Content\Images\Restaurants\Wilburt%27s_Food_&amp;_Music.jpg" />
+    <Content Include="Content\Images\Restaurants\Wilbert%27s_Food_&amp;_Music.jpg" />
     <Content Include="Content\Images\Restaurants\Wild_Eagle_Saloon.jpg" />
     <Content Include="Content\Images\Restaurants\Winking_Lizard_Tavern.jpg" />
     <Content Include="Content\Images\Restaurants\Zocalo_Tequileria.jpg" />
