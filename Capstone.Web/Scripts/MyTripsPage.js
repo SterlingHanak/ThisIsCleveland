@@ -89,15 +89,14 @@
 
     //Deleting trip  
     $("#delete_trip").on("click", function () {
-        var tripId = $(this).parent().attr('id');
-        $("#" + tripId).remove();
-        //$.ajax({
-        //    type: "POST",
-        //    url: "/MyTrips/DeleteTripLandmark/",
-        //    data: {"tripId": tripId },
-        //    success: function (msg) {
-               
-        //    }
-        //});
+        var tripId = $(this).parent().attr('id');      
+        $.ajax({
+            type: "POST",
+            url: "/MyTrips/DeleteTrip/",
+            data: {"tripId": tripId },
+            success: function () {
+                $("#" + tripId).remove();
+            }
+        });
         });
 });
