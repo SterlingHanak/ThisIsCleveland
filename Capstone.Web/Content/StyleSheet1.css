@@ -234,7 +234,7 @@ main {
 }
 
 .category-jumbo > h2 {
-    font-size: 100px;
+    font-size: 80px;
     vertical-align: central;
     color: #860038;
 }
@@ -296,6 +296,10 @@ font-size: 16px;
     color:white;
 }
 
+.category-body {
+    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+}
+
 .category-icon-div {
     background-color: #FDBB30;
     border-top-right-radius: 20px;
@@ -330,6 +334,17 @@ h1 {
     display:block;
     width:100%;
     height:auto;
+}
+
+
+.category-detail-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 88%; 
+    width: 100%;
+    margin: auto;
 }
 
 .overlay {
