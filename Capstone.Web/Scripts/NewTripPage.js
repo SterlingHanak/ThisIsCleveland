@@ -76,7 +76,7 @@
                                 $(containerId).html(message);
                             }
                             else {
-                                $(containerId).html("CLOSED");
+                                $(containerId).html("UNAVAILABLE");
                             }
                         }
 
@@ -219,6 +219,9 @@
         if (checked) {
             $("#" + id).next().next().css('border', '1px #000 solid');
             
+        }
+        if (!checked) {
+            $("#" + id).next().next().css( 'border','');
         }
       
     });
