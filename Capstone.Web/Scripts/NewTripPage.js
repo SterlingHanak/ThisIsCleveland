@@ -213,7 +213,14 @@
 
     //Adding border to each category 
 
-    $("#category").on("click", function () {
-        $(this).addClass('category_border')
-        )}
+    $(".category").on("change", function () {
+        var id = $(this).attr("id");
+        var checked = this.checked;
+        if (checked) {
+            $("#" + id).css('border', '1px #000 dashed');
+            
+        }
+      
+    });
+
 });
