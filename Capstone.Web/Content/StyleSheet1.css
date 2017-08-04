@@ -1,4 +1,9 @@
-﻿body {
+﻿@font-face {
+    font-family: "Paytone One";
+    src: url("//fonts.googleapis.com/css?family=Paytone+One");
+}
+
+body {
     /*color: white;
     background-repeat:no-repeat;
     background-size: cover;
@@ -94,13 +99,13 @@ li {
 .carousel-headline {
     position: absolute;
     bottom: 62%;
-    left: 23%;
     color: white;
-    font-size: 720%;
+    font-size: 700%;
     text-align: center;
-    text-shadow: 7px 5px 7px #333;
-    font-family:'Copperplate Gothic';
+    text-shadow: 7px 5px 7px #111;
+    font-family:'Californian FB';
     font-weight:400;
+    margin-left:26%;
 }
 
 .carousel-indicators {
@@ -111,8 +116,8 @@ li {
 .home-info-bar {
     text-align: center;
     font-size: 260%;
-    /*color: #FDBB30;*/
-    color:white;
+    color: #FDBB30;
+    /*color:white;*/
     text-shadow:4px 5px 1px #111;
     padding: 100px;
 }
@@ -122,37 +127,59 @@ li {
     padding-bottom:100px;
 }
 
+.homepage_paragraph {
+    font-weight: bold;
+    height: 200px;
+    font-size: 25px;
+    /*color: #FDBB30;*/
+    color: white;
+    text-shadow: 4px 5px 1px #111;
+    text-align: center;
+    padding-top: 10px;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.homepage_images{
+    margin-left:5%;
+    margin-right:5%;
+    width:90%;
+}
+
+
 .about_headers {
     color: #FDBB30;
     text-shadow: 4px 5px 1px #111;
     text-align: center;
-    font-size: 250%;
+    font-size: 450%;
+    font-family:'Californian FB';
+    font-weight:bold;
+    padding-top:70px;
 }
 
 .about_paragraph {
     color: #cccccc;
     text-shadow: 4px 5px 1px #111;
-    font-size: 130%;
+    font-size: 160%;
     font-weight: bold;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: ridge;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #18121E;
+    padding: 25px;
+    border-color: black;
+    box-shadow: 3px 3px #000;
 }
 
 .about_background {
     background-color: #18121E !important;
-    /*background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;
     background-size:100%;
     background-repeat:no-repeat;
     background-repeat:repeat-y !important;
-}
-
-.homepage_paragraph {
-    font-weight: bold;
-    height: 150px;
-    font-size: 25px;
-    /*color: #FDBB30;*/
-    color:white;
-    text-shadow: 4px 5px 1px #111;
-    text-align: center;
-    padding-top: 10px;
 }
 
 .navbar-nav{
@@ -228,15 +255,12 @@ li {
 
 /*CATEGORY VIEW*/
 .category-jumbo {
-    border: ridge;
-    border-color: #860038;
     border-radius: 6px;
     text-align: center;
-    background-color: #FDBB30;
     margin-bottom: 30px;
     margin-left: 10%;
     margin-right: 10%;
-    height: 150px;
+    height: 100px;
 }
 
 main {
@@ -248,16 +272,24 @@ main {
 }
 
 .category-jumbo > h2 {
-    font-size: 80px;
+    font-size: 75px;
+    font-weight: bold;
+    font-family: 'Lucida Calligraphy';
     vertical-align: central;
-    color: #860038;
+    color: #FDBB30;
+    text-shadow: 8px 4px 4px #111;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    right: 10%;
+    vertical-align: central;
 }
 
 .location-detail {
     border: ridge;
     border-color: black;
-    background-color: #860038;
-    color: #FDBB30;
+    background-color: #001a33;
+    color: #cccccc;
     height: 350px;
     text-align: center;
 }
@@ -312,10 +344,13 @@ font-size: 16px;
 
 .category-body {
     background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .category-icon-div {
-    background-color: #FDBB30;
+    /*background-color: #FDBB30;*/
+    background-color: #cccccc;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     padding: 10px;
@@ -323,21 +358,16 @@ font-size: 16px;
     border-right: ridge;
     border-left: ridge;
     border-top: ridge;
-    border-color: #860038;
+    border-color: black;
 }
 
 .category-icon-div > div {
     display: inline-block;
-    padding-right: 6%;
+    margin-right: 6%;
 }
 
 #openCatBtn {
-    width: 18%;
-    font-size: 30px;
     cursor: pointer;
-    color: black;
-    font-weight: bold;
-    padding-top: 30px !important;
 }
 
 h1 {
@@ -371,7 +401,7 @@ h1 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #860038;
+    background-color: #001a33;
 }
 
 .location-detail:hover .overlay{
