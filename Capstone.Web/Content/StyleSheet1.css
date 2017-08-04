@@ -94,13 +94,13 @@ li {
 .carousel-headline {
     position: absolute;
     bottom: 62%;
-    left: 23%;
     color: white;
-    font-size: 720%;
+    font-size: 700%;
     text-align: center;
-    text-shadow: 7px 5px 7px #333;
-    font-family:'Copperplate Gothic';
+    text-shadow: 7px 5px 7px #111;
+    font-family:'Californian FB';
     font-weight:400;
+    margin-left:26%;
 }
 
 .carousel-indicators {
@@ -111,8 +111,8 @@ li {
 .home-info-bar {
     text-align: center;
     font-size: 260%;
-    /*color: #FDBB30;*/
-    color:white;
+    color: #FDBB30;
+    /*color:white;*/
     text-shadow:4px 5px 1px #111;
     padding: 100px;
 }
@@ -122,37 +122,59 @@ li {
     padding-bottom:100px;
 }
 
+.homepage_paragraph {
+    font-weight: bold;
+    height: 200px;
+    font-size: 25px;
+    /*color: #FDBB30;*/
+    color: white;
+    text-shadow: 4px 5px 1px #111;
+    text-align: center;
+    padding-top: 10px;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.homepage_images{
+    margin-left:5%;
+    margin-right:5%;
+    width:90%;
+}
+
+
 .about_headers {
     color: #FDBB30;
     text-shadow: 4px 5px 1px #111;
     text-align: center;
-    font-size: 250%;
+    font-size: 450%;
+    font-family:'Californian FB';
+    font-weight:bold;
+    padding-top:70px;
 }
 
 .about_paragraph {
     color: #cccccc;
     text-shadow: 4px 5px 1px #111;
-    font-size: 130%;
+    font-size: 160%;
     font-weight: bold;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: ridge;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #18121E;
+    padding: 25px;
+    border-color: black;
+    box-shadow: 3px 3px #000;
 }
 
 .about_background {
     background-color: #18121E !important;
-    /*background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;
     background-size:100%;
     background-repeat:no-repeat;
     background-repeat:repeat-y !important;
-}
-
-.homepage_paragraph {
-    font-weight: bold;
-    height: 150px;
-    font-size: 25px;
-    /*color: #FDBB30;*/
-    color:white;
-    text-shadow: 4px 5px 1px #111;
-    text-align: center;
-    padding-top: 10px;
 }
 
 .navbar-nav{
