@@ -45,7 +45,7 @@
         <div id="col" class="col-sm-9 col-md-9 col-lg-9 col-height">
             <div class="row">
                 <!--FILTER SECTION-->
-                <h4 style="color: black;"><button type="button" class="btn btn-outline-success"><span class="glyphicon glyphicon-filter"></span>Filter By:</button></h4>
+                <h4 style="color: black; margin-bottom:0px"><button type="button" class="btn btn-outline-success"><span class="glyphicon glyphicon-filter"></span>Filter By:</button></h4>
                 <div id="filterTabs" class="display:inline;">
                     <ul style="border: 1px solid black">
                         <li><a href="#filterTabs-category">Category</a></li>
@@ -59,7 +59,7 @@
                                     string imageName = category.Replace(" ", "") + "Icon.jpg";
                             <li>
                                 @Html.CheckBox(category, false, new { id = category.Replace(" ", ""), value = category, @class = "category", style = "margin-right: 5px; display: none;" })
-                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 1%;"/></label>
+                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 1%; padding-right: 30px; padding-left: 12px;"/></label>
                             </li>
                             }
                         </ul>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <!--MAP-->
-                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-height" style="height: 400px; width: 900px;"></div>
+                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-height" style="height: 650px; width: 900px; border: 5px solid #984B43"></div>
             </div>
 
             <!--DETAILS-->
