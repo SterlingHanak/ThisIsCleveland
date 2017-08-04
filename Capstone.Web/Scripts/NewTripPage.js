@@ -119,7 +119,7 @@
                     data: { "category": categoryName },
                     dataType: "json"
 
-                 // If json data retrieval successful, display all markers on map corresponding to category
+                    // If json data retrieval successful, display all markers on map corresponding to category
                 }).done(function (data) {
                     gMarkers[categoryName] = data;
                     GMaps.prototype.addMarkersOfType(categoryName, categoryName);
@@ -210,4 +210,10 @@
             $("#landmarkDetailsSection").hide();
         });
     }
+
+    //Adding border to each category 
+
+    $("#category").on("click", function () {
+        $(this).addClass('category_border')
+        )}
 });
