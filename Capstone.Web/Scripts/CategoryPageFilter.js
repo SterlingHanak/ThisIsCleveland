@@ -79,13 +79,13 @@
                     "<div class='detail-container'><h2 style='margin-top: 10px; font-size: 25px;'>" + name + "</h2>" +
                     "<img class='img-fluid category-detail-img' src='../Content/Images/" +
                     categoryName.replace(/\s/g, '') + "/" + name.replace(/\s/g, '_').replace(":", "").replace("'", "%27") + ".jpg'/></div>" +
-                    "<div class='overlay' style='color: #FDBB30; margin: auto;'>" +
+                    "<div class='overlay' style='color: #cccccc; margin: auto;'>" +
                     "<h2 style='margin-top: 10px; font-size: 25px;'>" + name + "</h2>" +
                     "<p>" + address + "</p>" +
                     "<p><span class='glyphicon glyphicon-phone-alt'></span> " + phoneNumber + "</p>" +
                     "<p> " + description + "</p>" +
                     "<p><span class='glyphicon glyphicon-globe'></span> " + websiteUrl + "</p>" +
-                    "<button type='submit'>Add To Trip</button></div></div>");
+                    "<button class='-add-btn btn' style='color: black;' type='submit'>Add To Trip</button></div></div>");
             }
         }            
     )});

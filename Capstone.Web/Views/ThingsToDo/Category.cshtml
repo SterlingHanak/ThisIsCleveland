@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body class="category-body">
+<div class="category-body">
 
 <div class="category-jumbo">
     <h2 id="currentCategoryTitle">@Model.Category</h2>
@@ -14,34 +14,34 @@
 
 <div class=" category-icon-div container-fluid">
     <div>
-        <span title="More Filter Options" id="openCatBtn">     &#9776;</span>
+        <span class="categoryIcons" id="openCatBtn"><img title="More Filter Options" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/FilterIcon.jpg" /></span>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="restaurantIcon" value="Restaurants"><img title="Restaurants" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/RestaurantsIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Restaurants"><img title="Restaurants" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/RestaurantsIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="schoolIcon" value="Schools"><img title="Schools" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/SchoolsIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Schools"><img title="Schools" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/SchoolsIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="concertIcon" value="Concert Venues"><img title="Concert Venues" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/ConcertVenuesIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Concert Venues"><img title="Concert Venues" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/ConcertVenuesIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="theatreIcon" value="Theatres"><img title="Theatres" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/TheatresIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Theatres"><img title="Theatres" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/TheatresIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons"  id ="museumIcon" value="Libraries and Museums"><img title="Libraries and Museums" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/LibrariesandMuseumsIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Libraries and Museums"><img title="Libraries and Museums" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/LibrariesandMuseumsIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="sportIcon" value="Sports Venues"><img title="Sports Venues" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/SportsVenuesIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Sports Venues"><img title="Sports Venues" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/SportsVenuesIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="parkIcon" value="Nature and Parks"><img title="Nature and Parks" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/NatureandParksIcon.jpg"/></a>
+        <a href="#" class="categoryIcons" value="Nature and Parks"><img title="Nature and Parks" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/NatureandParksIcon.jpg"/></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="shoppingIcon" value="Shopping Centers"><img title="Shopping Centers" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/ShoppingCentersIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Shopping Centers"><img title="Shopping Centers" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/ShoppingCentersIcon.jpg" /></a>
     </div>
     <div>
-        <a href="#" class="categoryIcons" id="casinoIcon" value="Casino"><img title="Casino" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/CasinoIcon.jpg" /></a>
+        <a href="#" class="categoryIcons" value="Casino"><img title="Casino" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/CasinoIcon.jpg" /></a>
     </div>
 </div>
 
@@ -87,18 +87,18 @@
                     <h2 style="margin-top: 10px; width: 100%; font-size: 25px;">@location.Name</h2>
                     <img  class="img-fluid category-detail-img" src=@("../Content/Images/" + Model.Category + "/" + location.Name.Replace(" ", "_") + ".jpg") />
                 </div>
-                <div class="overlay" style="color: #FDBB30; margin: auto;">
+                <div class="overlay" style="color: #cccccc; margin: auto;">
                     <h2 style="margin-top: 10px; font-size: 25px;">@location.Name</h2>
-                    <p>@location.Address</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> @location.Address</p>
                     <p><span class="glyphicon glyphicon-phone-alt"></span>  @location.PhoneNumber</p>
-                    <p>@location.Description</p>
+                    <p style="padding-left: 5px; padding-right: 5px;">@location.Description</p>
 
-                    <p><span class="glyphicon glyphicon-globe"></span>  @("https://" + location.WebsiteUrl)</p>
-                    <button class="category-add-btn" type="submit" style="background-color: white; color: black;">Add To Trip</button>
+                    <p><a href="@location.WebsiteUrl"><span class="glyphicon glyphicon-globe"></span>  @location.WebsiteUrl</a></p>
+                    <button class="category-add-btn btn" type="submit" style="color: black;">Add To Trip</button>
                 </div>
             </div>
         }
     }
 </div>
 
-</body>
+</div>

@@ -4,6 +4,8 @@
 
     if ($("#map").length) {
 
+        $("#landmarkDetailsSection").hide();
+
         /**********************
          * CREATE MAP 
          **********************/
@@ -77,6 +79,9 @@
                                 $(containerId).html("CLOSED");
                             }
                         }
+
+                        // Show landmark details
+                        $("#landmarkDetailsSection").show();
                     }
                 });
                 // Save it as real (Google Maps) marker
@@ -196,6 +201,13 @@
         ***********************************************/
         $("#filterTabs").tabs({
             collapsible: true
+        });
+
+        /**********************************************
+        * CLOSE LANDMARK DETAIL PANEL
+        ***********************************************/
+        $("#closeLandmarkDetailsBtn").on("click", function () {
+            $("#landmarkDetailsSection").hide();
         });
     }
 });
