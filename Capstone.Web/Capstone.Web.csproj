@@ -175,6 +175,7 @@
     <Content Include="Content\Images\iconic-cleveland-statue-frozen-in-time-fine-art-photography.jpg" />
     <Content Include="Content\Images\Icons\CasinoIcon.jpg" />
     <Content Include="Content\Images\Icons\ConcertVenuesIcon.jpg" />
+    <Content Include="Content\Images\Icons\FilterIcon.jpg" />
     <Content Include="Content\Images\Icons\LibrariesandMuseumsIcon.jpg" />
     <Content Include="Content\Images\Icons\NatureandParksIcon.jpg" />
     <Content Include="Content\Images\Icons\RestaurantsIcon.jpg" />
