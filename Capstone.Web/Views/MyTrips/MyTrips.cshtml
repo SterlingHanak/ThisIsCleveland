@@ -43,7 +43,7 @@
                                     string landmarkImgName = trip.Landmarks[0].Name.Replace(" ", "_") + ".jpg";
                                 }
                                 <div class="col-md-3">
-                                    <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="height: 55%;width: 55%" class="text-left" />
+                                    <img src=@("../Content/Images/" + landmarkFolderName + "/" + landmarkImgName) style="height: 55%;width: 55%; margin: 10px;" class="text-left" />
                                     <div id="button" class="col-md-12" style="padding-left: 0px;">
                                         <button type="submit" @*id="delete_trip"*@ class="btn btn-primary submit_button" style="z-index: 50;"> Delete Trip</button>
                                     </div>

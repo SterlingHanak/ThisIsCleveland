@@ -5,6 +5,7 @@
       
         var travelMode = "driving";
         var currentTripId = "";
+        var markers = [];
 
         var routeMap = new GMaps({
             div: '#routeMap',
@@ -13,6 +14,8 @@
         });
 
         var drawRoute = function (tripId) {
+            // Initialize map
+            clearMap();
 
             // Retrieve landmark details based on trip id
             $.ajax({
@@ -38,7 +41,7 @@
                     var destinationLongitude = data[i + 1].Longitude;
 
                     // Retrieve category name of current landmark
-                    var categoryName = data[i].Categories[i];
+                    var categoryName = data[i].Categories[0];
 
                     // Add marker to current landmark
                     var marker = routeMap.addMarker({
@@ -46,7 +49,11 @@
                         lng: originLongitude,
                         title: "#" + (i + 1) + ": " + data[i].Name,
                         icon: "/Content/Markers/" + categoryName.replace(/\s/g, '') + "_marker.png",
+                        infoWindow: { content: '<p>' + (i + 1) + ' - ' + data[i].Name + '<p>' }
                     });
+
+                    // Add marker to collection
+                    markers.push(marker);
 
                     var stepFunction = new stepPrinter(i);
 
@@ -75,7 +82,10 @@
                             lng: destinationLongitude,
                             title: "#" + (i + 1) + ": " + data[i].Name,
                             icon: "/Content/Markers/" + categoryName.replace(/\s/g, '') + "_marker.png",
+                            infoWindow: { content: '<p>' + (i + 2) + ' - ' + data[i + 1].Name + '<p>' }
                         });
+
+                        markers.push(marker);
                     }
                 }
             });
@@ -113,8 +123,26 @@
             $("#drivingDirectionHeader").html("Walking Directions");
             if (currentTripId !== "") {
                 $("#routeDirections").empty();
+                clearMap();
                 drawRoute(currentTripId);
             }
         });
+
+        $("#driving_Btn").on("click", function () {
+            travelMode = "driving";
+            $("#drivingDirectionHeader").html("Driving Directions");
+            if (currentTripId !== "") {
+                $("#routeDirections").empty();
+                clearMap();
+                drawRoute(currentTripId);
+            }
+        });
+
+        // Clear Map
+        function clearMap() {
+            routeMap.cleanRoute();
+            routeMap.removeMarkers();
+            $("#routeDirections").empty();
+        };
     }
 });

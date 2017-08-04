@@ -490,3 +490,7 @@ h1 {
     font-family: 'Paytone One';
     font-size: 1.2em;
 }
+
+.tripDiv:hover {
+    background-color: #984B43 !important;
+}
