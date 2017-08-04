@@ -82,8 +82,12 @@
 
                         // Show landmark details
                         $("#landmarkDetailsSection").show();
+
+                        // Scroll to location div
+                        $('html, body').animate({ scrollTop: $('#landmarkDetailsSection').offset().top - 10 }, 'slow');
                     }
                 });
+
                 // Save it as real (Google Maps) marker
                 realMarkers[markerType].push(marker);
             }
@@ -200,7 +204,16 @@
         * FILTER DOCK
         ***********************************************/
         $("#filterTabs").tabs({
-            collapsible: true
+            collapsible: true,
+            active: false
+        });
+
+        $("#filterTabs").on("tabsactivate", function (event, ui) {
+            var x = $(ui.newTab).css("background-color");
+            $(ui.newTab).css("background-color", "lightgray");
+            $(ui.newTab).css("color", "black");
+            $(ui.oldTab).css("background-color", "#333333");
+            $(ui.oldTab).css("color", "white");
         });
 
         /**********************************************
@@ -217,7 +230,10 @@
         var id = $(this).attr("id");
         var checked = this.checked;
         if (checked) {
-            $("#" + id).next().next().css('border', '1px #000 solid');  
+            $("#" + id).next().next().css('border', '2px red solid');  
+        }
+        else {
+            $("#" + id).next().next().css("border", "none");
         }
     });
 

@@ -17,18 +17,18 @@
                 using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
                 {
                     <p>
-                        <h5>Name</h5>
+                        <h5 class="ctrl_panel_inputs">Name</h5>
                         <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" class="form-control" />
                         @Html.ValidationMessage("MyTripViewModel.TripName")
                     </p>
 
                     <p>
-                        <h5>Description</h5>
+                        <h5 class="ctrl_panel_inputs">Description</h5>
                         <textarea name="MyTripViewModel.TripDescription" class="form-control"></textarea>
                         @Html.ValidationMessageFor(m => Model.TripDescription)
                     </p>
                         <p>
-                            <h5>Date</h5>
+                            <h5 class="ctrl_panel_inputs">Date</h5>
                             <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                             @Html.ValidationMessageFor(m => Model.TripDate)
                         </p>
@@ -47,12 +47,11 @@
         <div id="col" class="col-sm-9 col-md-9 col-lg-9 col-height">
             <div class="row trip-filter-row" style="background-color: #333;">
                 <!--FILTER SECTION-->
-                <h4 style="color: black; margin-bottom:0px"><button type="button" class="btn btn-outline-success"><span class="glyphicon glyphicon-filter"></span>Filter By:</button></h4>
+                <h4 style="font-family: 'Paytone One'; color: white; margin-bottom:0px; padding: 5px;"><span class="glyphicon glyphicon-filter"></span>Choose to Filter Landmarks By:</h4>
                 <div id="filterTabs" class="display:inline;">
-                    <ul>
-                        <li><a href="#filterTabs-category">Category</a></li>
-                        <li><a href="#filterTabs-keywordSearch">Keyword Search</a></li>
-                        <li><a href="#filterTabs-mileRadius">Mile Radius</a></li>
+                    <ul style="font-family: 'Paytone One'">
+                        <li><a href="#filterTabs-category" class="singleFilterTab">Category</a></li>
+                        <li><a href="#filterTabs-keywordSearch" class="singleFilterTab">Keyword Search</a></li>
                     </ul>
                     <div id="filterTabs-category" style="background-color: lightgray;">
                         <ul style="background-color: lightgray;">
@@ -67,15 +66,9 @@
                         </ul>
                     </div>
                     <div id="filterTabs-keywordSearch" style="background-color: lightgray;">
-                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms", @class = "btn btn-secondary" })
-                        <button id="displaySearchResults" class="btn btn-success submit_button"><span class="glyphicon glyphicon-pushpin"></span><h5 style="inline-block;">Display Search Results</h5></button>
+                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms", @class = "btn btn-secondary", @style = "margin-left: 5px;" })
+                        <button id="displaySearchResults" class="btn btn-success submit_button"><span class="glyphicon glyphicon-pushpin"></span><h5>Display Search Results</h5></button>
                         <button id="clearSearch" class="btn btn-success submit_button"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
-                    </div>
-                    <div id="filterTabs-mileRadius" style="background-color: lightgray;">
-                        <span>Starting Point</span>
-                        @Html.TextBox("startingPoint", String.Empty, new { @id = "startingPoint", @placeholder = "Starting Address", style = "margin-right: 2%;" })
-                        <span>Radius (miles)</span>
-                        @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10 })
                     </div>
                 </div>
                 <!--MAP-->

@@ -320,6 +320,7 @@ main {
     background-color: #5FB68C;
     font-size: 1em;
     font-family: 'Paytone One';
+    margin: 10px; 
 }
 
 
@@ -477,4 +478,15 @@ h1 {
 .my-trip-body {
     background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg');
     background-size: 100%;
+}
+
+#filterTabs a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #984B43;
+}
+
+.ctrl_panel_inputs {
+    font-family: 'Paytone One';
+    font-size: 1.2em;
 }

@@ -714,7 +714,10 @@ INSERT INTO daily_hours VALUES (5, 85, '11:00:00', '02:30:00');
 INSERT INTO daily_hours VALUES (6, 85, '11:00:00', '02:30:00');
 INSERT INTO daily_hours VALUES (7, 85, '11:00:00', '02:30:00');
 
--- 8/4/17 - Correct misspelled restaurant name
+-- 8/4/17
+-- Correct misspelled restaurant name
 UPDATE landmark SET name = 'Wilbert''s Food & Music' WHERE id = 29;
+-- Delete Tower City Center as casino
+DELETE FROM landmark_category WHERE landmark_id = 77 AND category_id = 9;
 
 COMMIT;
