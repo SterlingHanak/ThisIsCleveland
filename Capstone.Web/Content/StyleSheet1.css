@@ -78,11 +78,12 @@ li {
 
 .footer {
     margin-bottom: 0px !important;
-    color:white;
-    background-color:#233237;
-    margin-top:15px;
-    opacity:1 !important;
-    padding-top:20px;
+    color: white;
+    background-color: rgba(35, 50, 55, 0.90);
+    margin-top: 15px;
+    padding-top: 20px;
+    font-family: 'Paytone One';
+    font-size:100%;
 }
 
 /*Home View*/
@@ -103,9 +104,8 @@ li {
     font-size: 700%;
     text-align: center;
     text-shadow: 7px 5px 7px #111;
-    font-family:'Californian FB';
-    font-weight:400;
-    margin-left:26%;
+    font-family: 'Paytone One';
+    margin-left: 26%;
 }
 
 .carousel-indicators {
@@ -118,8 +118,9 @@ li {
     font-size: 260%;
     color: #FDBB30;
     /*color:white;*/
-    text-shadow:4px 5px 1px #111;
+    text-shadow: 4px 5px 1px #111;
     padding: 100px;
+    font-family: 'Paytone One';
 }
 
 .home-info {
@@ -128,16 +129,17 @@ li {
 }
 
 .homepage_paragraph {
-    font-weight: bold;
-    height: 200px;
+    height: 250%;
     font-size: 25px;
-    /*color: #FDBB30;*/
     color: white;
     text-shadow: 4px 5px 1px #111;
-    text-align: center;
+    text-align:left;
     padding-top: 10px;
-    margin-left:5%;
-    margin-right:5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Paytone One';
+    background-color: rgba(24, 18, 30, 0.75);
+    padding:15px;
 }
 
 .homepage_images{
@@ -157,7 +159,7 @@ li {
 }
 
 .about_paragraph {
-    color: #cccccc;
+    color: white;
     font-family: 'Paytone One';
     text-shadow: 4px 5px 1px #111;
     font-size: 160%;
@@ -174,16 +176,15 @@ li {
 
 .about_background {
     background-color: #18121E !important;
-    background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;
-    background-size:100%;
-    background-repeat:no-repeat;
-    background-repeat:repeat-y !important;
+    background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg')!important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y !important;
 }
 
-.navbar-nav{
-    background-color: #18121E;
-    font-weight:900;
-    font-family:cursive;
+.navbar-nav {
+    background-color: #18121e;
+    font-family: 'Paytone One';
 }
 
 .btn-primary{
@@ -201,8 +202,7 @@ li {
     margin-left: 30%;
     margin-right: 30%;
     text-align: center;
-    background-color: #233237;
-    opacity:0.8;
+    background-color: rgba(35, 50, 55, 0.75);
     border-radius: 10px 100px 10px 100px;
     font-weight:bold;
     padding-bottom: 30px;
@@ -220,8 +220,7 @@ li {
 }
 
 .home_background {
-    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;*/
-    background-image: url('Images/HomepageBackground/paul-299941.jpg') !important;
+    background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg')!important;
     background-size: 100%;
     background-repeat: no-repeat;
     background-repeat: repeat-y !important;
@@ -234,14 +233,13 @@ li {
     margin-top: 4%;
     margin-right: 25%;
     margin-left: 30%;
-    background-color: #233237;
-    opacity: 0.8;
-    font-weight:bold;
+    background-color: rgba(35, 50, 55, 0.75);
+    font-weight: bold;
     border-radius: 10px 150px 10px 140px;
     text-align: center;
-    padding-bottom:10px;
-    padding-top:10px;
-    background-repeat:no-repeat
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-repeat: no-repeat
 }
 
 /*NEW TRIP*/
@@ -261,6 +259,10 @@ li {
     height: 100px;
 }
 
+.category_border{
+    border:2px solid black;
+}
+
 main {
     display: inline-block;
 }
@@ -272,7 +274,7 @@ main {
 .category-jumbo > h2 {
     font-size: 75px;
     font-weight: bold;
-    font-family: 'Lucida Calligraphy';
+    font-family: 'Paytone One';
     vertical-align: central;
     color: #FDBB30;
     text-shadow: 8px 4px 4px #111;
@@ -341,9 +343,13 @@ font-size: 16px;
 }
 
 .category-body {
-    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');*/
+    background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg');
     padding-left: 15px;
     padding-right: 15px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y !important;
 }
 
 .category-icon-div {
@@ -369,7 +375,7 @@ font-size: 16px;
 }
 
 h1 {
-    font-family: Snell Roundhand, cursive;
+    font-family: 'Paytone One';
 }
 
 .detail-container{
@@ -400,6 +406,7 @@ h1 {
     opacity: 0;
     transition: .5s ease;
     background-color: #001a33;
+    overflow:auto;
 }
 
 .location-detail:hover .overlay{
