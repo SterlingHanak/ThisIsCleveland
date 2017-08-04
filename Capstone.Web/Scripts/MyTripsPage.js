@@ -4,6 +4,7 @@
     if ($("#MyTripsPgLocator").length) {
       
         var travelMode = "driving";
+        var currentTripId = "";
 
         var routeMap = new GMaps({
             div: '#routeMap',
@@ -89,6 +90,7 @@
 
         $(".tripDiv").on("click", function (event) {
             var tripId = $(this).attr("id");
+            currentTripId = tripId;
             drawRoute(tripId);
         });
 
@@ -108,8 +110,11 @@
         // Walking and Driving Buttons
         $("#walking_Btn").on("click", function () {
             travelMode = "walking";
-            $("#drivingDirectionHeader").html("Walking Direction");
-            $("#routeDirections").empty();
+            $("#drivingDirectionHeader").html("Walking Directions");
+            if (currentTripId !== "") {
+                $("#routeDirections").empty();
+                drawRoute(currentTripId);
+            }
         });
     }
 });

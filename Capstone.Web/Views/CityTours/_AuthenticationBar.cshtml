@@ -5,13 +5,14 @@
     if (Model == null)
     {
         <ul class="nav navbar-nav navbar-right shared_navbar" >
+            <li class="text-right"><a href="@Url.Action("Register","Users")">Register</a></li>
             <li class="text-right"><a href="@Url.Action("Login","Users")">Login</a></li>
         </ul>
     }
     else
     {
         <ul class="nav navbar-nav navbar-right shared_navbar">
-            <li><h4 style="color: white; margin-top: 15px;">Welcome, @Model.FirstName!</h4></li>
+            <li><h4 style="color: white; padding-top: 5px; line-height: 20px; font-size: 20px; color: #FDBB30;">Welcome, @Model.FirstName!</h4></li>
             <li></li>
             <li><a href=@Url.Action("ChangePassword", "Users")>Manage Account</a></li>
             <li><a href=@Url.Action("Logout", "Users")>Logout</a></li>

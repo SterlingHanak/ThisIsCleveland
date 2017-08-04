@@ -24,7 +24,7 @@
         @Html.Action("GetAuthenticatedUser", "CityTours")
         <div class="container-fluid shared_navbar">
             <ul class="nav navbar-nav navbar">
-                <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href=@Url.Action("Index", "Home")><span class="glyphicon glyphicon-home" style="color: #FDBB30;"></span></a></li>
                 <li>@Html.ActionLink("Things To Do", "Category", "ThingsToDo")</li>
                 <li>@Html.ActionLink("Plan Trip", "NewTrip", "PlanTrip")</li>
                 <li>@Html.ActionLink("My Trips", "MyTrips", "MyTrips")</li>
