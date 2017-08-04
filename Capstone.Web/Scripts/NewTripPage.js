@@ -217,7 +217,7 @@
         var id = $(this).attr("id");
         var checked = this.checked;
         if (checked) {
-            $("#" + id).css('border', '1px #000 dashed');
+            $("#" + id).next().next().css('border', '1px #000 solid');
             
         }
       
