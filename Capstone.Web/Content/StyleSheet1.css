@@ -151,26 +151,24 @@ li {
     color: #FDBB30;
     text-shadow: 4px 5px 1px #111;
     text-align: center;
-    font-size: 450%;
-    font-family:'Californian FB';
-    font-weight:bold;
-    padding-top:70px;
+    font-size: 500%;
+    font-family: 'Paytone One';
+    padding-top: 70px;
 }
 
 .about_paragraph {
     color: #cccccc;
+    font-family: 'Paytone One';
     text-shadow: 4px 5px 1px #111;
     font-size: 160%;
-    font-weight: bold;
     margin-left: 3%;
     margin-right: 3%;
-    border: ridge;
+    border: 1px #233237 solid;
     border-radius: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #18121E;
+    background-color: rgba(24, 18, 30, 0.75);
     padding: 25px;
-    border-color: black;
     box-shadow: 3px 3px #000;
 }
 
