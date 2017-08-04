@@ -253,7 +253,7 @@ li {
 .category-jumbo {
     border-radius: 6px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 200px;
     margin-left: 10%;
     margin-right: 10%;
     height: 100px;
@@ -272,14 +272,13 @@ main {
 }
 
 .category-jumbo > h2 {
-    font-size: 75px;
-    font-weight: bold;
+    font-size: 110px;
     font-family: 'Paytone One';
     vertical-align: central;
     color: #FDBB30;
     text-shadow: 8px 4px 4px #111;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 10%;
     right: 10%;
     vertical-align: central;
@@ -292,6 +291,7 @@ main {
     color: #cccccc;
     height: 350px;
     text-align: center;
+    font-family: 'Paytone One';
 }
 
 .sidenav {
@@ -301,12 +301,13 @@ main {
     z-index: 1;
     top: 0;
     left: -30px;
-    background-color: #111;
+    background-color: rgba(17, 17, 17, 0.92);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     color: white;
     text-align: right;
+    font-family: 'Paytone One';
 }
 
 .closebtn {
@@ -335,16 +336,15 @@ font-size: 16px;
   float: left;
   margin-left: -100px;
   color:white;
-
 }
+
 .icon_size {
     font-size: 25px;
     color:white;
 }
 
 .category-body {
-    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');*/
-    background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg');
+    background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg')!important;
     padding-left: 15px;
     padding-right: 15px;
     background-size: 100%;
@@ -353,7 +353,6 @@ font-size: 16px;
 }
 
 .category-icon-div {
-    /*background-color: #FDBB30;*/
     background-color: #cccccc;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -438,7 +437,7 @@ h1 {
     font-size: larger;
 }
 .shared_navbar {
-  background-color:#18121E;
+  background-color:#18121e;
    height:60px;
    font-size: 20px;
    margin-right: 20px;
