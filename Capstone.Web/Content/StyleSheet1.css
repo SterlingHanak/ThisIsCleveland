@@ -1,4 +1,9 @@
-﻿body {
+﻿@font-face {
+    font-family: "Paytone One";
+    src: url("//fonts.googleapis.com/css?family=Paytone+One");
+}
+
+body {
     /*color: white;
     background-repeat:no-repeat;
     background-size: cover;
@@ -250,11 +255,8 @@ li {
 
 /*CATEGORY VIEW*/
 .category-jumbo {
-    border: ridge;
-    border-color: #860038;
     border-radius: 6px;
     text-align: center;
-    background-color: #FDBB30;
     margin-bottom: 30px;
     margin-left: 10%;
     margin-right: 10%;
@@ -270,7 +272,7 @@ main {
 }
 
 .category-jumbo > h2 {
-    font-size: 70px;
+    font-size: 75px;
     font-weight: bold;
     font-family: 'Lucida Calligraphy';
     vertical-align: central;
@@ -280,9 +282,7 @@ main {
     top: 15%;
     left: 10%;
     right: 10%;
-    font-size: 80px;
     vertical-align: central;
-    color: #860038;
 }
 
 .location-detail {
@@ -344,6 +344,8 @@ font-size: 16px;
 
 .category-body {
     background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .category-icon-div {
@@ -399,7 +401,7 @@ h1 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #860038;
+    background-color: #001a33;
 }
 
 .location-detail:hover .overlay{
