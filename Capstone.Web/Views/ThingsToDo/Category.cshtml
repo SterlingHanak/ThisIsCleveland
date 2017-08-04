@@ -14,7 +14,7 @@
 
 <div class=" category-icon-div container-fluid">
     <div>
-        <span class="categoryIcons" id="openCatBtn"><img title="More Filter Options" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/FilterIcon.jpg" /></span>
+        <span id="openCatBtn"><img title="More Filter Options" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/FilterIcon.jpg" /></span>
     </div>
     <div>
         <a href="#" class="categoryIcons" value="Restaurants"><img title="Restaurants" style="height: 40px; width: 40px;" src="~/Content/Images/Icons/RestaurantsIcon.jpg" /></a>
@@ -68,8 +68,6 @@
         <p id="4-cost" class="checkbox_relative_cost">@Html.CheckBox("relative_cost-4", true) <img src="~/Content/Images/4-cost.png" style="width: 90px"></p>
         <p id="5-cost" class="checkbox_relative_cost">@Html.CheckBox("relative_cost-5", true) <img src="~/Content/Images/5-cost.png" style="width: 90px"></p>
     </div>
-    <h2>Radius</h2>
-        @Html.TextBox("mileRadius", 10, new { type = "number", min = 10, max = 100, step = 10})
 </div>
 
 
