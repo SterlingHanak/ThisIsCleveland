@@ -270,7 +270,6 @@ main {
 }
 
 .category-jumbo > h2 {
-<<<<<<< HEAD
     font-size: 70px;
     font-weight: bold;
     font-family: 'Lucida Calligraphy';
@@ -281,11 +280,9 @@ main {
     top: 15%;
     left: 10%;
     right: 10%;
-=======
     font-size: 80px;
     vertical-align: central;
     color: #860038;
->>>>>>> 05b75e38f5cd6d838bf6cf9804a543e4819f0e30
 }
 
 .location-detail {
