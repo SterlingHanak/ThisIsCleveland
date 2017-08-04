@@ -12,24 +12,24 @@
     <div class="row">
         <!--CURRENT TRIP SECTION-->
         <div class="col-sm-3 col-md-3 col-lg-3 col-height" style="background-color: #001a33; color: white;">
-            <h2>Current Trip</h2>
+            <h2 style="font-family: 'Paytone One';">Current Trip</h2>
             @{
                 using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
                 {
                     <p>
                         <h5>Name</h5>
-                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
+                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" class="form-control" />
                         @Html.ValidationMessage("MyTripViewModel.TripName")
                     </p>
 
                     <p>
                         <h5>Description</h5>
-                        <textarea name="MyTripViewModel.TripDescription"></textarea>
+                        <textarea name="MyTripViewModel.TripDescription" class="form-control"></textarea>
                         @Html.ValidationMessageFor(m => Model.TripDescription)
                     </p>
                         <p>
                             <h5>Date</h5>
-                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                             @Html.ValidationMessageFor(m => Model.TripDate)
                         </p>
 
@@ -38,7 +38,7 @@
                             <div id="stops" class="col-lg-10"></div>
                         </div>
                         <br />
-                        <button>Save</button>
+                        <button class="btn btn-success" style="text-shadow:0px 0px 10px;" >Save</button>
                 }
             }
         </div>
@@ -67,9 +67,9 @@
                         </ul>
                     </div>
                     <div id="filterTabs-keywordSearch" style="background-color: lightgray;">
-                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms" })
-                        <button id="displaySearchResults"><span class="glyphicon glyphicon-pushpin"></span><h5 style="inline-block;">Display Search Results</h5></button>
-                        <button id="clearSearch"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
+                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms", @class = "btn btn-secondary" })
+                        <button id="displaySearchResults" class="btn btn-success submit_button"><span class="glyphicon glyphicon-pushpin"></span><h5 style="inline-block;">Display Search Results</h5></button>
+                        <button id="clearSearch" class="btn btn-success submit_button"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
                     </div>
                     <div id="filterTabs-mileRadius" style="background-color: lightgray;">
                         <span>Starting Point</span>
@@ -83,7 +83,7 @@
             </div>
 
             <!--DETAILS-->
-            <div id="landmarkDetailsSection" class="row" style="background-color: #cccccc; color: black; padding: 20px; border: solid; border-color: black;">
+            <div id="landmarkDetailsSection" class="row" style="font-family: 'Paytone One'; background-color: #cccccc; color: black; padding: 20px; border: solid; border-color: black;">
                 <div class="row"><button id="closeLandmarkDetailsBtn"style="float: right;"><span class="glyphicon glyphicon-remove-sign"></span></button></div>
                 <div class="row">
                     <div class="col-lg-6">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" style="font-size:35px">
                         <h5>Hours</h5>
                         @{
                             string[] daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
@@ -117,7 +117,7 @@
                         <h4 id="landmark_phone_number"></h4>
                         <a id="landmark_website_url" href="#"><span class="glyphicon glyphicon-new-window"></span> Link to External Site</a>
                         <br />
-                        <button id="addLandmarkToTripBtn">Add to Trip</button>
+                        <button id="addLandmarkToTripBtn" class="btn btn-primary">Add to Trip</button>
                     </div>
                 </div>
             </div>
