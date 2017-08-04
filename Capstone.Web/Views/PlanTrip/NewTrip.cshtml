@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid" style="margin-right: -15px;">
+<div class="container">
     <div class="row" style="background-color: #E14658; color: white;"><h1>New Trip</h1></div>
-    <div class="row" style="margin-left: 2%;">
+    <div class="row">
         <!--CURRENT TRIP SECTION-->
         <div class="col-sm-3 col-md-3 col-lg-3 col-height" style="background-color: #a0f327; color: black;">
             <h2>Current Trip</h2>
@@ -42,7 +42,7 @@
         </div>
 
         <!--MAP AND DETAIL SECTIONS-->
-        <div class="col-lg-12 col-md-12 col-sm-12 col-height">
+        <div id="col" class="col-sm-9 col-md-9 col-lg-9 col-height">
             <div class="row">
                 <!--FILTER SECTION-->
                 <h4 style="color: white;"><span class="glyphicon glyphicon-filter"></span>Filter By:</h4>
@@ -59,7 +59,7 @@
                                     string imageName = category.Replace(" ", "") + "Icon.jpg";
                             <li>
                                 @Html.CheckBox(category, false, new { id = category.Replace(" ", ""), value = category, @class = "category", style = "margin-right: 5px; display: none;" })
-                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 4em;"/></label>
+                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 1%;"/></label>
                             </li>
                             }
                         </ul>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <!--MAP-->
-                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-" style="height: 400px;"></div>
+                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-height" style="height: 400px; width: 900px;"></div>
             </div>
 
             <!--DETAILS-->
