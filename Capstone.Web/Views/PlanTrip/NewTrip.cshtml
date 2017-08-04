@@ -5,29 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<body class="my-trip-body">
+
 <div class="container">
-    <div class="row" style="background-color: #E14658; color: white;"><h1 class="text-center">New Trip</h1></div>
+    <div class="row"><h1 class="text-center about_headers">New Trip</h1></div>
     <div class="row">
         <!--CURRENT TRIP SECTION-->
-        <div class="col-sm-3 col-md-3 col-lg-3 col-height" style="background-color: #a0f327; color: black;">
-            <h2>Current Trip</h2>
+        <div class="col-sm-3 col-md-3 col-lg-3 col-height" style="background-color: #001a33; color: white;">
+            <h2 style="font-family: 'Paytone One';">Current Trip</h2>
             @{
                 using (Html.BeginForm("NewTrip", "PlanTrip", FormMethod.Post))
                 {
                     <p>
                         <h5>Name</h5>
-                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" />
+                        <input type="text" name="MyTripViewModel.TripName" placeholder="My New Trip" class="form-control" />
                         @Html.ValidationMessage("MyTripViewModel.TripName")
                     </p>
 
                     <p>
                         <h5>Description</h5>
-                        <textarea name="MyTripViewModel.TripDescription"></textarea>
+                        <textarea name="MyTripViewModel.TripDescription" class="form-control"></textarea>
                         @Html.ValidationMessageFor(m => Model.TripDescription)
                     </p>
                         <p>
                             <h5>Date</h5>
-                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            <input type="date" name="MyTripViewModel.TripDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                             @Html.ValidationMessageFor(m => Model.TripDate)
                         </p>
 
@@ -36,18 +38,18 @@
                             <div id="stops" class="col-lg-10"></div>
                         </div>
                         <br />
-                        <button>Save</button>
+                        <button class="btn btn-success" style="text-shadow:0px 0px 10px;" >Save</button>
                 }
             }
         </div>
 
         <!--MAP AND DETAIL SECTIONS-->
         <div id="col" class="col-sm-9 col-md-9 col-lg-9 col-height">
-            <div class="row">
+            <div class="row trip-filter-row" style="background-color: #333;">
                 <!--FILTER SECTION-->
-                <h4 style="color: black;"><button type="button" class="btn btn-outline-success"><span class="glyphicon glyphicon-filter"></span>Filter By:</button></h4>
+                <h4 style="color: black; margin-bottom:0px"><button type="button" class="btn btn-outline-success"><span class="glyphicon glyphicon-filter"></span>Filter By:</button></h4>
                 <div id="filterTabs" class="display:inline;">
-                    <ul style="border: 1px solid black">
+                    <ul>
                         <li><a href="#filterTabs-category">Category</a></li>
                         <li><a href="#filterTabs-keywordSearch">Keyword Search</a></li>
                         <li><a href="#filterTabs-mileRadius">Mile Radius</a></li>
@@ -59,15 +61,15 @@
                                     string imageName = category.Replace(" ", "") + "Icon.jpg";
                             <li>
                                 @Html.CheckBox(category, false, new { id = category.Replace(" ", ""), value = category, @class = "category", style = "margin-right: 5px; display: none;" })
-                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 1%;"/></label>
+                                <label for=@category.Replace(" ", "")><img src=@("../Content/Images/Icons/" + imageName) style="height: 50px; margin-right: 1%; padding-right: 30px; padding-left: 12px;"/></label>
                             </li>
                             }
                         </ul>
                     </div>
                     <div id="filterTabs-keywordSearch" style="background-color: lightgray;">
-                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms" })
-                        <button id="displaySearchResults"><span class="glyphicon glyphicon-pushpin"></span><h5 style="inline-block;">Display Search Results</h5></button>
-                        <button id="clearSearch"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
+                        @Html.TextBox("search", String.Empty, new { @id = "searchBar", @placeholder = "Enter Search Terms", @class = "btn btn-secondary" })
+                        <button id="displaySearchResults" class="btn btn-success submit_button"><span class="glyphicon glyphicon-pushpin"></span><h5 style="inline-block;">Display Search Results</h5></button>
+                        <button id="clearSearch" class="btn btn-success submit_button"><span class="glyphicon glyphicon-remove-circle"></span><h5>Clear Search Pins</h5></button>
                     </div>
                     <div id="filterTabs-mileRadius" style="background-color: lightgray;">
                         <span>Starting Point</span>
@@ -77,11 +79,11 @@
                     </div>
                 </div>
                 <!--MAP-->
-                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-height" style="height: 400px; width: 900px;"></div>
+                <div id="map" class="col-lg-12 col-md-12 col-sm-12 col-height" style="height: 650px; width: 900px;"></div>
             </div>
 
             <!--DETAILS-->
-            <div id="landmarkDetailsSection" class="row" style="background-color: yellow; color: black; padding: 20px;">
+            <div id="landmarkDetailsSection" class="row" style="font-family: 'Paytone One'; background-color: #cccccc; color: black; padding: 20px; border: solid; border-color: black;">
                 <div class="row"><button id="closeLandmarkDetailsBtn"style="float: right;"><span class="glyphicon glyphicon-remove-sign"></span></button></div>
                 <div class="row">
                     <div class="col-lg-6">
@@ -96,7 +98,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" style="font-size:35px">
                         <h5>Hours</h5>
                         @{
                             string[] daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
@@ -115,7 +117,7 @@
                         <h4 id="landmark_phone_number"></h4>
                         <a id="landmark_website_url" href="#"><span class="glyphicon glyphicon-new-window"></span> Link to External Site</a>
                         <br />
-                        <button id="addLandmarkToTripBtn">Add to Trip</button>
+                        <button id="addLandmarkToTripBtn" class="btn btn-primary">Add to Trip</button>
                     </div>
                 </div>
             </div>
@@ -123,4 +125,4 @@
     </div>
 </div>
 
-
+</body>

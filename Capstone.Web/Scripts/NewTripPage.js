@@ -76,7 +76,7 @@
                                 $(containerId).html(message);
                             }
                             else {
-                                $(containerId).html("CLOSED");
+                                $(containerId).html("UNAVAILABLE");
                             }
                         }
 
@@ -176,7 +176,7 @@
             var newStopOrderRow = "<div class='row'>" + (landmarkIds.length + 1) + "</div>";
 
             // Add row for new landmark stop
-            var newStopRow = "<div id='landmark" + $("#landmark_id").val() + "' style='background-color: yellow; border: 2px solid orange;'>" +
+            var newStopRow = "<div id='landmark" + $("#landmark_id").val() + "' class='form-control' style='color: black; background-color: #cccccc; font-weight: bold;'>" +
                 "<span class='ui-icon ui-icon-caret-2-n-s' ></span>" + $("#landmark_name").html() + "</div>";
 
             // Add each new rows to appropriate container
@@ -217,10 +217,8 @@
         var id = $(this).attr("id");
         var checked = this.checked;
         if (checked) {
-            $("#" + id).css('border', '1px #000 dashed');
-            
+            $("#" + id).next().next().css('border', '1px #000 solid');  
         }
-      
     });
 
 });
