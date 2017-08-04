@@ -110,42 +110,49 @@ li {
 
 .home-info-bar {
     text-align: center;
-    font-size: 220%;
-    background-color: #18121E;
-    color: white;
+    font-size: 260%;
+    /*color: #FDBB30;*/
+    color:white;
+    text-shadow:4px 5px 1px #111;
     padding: 100px;
 }
 
 .home-info {
-    padding-top:150px;
-    padding-bottom:150px;
+    padding-top:0px;
+    padding-bottom:100px;
 }
 
-.about_headers{
-    color:#EAC67A;
-    text-align:center;
-    font-size:250%;
+.about_headers {
+    color: #FDBB30;
+    text-shadow: 4px 5px 1px #111;
+    text-align: center;
+    font-size: 250%;
 }
 
-.about_paragraph{
-    color:white;
-    font-size:130%;
-    text-align:center;
-    font-weight:bold;
+.about_paragraph {
+    color: #cccccc;
+    text-shadow: 4px 5px 1px #111;
+    font-size: 130%;
+    font-weight: bold;
 }
 
 .about_background {
     background-color: #18121E !important;
+    /*background-image: url('Images/HomepageBackground/paul-299941.jpg')!important;*/
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-repeat:repeat-y !important;
 }
 
-.homepage_paragraph{
+.homepage_paragraph {
+    font-weight: bold;
+    height: 150px;
+    font-size: 25px;
+    /*color: #FDBB30;*/
     color:white;
-    font-weight:bold;
-    height:150px;
-    font-size:22px;
-    opacity:0.9;
-    text-align:center;
-    background-color:#18121E;
+    text-shadow: 4px 5px 1px #111;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .navbar-nav{
@@ -188,7 +195,11 @@ li {
 }
 
 .home_background {
-    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;
+    /*background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg') !important;*/
+    background-image: url('Images/HomepageBackground/paul-299941.jpg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y !important;
 }
 
 ::-webkit-input-placeholder {
@@ -205,7 +216,7 @@ li {
     text-align: center;
     padding-bottom:10px;
     padding-top:10px;
-    
+    background-repeat:no-repeat
 }
 
 /*NEW TRIP*/
@@ -217,7 +228,11 @@ li {
 
 /*CATEGORY VIEW*/
 .category-jumbo {
+    border: ridge;
+    border-color: #860038;
+    border-radius: 6px;
     text-align: center;
+    background-color: #FDBB30;
     margin-bottom: 30px;
     margin-left: 10%;
     margin-right: 10%;
@@ -233,6 +248,7 @@ main {
 }
 
 .category-jumbo > h2 {
+<<<<<<< HEAD
     font-size: 70px;
     font-weight: bold;
     font-family: 'Lucida Calligraphy';
@@ -243,6 +259,11 @@ main {
     top: 15%;
     left: 10%;
     right: 10%;
+=======
+    font-size: 80px;
+    vertical-align: central;
+    color: #860038;
+>>>>>>> 05b75e38f5cd6d838bf6cf9804a543e4819f0e30
 }
 
 .location-detail {
@@ -252,7 +273,6 @@ main {
     color: #cccccc;
     height: 350px;
     text-align: center;
-    padding: 0px !important;
 }
 
 .sidenav {
@@ -304,10 +324,7 @@ font-size: 16px;
 }
 
 .category-body {
-    background-image: url('Images/HomepageBackground/paul-299941.jpg');
-    background-size: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    background-image: url('Images/HomepageBackground/deepal-pallav-suthar-198550.jpg');
 }
 
 .category-icon-div {
@@ -363,9 +380,7 @@ h1 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    /*background-color: #860038;*/
-    background-color: #001a33;
-    overflow: auto;
+    background-color: #860038;
 }
 
 .location-detail:hover .overlay{

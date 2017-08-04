@@ -22,7 +22,25 @@ namespace Capstone.Web.DAL
 
         public bool ChangePassword(string username, string hashedPassword)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string sql = $"UPDATE city_tours_user SET password = '{hashedPassword}' WHERE username = '{username}'";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    int result = cmd.ExecuteNonQuery();
+
+                    return result > 0;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
         }
 
         public User GetUser(string userName, string password)
