@@ -76,7 +76,7 @@
                                 $(containerId).html(message);
                             }
                             else {
-                                $(containerId).html("CLOSED");
+                                $(containerId).html("UNAVAILABLE");
                             }
                         }
 
