@@ -430,6 +430,14 @@ h1 {
     opacity:1;
 }
 
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y !important;
+}
+
 /*password validation*/
 #register .short {
     font-weight: bold;
@@ -464,5 +472,11 @@ h1 {
     font-size: 20px;
 }
 
+.trip-filter-row {
+    background-color: #333 !important;
+}
 
-
+.my-trip-body {
+    background-image: url('Images/HomepageBackground/wildtextures-Dark-Grunge-Brick-Wall-Texture.jpg');
+    background-size: 100%;
+}
