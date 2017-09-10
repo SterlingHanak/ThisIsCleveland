@@ -1,0 +1,51 @@
+body {
+	background-image: url('bloodraven.jpg');
+	background-repeat: no-repeat;
+	background-size: 55%;
+	background-position: 50% 5%;
+	background-color: #1a0000;
+}
+
+h1 {
+	font-size: 85px;
+	color: #ffffcc;
+	position: fixed;
+	right: 25%;
+	left: 28%;
+	margin-top: 0px;
+}
+
+p {
+	color: #ffffcc;
+	position: fixed;
+	text-align: center;
+	top: 7%;
+	font-size: 40px;
+	left: 22%;
+	right: 22%;
+}
+
+#quoteDisplay {
+	color: black;
+	text-align: center;
+	background-color: white;
+	opacity: 0.6;
+	position: fixed;
+	left: 20%;
+	right: 20%;
+	top: 32%;
+	font-size: 40px;
+	border-style: ridge;
+	border-color: black;
+	border-radius: 10px;
+}
+
+#randomQuote {
+	position: fixed;
+	top: 26%;
+	font-size: 40px;
+	background-color: #1a0000;
+	color: #ffffcc;
+	left: 45%;
+	right: 30%;
+}
